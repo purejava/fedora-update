@@ -1,20 +1,20 @@
 /*
-    This file is part of Arch Linux Updates Indicator
+    This file is part of Fedora Linux Update Indicator
 
-    Arch Linux Updates Indicator is free software: you can redistribute it and/or modify
+    Fedora Linux Update Indicator is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    Arch Linux Updates Indicator is distributed in the hope that it will be useful,
+    Fedora Linux Update Indicator is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Arch Linux Updates Indicator.  If not, see <http://www.gnu.org/licenses/>.
+    along with Fedora Linux Update Indicator.  If not, see <http://www.gnu.org/licenses/>.
 
-    Copyright 2016-2022 Raphaël Rochet
+    Copyright 2023 Ralph Plawetzki
 */
 
 const Clutter = imports.gi.Clutter;
@@ -37,12 +37,12 @@ const ExtensionManager = imports.ui.main.extensionManager;
 const Me = ExtensionUtils.getCurrentExtension();
 
 const Format = imports.format;
-const Gettext = imports.gettext.domain('arch-update');
+const Gettext = imports.gettext.domain('fedora-update@purejava.org');
 const _ = Gettext.gettext;
 
 /* RegExp to tell what's an update */
 /* I am very loose on this, may make it easier to port to other distros */
-const RE_UpdateLine = /^(.+)\s+(\S+)\s+->\s+(.+)$/;
+const RE_UpdateLine = /^(\S+)\.(x86_64|aarch64|i686|noarch)\s+(\S+)$/;
 
 /* Options */
 let ALWAYS_VISIBLE     = true;
@@ -53,15 +53,15 @@ let CHECK_INTERVAL     = 60*60;   // 1h
 let NOTIFY             = false;
 let HOWMUCH            = 0;
 let TRANSIENT          = true;
-let UPDATE_CMD         = "gnome-terminal -- /bin/sh -c \"sudo pacman -Syu ; echo Done - Press enter to exit; read _\" ";
-let CHECK_CMD          = "/usr/bin/checkupdates";
+let UPDATE_CMD         = "gnome-terminal -- /bin/sh -c \"sudo dnf upgrade; echo Done - Press enter to exit; read _\" ";
+let CHECK_CMD          = "/bin/bash -c \"/usr/bin/dnf check-update --refresh -yq | tail -n +2  | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print $1,$2}'\"";
 let MANAGER_CMD        = "";
-let PACMAN_DIR         = "/var/lib/pacman/local";
+let PACKAGE_CACHE_DIR  = "";
 let STRIP_VERSIONS     = false;
 let STRIP_VERSIONS_N   = true;
 let AUTO_EXPAND_LIST   = 0;
 let DISABLE_PARSING    = false;
-let PACKAGE_INFO_CMD   = "xdg-open https://www.archlinux.org/packages/%2$s/%3$s/%1$s";
+let PACKAGE_INFO_CMD   = "xdg-open https://packages.fedoraproject.org/";
 
 /* Variables we want to keep when extension is disabled (eg during screen lock) */
 let FIRST_BOOT         = 1;
@@ -77,10 +77,10 @@ launcher.setenv("LANG", "C", true);
 
 function init() {
 	String.prototype.format = Format.format;
-	ExtensionUtils.initTranslations("arch-update");
+	ExtensionUtils.initTranslations("fedora-update@purejava.org");
 }
 
-const ArchUpdateIndicator = GObject.registerClass(
+const FedoraUpdateIndicator = GObject.registerClass(
 	{
 		_TimeoutId: null,
 		_FirstTimeoutId: null,
@@ -89,11 +89,11 @@ const ArchUpdateIndicator = GObject.registerClass(
 		_updateProcess_pid: null,
 		_updateList: [],
 	},
-class ArchUpdateIndicator extends PanelMenu.Button {
+class FedoraUpdateIndicator extends PanelMenu.Button {
 
 	_init() {
 		super._init(0);
-		this.updateIcon = new St.Icon({gicon: this._getCustIcon('arch-unknown-symbolic'), style_class: 'system-status-icon'});
+		this.updateIcon = new St.Icon({gicon: this._getCustIcon('fedora-unknown-symbolic'), style_class: 'system-status-icon'});
 
 		let box = new St.BoxLayout({ vertical: false, style_class: 'panel-status-menu-box' });
 		this.label = new St.Label({ text: '',
@@ -107,7 +107,7 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 		// Prepare the special menu : a submenu for updates list that will look like a regular menu item when disabled
 		// Scrollability will also be taken care of by the popupmenu
 		this.menuExpander = new PopupMenu.PopupSubMenuMenuItem('');
-		this.menuExpander.menu.box.style_class = 'arch-updates-list';
+		this.menuExpander.menu.box.style_class = 'fedora-updates-list';
 
 		// Other standard menu items
 		let settingsMenuItem = new PopupMenu.PopupMenuItem(_('Settings'));
@@ -119,7 +119,7 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 		let checkingLabel = new St.Label({ text: _('Checking') + " …" });
 		let cancelButton = new St.Button({
 			child: new St.Icon({ icon_name: 'process-stop-symbolic' }),
-			style_class: 'system-menu-action arch-updates-menubutton',
+			style_class: 'system-menu-action fedora-updates-menubutton',
 			x_expand: true
 		});
 		cancelButton.set_x_align(Clutter.ActorAlign.END);
@@ -156,7 +156,7 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 		this._updateList = UPDATES_LIST;
 
 		// Load settings
-		this._settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.arch-update');
+		this._settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.fedora-update@purejava.org');
 		this._settings.connect('changed', this._positionChanged.bind(this));
 		this._settingsChangedId = this._settings.connect('changed', this._applySettings.bind(this));
 		this._applySettings();
@@ -235,7 +235,7 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 		CHECK_CMD = this._settings.get_string('check-cmd');
 		DISABLE_PARSING = this._settings.get_boolean('disable-parsing');
 		MANAGER_CMD = this._settings.get_string('package-manager');
-		PACMAN_DIR = this._settings.get_string('pacman-dir');
+		PACKAGE_CACHE_DIR = this._settings.get_string('packages-dir');
 		STRIP_VERSIONS = this._settings.get_boolean('strip-versions');
 		STRIP_VERSIONS_N = this._settings.get_boolean('strip-versions-in-notification');
 		AUTO_EXPAND_LIST = this._settings.get_int('auto-expand-list');
@@ -259,7 +259,7 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 			this._notifSource = null;
 		};
 		if (this.monitor) {
-			// Stop spying on pacman local dir
+			// Stop spying on package manager local dir
 			this.monitor.cancel();
 			this.monitor = null;
 		}
@@ -310,9 +310,9 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 	}
 
 	_startFolderMonitor() {
-		if (PACMAN_DIR) {
-			this.pacman_dir = Gio.file_new_for_path(PACMAN_DIR);
-			this.monitor = this.pacman_dir.monitor_directory(0, null);
+		if (PACKAGE_CACHE_DIR) {
+			this.packages_dir = Gio.file_new_for_path(PACKAGE_CACHE_DIR);
+			this.monitor = this.packages_dir.monitor_directory(0, null);
 			this.monitor.connect('changed', this._onFolderChanged.bind(this));
 		}
 	}
@@ -330,7 +330,7 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 
 	_showChecking(isChecking) {
 		if (isChecking == true) {
-			this.updateIcon.set_gicon( this._getCustIcon('arch-unknown-symbolic') );
+			this.updateIcon.set_gicon( this._getCustIcon('fedora-unknown-symbolic') );
 			this.checkNowMenuContainer.actor.visible = false;
 			this.checkingMenuItem.actor.visible = true;;
 		} else {
@@ -343,7 +343,7 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 		updatesCount = typeof updatesCount === 'number' ? updatesCount : UPDATES_PENDING;
 		if (updatesCount > 0) {
 			// Updates pending
-			this.updateIcon.set_gicon( this._getCustIcon('arch-updates-symbolic') );
+			this.updateIcon.set_gicon( this._getCustIcon('fedora-updates-symbolic') );
 			this._updateMenuExpander( true, Gettext.ngettext( "%d update pending", "%d updates pending", updatesCount ).format(updatesCount) );
 			this.label.set_text(updatesCount.toString());
 			if (NOTIFY && UPDATES_PENDING < updatesCount) {
@@ -370,13 +370,13 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 					if (updateList.length > 0) {
 						// Show notification only if there's new updates
 						this._showNotification(
-							Gettext.ngettext( "New Arch Linux Update", "New Arch Linux Updates", updateList.length ),
+							Gettext.ngettext( "New Fedora Linux Update", "New Fedora Linux Updates", updateList.length ),
 							updateList.join(', ')
 						);
 					}
 				} else {
 					this._showNotification(
-						Gettext.ngettext( "New Arch Linux Update", "New Arch Linux Updates", updatesCount ),
+						Gettext.ngettext( "New Fedora Linux Update", "New Fedora Linux Updates", updatesCount ),
 						Gettext.ngettext( "There is %d update pending", "There are %d updates pending", updatesCount ).format(updatesCount)
 					);
 				}
@@ -387,20 +387,19 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 			this.label.set_text('');
 			if (updatesCount == -1) {
 				// Unknown
-				this.updateIcon.set_gicon( this._getCustIcon('arch-unknown-symbolic') );
+				this.updateIcon.set_gicon( this._getCustIcon('fedora-unknown-symbolic') );
 				this._updateMenuExpander( false, '' );
 			} else if (updatesCount == -2) {
 				// Error
-				this.updateIcon.set_gicon( this._getCustIcon('arch-error-symbolic') );
+				this.updateIcon.set_gicon( this._getCustIcon('fedora-error-symbolic') );
 				if ( this.lastUnknowErrorString.indexOf("/usr/bin/checkupdates") > 0 ) {
-					// We do a special change here due to checkupdates moved to pacman-contrib
-					this._updateMenuExpander( false, _("Note : you have to install pacman-contrib to use the 'checkupdates' script.") );
+					this._updateMenuExpander( false, _("Note : you have to install dnf to use the 'check for updates' script.") );
 				} else {
 					this._updateMenuExpander( false, _('Error') + "\n" + this.lastUnknowErrorString );
 				}
 			} else {
 				// Up to date
-				this.updateIcon.set_gicon( this._getCustIcon('arch-uptodate-symbolic') );
+				this.updateIcon.set_gicon( this._getCustIcon('fedora-uptodate-symbolic') );
 				this._updateMenuExpander( false, _('Up to date :)') );
 				UPDATES_LIST = []; // Reset stored list
 			}
@@ -434,19 +433,14 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 						let matches = item.match(RE_UpdateLine);
 						if (matches == null) {
 							// Not an update
-							this.menuExpander.menu.box.add( new St.Label({ text: item, style_class: 'arch-updates-update-title' }) );
+							this.menuExpander.menu.box.add( new St.Label({ text: item, style_class: 'fedora-updates-update-title' }) );
 						} else {
 							let hBox = new St.BoxLayout({ vertical: false });
 							hBox.add_child( this._createPackageLabel(matches[1]) );
 							if (!STRIP_VERSIONS) {
 								hBox.add_child( new St.Label({
-									text: matches[2] + " → ",
-									y_expand: true,
-									y_align: Clutter.ActorAlign.CENTER,
-									style_class: 'arch-updates-update-version-from' }) );
-								hBox.add_child( new St.Label({
 									text: matches[3],
-									style_class: 'arch-updates-update-version-to' }) );
+									style_class: 'fedora-updates-update-version-to' }) );
 							}
 							this.menuExpander.menu.box.add_child( hBox );
 						}
@@ -462,7 +456,7 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 		if (PACKAGE_INFO_CMD) {
 			let label = new St.Label({
 				text: name,
-				style_class: 'arch-updates-update-name-link'
+				style_class: 'fedora-updates-update-name-link'
 			});
 			let button = new St.Button({
 				child: label,
@@ -474,7 +468,7 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 			return new St.Label({
 				text: name,
 				x_expand: true,
-				style_class: 'arch-updates-update-name'
+				style_class: 'fedora-updates-update-name'
 			});
 		}
 	}
@@ -563,7 +557,7 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 			// We have to prepare this only once
 			this._notifSource = new MessageTray.SystemNotificationSource();
 			this._notifSource.createIcon = function() {
-				let gicon = Gio.icon_new_for_string( Me.dir.get_child('icons').get_path() + "/arch-updates-logo.svg" );
+				let gicon = Gio.icon_new_for_string( Me.dir.get_child('icons').get_path() + "/fedora-updates-logo.svg" );
 				return new St.Icon({ gicon: gicon });
 			};
 			// Take care of note leaving unneeded sources
@@ -586,15 +580,15 @@ class ArchUpdateIndicator extends PanelMenu.Button {
 
 });
 
-let archupdateindicator;
+let fedoraupdateindicator;
 
 function enable() {
-	archupdateindicator = new ArchUpdateIndicator();
-	Main.panel.addToStatusArea('ArchUpdateIndicator', archupdateindicator);
-	archupdateindicator._positionChanged();
+	fedoraupdateindicator = new FedoraUpdateIndicator();
+	Main.panel.addToStatusArea('FedoraUpdateIndicator', fedoraupdateindicator);
+	fedoraupdateindicator._positionChanged();
 }
 
 function disable() {
-	archupdateindicator.destroy();
-	archupdateindicator = null;
+	fedoraupdateindicator.destroy();
+	fedoraupdateindicator = null;
 }

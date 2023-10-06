@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <!--
-    This file is part of Arch Linux Updates Indicator
+    This file is part of Fedora Linux Update Indicator
 
-    Arch Linux Updates Indicator is free software: you can redistribute it and/or modify
+    Fedora Linux Update Indicator is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    Arch Linux Updates Indicator is distributed in the hope that it will be useful,
+    Fedora Linux Update Indicator is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Arch Linux Updates Indicator.  If not, see <http://www.gnu.org/licenses/>.
+    along with Fedora Linux Updates Indicator.  If not, see <http://www.gnu.org/licenses/>.
 
-    Copyright 2016-2022 Raphaël Rochet
+    Copyright 2023 Ralph Plawetzki
 -->
-<interface domain="arch-update">
+<interface domain="fedora-update@purejava.org">
 
 <object class="GtkAdjustment" id="Adjust_1">
 	<property name="lower">5</property>
@@ -288,12 +288,12 @@
 
 	<child>
 		<object class="AdwPreferencesGroup">
-			<property name="title" translatable="yes">Pacman local directory path - To detect when new packages are installed</property>
+			<property name="title" translatable="yes">Package manager local directory path - To detect when new packages are installed</property>
 			<child>
 				<object class="AdwActionRow">
-					<property name="activatable-widget">field_pacmandir</property>
+					<property name="activatable-widget">field_packagesdir</property>
 					<property name="child">
-						<object class="GtkEntry" id="field_pacmandir">
+						<object class="GtkEntry" id="field_packagesdir">
 						</object>
 					</property>
 				</object>

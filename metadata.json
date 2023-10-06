@@ -1,8 +1,8 @@
 {
-  "description": "Update indicator for Arch Linux and GNOME Shell.\n** Note : you now need to install the package pacman-contrib to use the checkupdates script. **\n  Can support AUR or other distros by changing command used to check for and apply updates.\n See README about Gnome Console",
-  "name": "Arch Linux Updates Indicator",
+  "description": "GNOME Shell update indicator for Fedora Linux.\n  See README about Gnome Console",
+  "name": "Fedora Linux Update Indicator",
   "shell-version": [ "44" ],
-  "url": "https://github.com/RaphaelRochet/arch-update", 
-  "uuid": "arch-update@RaphaelRochet", 
-  "version": 53
+  "url": "https://github.com/purejava/fedora-update",
+  "uuid": "fedora-update@purejava.org",
+  "version": 1
 }

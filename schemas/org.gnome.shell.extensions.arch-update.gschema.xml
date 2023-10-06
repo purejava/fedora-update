@@ -1,6 +1,6 @@
 <schemalist gettext-domain="gnome-shell-extensions">
-  <schema id="org.gnome.shell.extensions.arch-update"
-      path="/org/gnome/shell/extensions/arch-update/">
+  <schema id="org.gnome.shell.extensions.fedora-update@purejava.org"
+      path="/org/gnome/shell/extensions/fedora-update@purejava.org/">
 
     <key type="i" name="boot-wait">
         <default>15</default>
@@ -59,20 +59,20 @@
     </key>
 
     <key name="check-cmd" type="s">
-      <default>"/usr/bin/checkupdates"</default>
+      <default>"/bin/bash -c \"/usr/bin/dnf check-update --refresh -yq | tail -n +2  | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print $1,$2}'\""</default>
       <summary>Command to run to check for updated packages.</summary>
       <description>Command to run to check for updated packages.</description>
     </key>
 
     <key name="update-cmd" type="s">
-      <default>"gnome-terminal -- /bin/sh -c \"sudo pacman -Syu ; echo Done - Press enter to exit; read _\" "</default>
+      <default>"gnome-terminal -- /bin/sh -c \"sudo dnf upgrade; echo Done - Press enter to exit; read _\" "</default>
       <summary>Command to run to update packages.</summary>
       <description>Command to run to update packages.</description>
     </key>
 
-    <key name="pacman-dir" type="s">
-      <default>"/var/lib/pacman/local"</default>
-        <summary>Pacman directory to monitor</summary>
+    <key name="packages-dir" type="s">
+      <default>""</default>
+        <summary>Package cache directory to monitor</summary>
         <description></description>
     </key>
 
@@ -116,19 +116,19 @@
     <key name="position" type="i">
       <default>2</default>
       <summary>Position in the panel</summary>
-      <description>Position where the arch update will be displayed (left/center/right)</description>
+      <description>Position where the fedora update will be displayed (left/center/right)</description>
     </key>
 
     <key name="position-number" type="i">
       <default>-0</default>
-      <summary>Position of the arch update inside the box</summary>
+      <summary>Position of the fedora update inside the box</summary>
       <description></description>
     </key>
 
     <key name="package-info-cmd" type="s">
-      <default>"xdg-open https://www.archlinux.org/packages/%2$s/%3$s/%1$s"</default>
+      <default>"xdg-open https://packages.fedoraproject.org/"</default>
       <summary>Command to show info for a package.</summary>
-      <description>String template, takes the package, repo and arch as attributes.</description>
+      <description>Can be used as a string template with attributes.</description>
     </key>
 
   </schema>
