@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-08 19:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: extension.js:113
+msgid "Settings"
+msgstr ""
+
+#: extension.js:114 extension.js:572
+msgid "Update now"
+msgstr ""
+
+#: extension.js:115
+msgid "Open package manager"
+msgstr ""
+
+#: extension.js:119
+msgid "Checking"
+msgstr ""
+
+#: extension.js:130
+msgid "Check now"
+msgstr ""
+
+#: extension.js:153
+msgid "Waiting first check"
+msgstr ""
+
+#: extension.js:347
+#, javascript-format
+msgid "%d update pending"
+msgid_plural "%d updates pending"
+msgstr[0] ""
+msgstr[1] ""
+
+#: extension.js:373 extension.js:379
+msgid "New Fedora Linux Update"
+msgid_plural "New Fedora Linux Updates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: extension.js:380
+#, javascript-format
+msgid "There is %d update pending"
+msgid_plural "There are %d updates pending"
+msgstr[0] ""
+msgstr[1] ""
+
+#: extension.js:396
+msgid "Note : you have to install dnf to use the 'check for updates' script."
+msgstr ""
+
+#: extension.js:398
+msgid "Error"
+msgstr ""
+
+#: extension.js:403
+msgid "Up to date :)"
+msgstr ""
