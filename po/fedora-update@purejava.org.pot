@@ -14,7 +14,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
@@ -72,4 +72,124 @@ msgstr ""
 
 #: extension.js:403
 msgid "Up to date :)"
+msgstr ""
+
+#: prefs.xml:44
+msgid "Basic settings"
+msgstr ""
+
+#: prefs.xml:49
+msgid "Checking for updates"
+msgstr ""
+
+#: prefs.xml:52
+msgid "Time to wait before first check (seconds)"
+msgstr ""
+
+#: prefs.xml:64
+msgid "Interval between updates check (minutes)"
+msgstr ""
+
+#: prefs.xml:79
+msgid "Indicator"
+msgstr ""
+
+#: prefs.xml:82
+msgid "Always visible"
+msgstr ""
+
+#: prefs.xml:94
+msgid "Use built-in icons"
+msgstr ""
+
+#: prefs.xml:106
+msgid "Show updates count on indicator"
+msgstr ""
+
+#: prefs.xml:118
+msgid "Position in Panel"
+msgstr ""
+
+#: prefs.xml:136
+msgid "Left"
+msgstr ""
+
+#: prefs.xml:137
+msgid "Center"
+msgstr ""
+
+#: prefs.xml:138
+msgid "Right"
+msgstr ""
+
+#: prefs.xml:157
+msgid "Menu"
+msgstr ""
+
+#: prefs.xml:160
+msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
+msgstr ""
+
+#: prefs.xml:172 prefs.xml:230
+msgid "Strip out versions numbers"
+msgstr ""
+
+#: prefs.xml:187
+msgid "Notification"
+msgstr ""
+
+#: prefs.xml:190
+msgid "Send a notification when new updates are available"
+msgstr ""
+
+#: prefs.xml:202
+msgid "Use transient notifications (auto dismiss)"
+msgstr ""
+
+#: prefs.xml:214
+msgid "How much information to show on notifications"
+msgstr ""
+
+#: prefs.xml:220
+msgid "Count only"
+msgstr ""
+
+#: prefs.xml:221
+msgid "New updates names"
+msgstr ""
+
+#: prefs.xml:222
+msgid "All updates names"
+msgstr ""
+
+#: prefs.xml:245
+msgid "Advanced settings"
+msgstr ""
+
+#: prefs.xml:250
+msgid "Command to check for package updates"
+msgstr ""
+
+#: prefs.xml:262
+msgid "Disable output parsing, count every line as an update. This is the old behavior."
+msgstr ""
+
+#: prefs.xml:276
+msgid "Command to update packages"
+msgstr ""
+
+#: prefs.xml:291
+msgid "Package manager local directory path - To detect when new packages are installed"
+msgstr ""
+
+#: prefs.xml:306
+msgid "Command to open package manager (optional)"
+msgstr ""
+
+#: prefs.xml:321
+msgid "Command to show info for a package (optional)"
+msgstr ""
+
+#: prefs.xml:336
+msgid "About"
 msgstr ""
