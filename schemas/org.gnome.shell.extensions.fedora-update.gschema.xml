@@ -1,6 +1,6 @@
 <schemalist gettext-domain="gnome-shell-extensions">
-  <schema id="org.gnome.shell.extensions.fedora-update@purejava.org"
-      path="/org/gnome/shell/extensions/fedora-update@purejava.org/">
+  <schema id="org.gnome.shell.extensions.fedora-update"
+      path="/org/gnome/shell/extensions/fedora-update/">
 
     <key type="i" name="boot-wait">
         <default>15</default>

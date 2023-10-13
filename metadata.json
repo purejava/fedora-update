@@ -1,8 +1,8 @@
 {
-  "description": "GNOME Shell update indicator for Fedora Linux.\n  See README about Gnome Console",
+  "description": "GNOME Shell update indicator for Fedora Linux.\n  This is based on Arch Linux Updates Indicator by Raphaël Rochet.\n  This extension is not affiliated, funded, or in any way associated with Fedora brand and Red Hat Software.\n  See README about Gnome Console",
   "name": "Fedora Linux Update Indicator",
   "shell-version": [ "44" ],
   "url": "https://github.com/purejava/fedora-update",
-  "uuid": "fedora-update@purejava.org",
+  "uuid": "update-extension@purejava.org",
   "version": 1
 }

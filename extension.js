@@ -23,7 +23,6 @@ const St = imports.gi.St;
 const GObject = imports.gi.GObject;
 const GLib = imports.gi.GLib;
 const Gio = imports.gi.Gio;
-const Gtk = imports.gi.Gtk;
 
 const Main = imports.ui.main;
 const Panel = imports.ui.panel;
@@ -37,7 +36,7 @@ const ExtensionManager = imports.ui.main.extensionManager;
 const Me = ExtensionUtils.getCurrentExtension();
 
 const Format = imports.format;
-const Gettext = imports.gettext.domain('fedora-update@purejava.org');
+const Gettext = imports.gettext.domain('update-extension@purejava.org');
 const _ = Gettext.gettext;
 
 /* RegExp to tell what's an update */
@@ -69,21 +68,18 @@ let UPDATES_PENDING    = -1;
 let UPDATES_LIST       = [];
 
 /* A process builder without i10n for reproducible processing. */
-const launcher = new Gio.SubprocessLauncher({
-    flags: (Gio.SubprocessFlags.STDOUT_PIPE |
-            Gio.SubprocessFlags.STDERR_PIPE)
-});
-launcher.setenv("LANG", "C", true);
+var launcher = null;
 
 function init() {
 	String.prototype.format = Format.format;
-	ExtensionUtils.initTranslations("fedora-update@purejava.org");
+	ExtensionUtils.initTranslations("update-extension@purejava.org");
 }
 
 const FedoraUpdateIndicator = GObject.registerClass(
 	{
 		_TimeoutId: null,
 		_FirstTimeoutId: null,
+		_FolderChangedTimeoutId: null,
 		_updateProcess_sourceId: null,
 		_updateProcess_stream: null,
 		_updateProcess_pid: null,
@@ -156,7 +152,7 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 		this._updateList = UPDATES_LIST;
 
 		// Load settings
-		this._settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.fedora-update@purejava.org');
+		this._settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.fedora-update');
 		this._settings.connect('changed', this._positionChanged.bind(this));
 		this._settingsChangedId = this._settings.connect('changed', this._applySettings.bind(this));
 		this._applySettings();
@@ -179,17 +175,11 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 	}
 
 	_getCustIcon(icon_name) {
-		// I did not find a way to lookup icon via Gio, so use Gtk
-		// I couldn't find why, but get_default is sometimes null, hence this additional test
-		// TODO : Maybe switch to St.IconTheme
-		// https://gjs.guide/extensions/upgrading/gnome-shell-44.html#gtk-icontheme
-		// https://gjs-docs.gnome.org/st12~12/st.icontheme
 		if (!USE_BUILDIN_ICONS && St.Settings.get().gtk_icon_theme) {
-			let theme = new Gtk.IconTheme();
-			theme.set_theme_name( St.Settings.get().gtk_icon_theme );
+			let theme = new St.IconTheme();
 
 			if (theme.has_icon(icon_name)) {
-				return Gio.icon_new_for_string( icon_name );
+				return theme.load_icon(icon_name, 32, St.IconLookupFlags.FORCE_SYMBOLIC);
 			}
 		}
 		// Icon not available in theme, or user prefers built in icon
@@ -273,6 +263,10 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 			GLib.source_remove(this._FirstTimeoutId);
 			this._FirstTimeoutId = null;
 		}
+		if (this._FolderChangedTimeoutId) {
+			GLib.source_remove(this._FolderChangedTimeoutId);
+			this._FolderChangedTimeoutId = null;
+		}
 		if (this._TimeoutId) {
 			GLib.source_remove(this._TimeoutId);
 			this._TimeoutId = null;
@@ -320,10 +314,10 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 	_onFolderChanged() {
 		// Folder have changed ! Let's schedule a check in a few seconds
 		let that = this;
-		if (this._FirstTimeoutId) GLib.source_remove(this._FirstTimeoutId);
-		this._FirstTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 5, function () {
+		if (this._FolderChangedTimeoutId) GLib.source_remove(this._FolderChangedTimeoutId);
+		this._FolderChangedTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 5, function () {
 			that._checkUpdates();
-			that._FirstTimeoutId = null;
+			that._FolderChangedTimeoutId = null;
 			return false;
 		});
 	}
@@ -583,12 +577,23 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 let fedoraupdateindicator;
 
 function enable() {
+	if (launcher == null) {
+		launcher = new Gio.SubprocessLauncher({
+			flags: (Gio.SubprocessFlags.STDOUT_PIPE |
+							Gio.SubprocessFlags.STDERR_PIPE)
+		});
+		launcher.setenv("LANG", "C", true);
+	}
 	fedoraupdateindicator = new FedoraUpdateIndicator();
 	Main.panel.addToStatusArea('FedoraUpdateIndicator', fedoraupdateindicator);
 	fedoraupdateindicator._positionChanged();
 }
 
 function disable() {
+	if (launcher instanceof Gio.SubprocessLauncher) {
+		launcher = null;
+	}
+	String.prototype.format = null;
 	fedoraupdateindicator.destroy();
 	fedoraupdateindicator = null;
 }

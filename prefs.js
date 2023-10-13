@@ -20,18 +20,17 @@
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 const Gio = imports.gi.Gio;
-const Lang = imports.lang;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 
-const Gettext = imports.gettext.domain('fedora-update@purejava.org');
+const Gettext = imports.gettext.domain('update-extension@purejava.org');
 const _ = Gettext.gettext;
 
 let settings;
 
 function init() {
-	settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.fedora-update@purejava.org');
-	ExtensionUtils.initTranslations("fedora-update@purejava.org");
+	settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.fedora-update');
+	ExtensionUtils.initTranslations("update-extension@purejava.org");
 }
 
 function fillPreferencesWindow(window) {

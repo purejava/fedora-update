@@ -17,7 +17,7 @@
 
     Copyright 2023 Ralph Plawetzki
 -->
-<interface domain="fedora-update@purejava.org">
+<interface domain="update-extension@purejava.org">
 
 <object class="GtkAdjustment" id="Adjust_1">
 	<property name="lower">5</property>
