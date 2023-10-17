@@ -583,7 +583,6 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 let fedoraupdateindicator;
 
 function enable() {
-	String.prototype.format = Format.format;
 	fedoraupdateindicator = new FedoraUpdateIndicator();
 	Main.panel.addToStatusArea('FedoraUpdateIndicator', fedoraupdateindicator);
 	fedoraupdateindicator._positionChanged();
