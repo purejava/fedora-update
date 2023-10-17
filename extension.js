@@ -71,7 +71,6 @@ let UPDATES_LIST       = [];
 var launcher = null;
 
 function init() {
-	String.prototype.format = Format.format;
 	ExtensionUtils.initTranslations("update-extension@purejava.org");
 }
 
@@ -89,6 +88,13 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 
 	_init() {
 		super._init(0);
+
+		launcher = new Gio.SubprocessLauncher({
+			flags: (Gio.SubprocessFlags.STDOUT_PIPE |
+							Gio.SubprocessFlags.STDERR_PIPE)
+		});
+		launcher.setenv("LANG", "C", true);
+
 		this.updateIcon = new St.Icon({gicon: this._getCustIcon('fedora-unknown-symbolic'), style_class: 'system-status-icon'});
 
 		let box = new St.BoxLayout({ vertical: false, style_class: 'panel-status-menu-box' });
@@ -577,13 +583,7 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 let fedoraupdateindicator;
 
 function enable() {
-	if (launcher == null) {
-		launcher = new Gio.SubprocessLauncher({
-			flags: (Gio.SubprocessFlags.STDOUT_PIPE |
-							Gio.SubprocessFlags.STDERR_PIPE)
-		});
-		launcher.setenv("LANG", "C", true);
-	}
+	String.prototype.format = Format.format;
 	fedoraupdateindicator = new FedoraUpdateIndicator();
 	Main.panel.addToStatusArea('FedoraUpdateIndicator', fedoraupdateindicator);
 	fedoraupdateindicator._positionChanged();
@@ -593,7 +593,7 @@ function disable() {
 	if (launcher instanceof Gio.SubprocessLauncher) {
 		launcher = null;
 	}
-	String.prototype.format = null;
+	UPDATES_LIST = [];
 	fedoraupdateindicator.destroy();
 	fedoraupdateindicator = null;
 }

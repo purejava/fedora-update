@@ -26,10 +26,7 @@ const Me = ExtensionUtils.getCurrentExtension();
 const Gettext = imports.gettext.domain('update-extension@purejava.org');
 const _ = Gettext.gettext;
 
-let settings;
-
 function init() {
-	settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.fedora-update');
 	ExtensionUtils.initTranslations("update-extension@purejava.org");
 }
 
@@ -46,6 +43,7 @@ function fillPreferencesWindow(window) {
 	buildable.get_object('about_url').set_markup("<a href=\"" + Me.metadata.url.toString() + "\">" + Me.metadata.url.toString() + "</a>");
 
 	// Bind fields to settings
+	let settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.fedora-update');
 	settings.bind('boot-wait' , buildable.get_object('field_wait') , 'value' , Gio.SettingsBindFlags.DEFAULT);
 	settings.bind('check-interval' , buildable.get_object('field_interval') , 'value' , Gio.SettingsBindFlags.DEFAULT);
 	settings.bind('always-visible' , buildable.get_object('field_visible') , 'active' , Gio.SettingsBindFlags.DEFAULT);
@@ -68,6 +66,7 @@ function fillPreferencesWindow(window) {
 	settings.bind('position-number' , buildable.get_object('field_positionnumber') , 'value' , Gio.SettingsBindFlags.DEFAULT);
 	settings.bind('package-info-cmd' , buildable.get_object('field_packageinfocmd') , 'text' , Gio.SettingsBindFlags.DEFAULT);
 
+	
 	// Pref window layout
 	window.search_enabled = true;
 	window.add( buildable.get_object('page_basic') );
