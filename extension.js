@@ -35,7 +35,6 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const ExtensionManager = imports.ui.main.extensionManager;
 const Me = ExtensionUtils.getCurrentExtension();
 
-const Format = imports.format;
 const Gettext = imports.gettext.domain('update-extension@purejava.org');
 const _ = Gettext.gettext;
 
