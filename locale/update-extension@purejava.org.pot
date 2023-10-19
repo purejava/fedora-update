@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 18:23+0200\n"
+"POT-Creation-Date: 2023-10-19 18:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,59 +18,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: extension.js:114
+#: extension.js:121
 msgid "Settings"
 msgstr ""
 
-#: extension.js:115 extension.js:571
+#: extension.js:122 extension.js:584
 msgid "Update now"
 msgstr ""
 
-#: extension.js:116
+#: extension.js:123
 msgid "Open package manager"
 msgstr ""
 
-#: extension.js:120
+#: extension.js:127
 msgid "Checking"
 msgstr ""
 
-#: extension.js:131
+#: extension.js:138
 msgid "Check now"
 msgstr ""
 
-#: extension.js:154
+#: extension.js:161
 msgid "Waiting first check"
 msgstr ""
 
-#: extension.js:346
+#: extension.js:359
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
 msgstr[0] ""
 msgstr[1] ""
 
-#: extension.js:372 extension.js:378
+#: extension.js:385 extension.js:391
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: extension.js:379
+#: extension.js:392
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
 msgstr[0] ""
 msgstr[1] ""
 
-#: extension.js:395
+#: extension.js:408
 msgid "Note : you have to install dnf to use the 'check for updates' script."
 msgstr ""
 
-#: extension.js:397
+#: extension.js:410
 msgid "Error"
 msgstr ""
 
-#: extension.js:402
+#: extension.js:415
 msgid "Up to date :)"
 msgstr ""
 
