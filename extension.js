@@ -17,26 +17,19 @@
     Copyright 2023 Ralph Plawetzki
 */
 
-const Clutter = imports.gi.Clutter;
+import Clutter from 'gi://Clutter';
+import St from 'gi://St';
+import GObject from 'gi://GObject';
+import Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
 
-const St = imports.gi.St;
-const GObject = imports.gi.GObject;
-const GLib = imports.gi.GLib;
-const Gio = imports.gi.Gio;
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+import {Button} from 'resource:///org/gnome/shell/ui/panelMenu.js';
 
-const Main = imports.ui.main;
-const Panel = imports.ui.panel;
-const PanelMenu = imports.ui.panelMenu;
-const PopupMenu = imports.ui.popupMenu;
-const MessageTray = imports.ui.messageTray;
-
-const Util = imports.misc.util;
-const ExtensionUtils = imports.misc.extensionUtils;
-const ExtensionManager = imports.ui.main.extensionManager;
-const Me = ExtensionUtils.getCurrentExtension();
-
-const Gettext = imports.gettext.domain('update-extension@purejava.org');
-const _ = Gettext.gettext;
+import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
+import * as MessageTray from 'resource:///org/gnome/shell/ui/messageTray.js';
+import * as Util from 'resource:///org/gnome/shell/misc/util.js';
+import {Extension, gettext as _, ngettext as __} from 'resource:///org/gnome/shell/extensions/extension.js';
 
 /* RegExp to tell what's an update */
 /* I am very loose on this, may make it easier to port to other distros */
@@ -69,8 +62,21 @@ let UPDATES_LIST       = [];
 /* A process builder without i10n for reproducible processing. */
 var launcher = null;
 
-function init() {
-	ExtensionUtils.initTranslations("update-extension@purejava.org");
+export default class FedoraUpdateIndicatorExtension extends Extension {
+	constructor(metadata) {
+		super(metadata);
+	}
+	init() { }
+
+	enable() {
+		this.fedoraupdateindicator = new FedoraUpdateIndicator(this);
+		Main.panel.addToStatusArea('FedoraUpdateIndicator', this.fedoraupdateindicator);
+		this.fedoraupdateindicator._positionChanged();
+	}
+	disable() {
+		this.fedoraupdateindicator.destroy();
+		this.fedoraupdateindicator = null;
+	}
 }
 
 const FedoraUpdateIndicator = GObject.registerClass(
@@ -83,16 +89,17 @@ const FedoraUpdateIndicator = GObject.registerClass(
 		_updateProcess_pid: null,
 		_updateList: [],
 	},
-class FedoraUpdateIndicator extends PanelMenu.Button {
+class FedoraUpdateIndicator extends Button {
 
-	_init() {
+	_init(ext) {
 		super._init(0);
+		this._extension = ext;
 
-		launcher = new Gio.SubprocessLauncher({
+		this.launcher = new Gio.SubprocessLauncher({
 			flags: (Gio.SubprocessFlags.STDOUT_PIPE |
 							Gio.SubprocessFlags.STDERR_PIPE)
 		});
-		launcher.setenv("LANG", "C", true);
+		this.launcher.setenv("LANG", "C", true);
 
 		this.updateIcon = new St.Icon({gicon: this._getCustIcon('fedora-unknown-symbolic'), style_class: 'system-status-icon'});
 
@@ -157,13 +164,10 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 		this._updateList = UPDATES_LIST;
 
 		// Load settings
-		this._settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.fedora-update');
+		this._settings = this._extension.getSettings();
 		this._settings.connect('changed', this._positionChanged.bind(this));
 		this._settingsChangedId = this._settings.connect('changed', this._applySettings.bind(this));
 		this._applySettings();
-
-		// Start monitoring external changes
-		this._startFolderMonitor();
 
 		if (FIRST_BOOT) {
 			// Schedule first check only if this is the first extension load
@@ -188,7 +192,7 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 			}
 		}
 		// Icon not available in theme, or user prefers built in icon
-		return Gio.icon_new_for_string( Me.dir.get_child('icons').get_path() + "/" + icon_name + ".svg" );
+		return Gio.icon_new_for_string( this._extension.dir.get_child('icons').get_path() + "/" + icon_name + ".svg" );
 	}
 
 	_positionChanged(){
@@ -206,7 +210,7 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 	}
 
 	_openSettings() {
-		ExtensionUtils.openPrefs();
+		this._extension.openPreferences();
 	}
 
 	_openManager() {
@@ -238,6 +242,7 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 		this.managerMenuItem.actor.visible = ( MANAGER_CMD != "" );
 		this._checkShowHide();
 		this._updateStatus();
+		this._startFolderMonitor();
 		let that = this;
 		if (this._TimeoutId) GLib.source_remove(this._TimeoutId);
 		this._TimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, CHECK_INTERVAL, function () {
@@ -309,7 +314,15 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 	}
 
 	_startFolderMonitor() {
-		if (PACKAGE_CACHE_DIR) {
+		if (this.monitoring && this.monitoring != PACKAGE_CACHE_DIR) {
+			// The path to be monitored has been changed
+			this.monitor.cancel();
+			this.monitor = null;
+			this.monitoring = null;
+		}
+		if (PACKAGE_CACHE_DIR && !this.monitoring) {
+			// If there's a path to monitor and we're not already monitoring
+			this.monitoring = PACKAGE_CACHE_DIR;
 			this.packages_dir = Gio.file_new_for_path(PACKAGE_CACHE_DIR);
 			this.monitor = this.packages_dir.monitor_directory(0, null);
 			this.monitor.connect('changed', this._onFolderChanged.bind(this));
@@ -343,7 +356,7 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 		if (updatesCount > 0) {
 			// Updates pending
 			this.updateIcon.set_gicon( this._getCustIcon('fedora-updates-symbolic') );
-			this._updateMenuExpander( true, Gettext.ngettext( "%d update pending", "%d updates pending", updatesCount ).format(updatesCount) );
+			this._updateMenuExpander( true, __( "%d update pending", "%d updates pending", updatesCount ).format(updatesCount) );
 			this.label.set_text(updatesCount.toString());
 			if (NOTIFY && UPDATES_PENDING < updatesCount) {
 				if (HOWMUCH > 0) {
@@ -369,14 +382,14 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 					if (updateList.length > 0) {
 						// Show notification only if there's new updates
 						this._showNotification(
-							Gettext.ngettext( "New Fedora Linux Update", "New Fedora Linux Updates", updateList.length ),
+							__( "New Fedora Linux Update", "New Fedora Linux Updates", updateList.length ),
 							updateList.join(', ')
 						);
 					}
 				} else {
 					this._showNotification(
-						Gettext.ngettext( "New Fedora Linux Update", "New Fedora Linux Updates", updatesCount ),
-						Gettext.ngettext( "There is %d update pending", "There are %d updates pending", updatesCount ).format(updatesCount)
+						__( "New Fedora Linux Update", "New Fedora Linux Updates", updatesCount ),
+						__( "There is %d update pending", "There are %d updates pending", updatesCount ).format(updatesCount)
 					);
 				}
 			}
@@ -473,7 +486,7 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 	}
 
 	_packageInfo(item) {
-		let proc = launcher.spawnv(['pacman', '-Si', item]);
+		let proc = this.launcher.spawnv(['pacman', '-Si', item]);
 		proc.communicate_utf8_async(null, null, (proc, res) => {
 			let repo = "REPO";
 			let arch = "ARCH";
@@ -555,8 +568,8 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 		if (this._notifSource == null) {
 			// We have to prepare this only once
 			this._notifSource = new MessageTray.SystemNotificationSource();
+			let gicon = Gio.icon_new_for_string( this._extension.dir.get_child('icons').get_path() + "/fedora-updates-logo.svg" );
 			this._notifSource.createIcon = function() {
-				let gicon = Gio.icon_new_for_string( Me.dir.get_child('icons').get_path() + "/fedora-updates-logo.svg" );
 				return new St.Icon({ gicon: gicon });
 			};
 			// Take care of note leaving unneeded sources
@@ -578,20 +591,3 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 	}
 
 });
-
-let fedoraupdateindicator;
-
-function enable() {
-	fedoraupdateindicator = new FedoraUpdateIndicator();
-	Main.panel.addToStatusArea('FedoraUpdateIndicator', fedoraupdateindicator);
-	fedoraupdateindicator._positionChanged();
-}
-
-function disable() {
-	if (launcher instanceof Gio.SubprocessLauncher) {
-		launcher = null;
-	}
-	UPDATES_LIST = [];
-	fedoraupdateindicator.destroy();
-	fedoraupdateindicator = null;
-}
