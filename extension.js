@@ -63,10 +63,6 @@ let UPDATES_LIST       = [];
 var launcher = null;
 
 export default class FedoraUpdateIndicatorExtension extends Extension {
-	constructor(metadata) {
-		super(metadata);
-	}
-	init() { }
 
 	enable() {
 		this.fedoraupdateindicator = new FedoraUpdateIndicator(this);
