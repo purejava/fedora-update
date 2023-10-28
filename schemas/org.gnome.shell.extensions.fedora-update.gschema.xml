@@ -126,7 +126,7 @@
     </key>
 
     <key name="package-info-cmd" type="s">
-      <default>"xdg-open https://packages.fedoraproject.org/"</default>
+      <default>"xdg-open https://packages.fedoraproject.org/pkgs/%1$s/%2$s"</default>
       <summary>Command to show info for a package.</summary>
       <description>Can be used as a string template with attributes.</description>
     </key>

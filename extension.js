@@ -482,19 +482,19 @@ class FedoraUpdateIndicator extends Button {
 	}
 
 	_packageInfo(item) {
-		let proc = this.launcher.spawnv(['pacman', '-Si', item]);
+		let proc = this.launcher.spawnv(['dnf', 'info', item]);
 		proc.communicate_utf8_async(null, null, (proc, res) => {
-			let repo = "REPO";
-			let arch = "ARCH";
+			let name = "NAME";
+			let rootPackage = "PACKAGE";
 			let [,stdout,] = proc.communicate_utf8_finish(res);
 			if (proc.get_successful()) {
-				let m = stdout.match(/^Repository\s+:\s+(\w+).*?^Architecture\s+:\s+(\w+)/ms);
+				let m = stdout.match(/^Name\s+:\s+(\w+(-\w+)*)*.*?^Source\s+:\s+((\w+)(-\w+)?)(-\d)/ms);
 				if (m !== null) {
-					repo = m[1];
-					arch = m[2];
+					name = m[1]; // should be same as item
+					rootPackage = m[3];
 				}
 			}
-			let command = PACKAGE_INFO_CMD.format(item, repo, arch);
+			let command = PACKAGE_INFO_CMD.format(rootPackage, item);
 			Util.spawnCommandLine(command);
 		});
 	}
