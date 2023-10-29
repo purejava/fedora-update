@@ -88,11 +88,11 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 	_init() {
 		super._init(0);
 
-		launcher = new Gio.SubprocessLauncher({
+		this.launcher = new Gio.SubprocessLauncher({
 			flags: (Gio.SubprocessFlags.STDOUT_PIPE |
 							Gio.SubprocessFlags.STDERR_PIPE)
 		});
-		launcher.setenv("LANG", "C", true);
+		this.launcher.setenv("LANG", "C", true);
 
 		this.updateIcon = new St.Icon({gicon: this._getCustIcon('fedora-unknown-symbolic'), style_class: 'system-status-icon'});
 
@@ -473,19 +473,19 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 	}
 
 	_packageInfo(item) {
-		let proc = launcher.spawnv(['pacman', '-Si', item]);
+		let proc = this.launcher.spawnv(['dnf', 'info', item]);
 		proc.communicate_utf8_async(null, null, (proc, res) => {
-			let repo = "REPO";
-			let arch = "ARCH";
+			let name = "NAME";
+			let rootPackage = "PACKAGE";
 			let [,stdout,] = proc.communicate_utf8_finish(res);
 			if (proc.get_successful()) {
-				let m = stdout.match(/^Repository\s+:\s+(\w+).*?^Architecture\s+:\s+(\w+)/ms);
+				let m = stdout.match(/^Name\s+:\s+(\w+(-\w+)*)*.*?^Source\s+:\s+((\w+)(-\w+)?)(-\d)/ms);
 				if (m !== null) {
-					repo = m[1];
-					arch = m[2];
+					name = m[1]; // should be same as item
+					rootPackage = m[3];
 				}
 			}
-			let command = PACKAGE_INFO_CMD.format(item, repo, arch);
+			let command = PACKAGE_INFO_CMD.format(rootPackage, item);
 			Util.spawnCommandLine(command);
 		});
 	}
@@ -588,8 +588,8 @@ function enable() {
 }
 
 function disable() {
-	if (launcher instanceof Gio.SubprocessLauncher) {
-		launcher = null;
+	if (this.launcher instanceof Gio.SubprocessLauncher) {
+		this.launcher = null;
 	}
 	UPDATES_LIST = [];
 	fedoraupdateindicator.destroy();
