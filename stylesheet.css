@@ -43,6 +43,9 @@
 .fedora-updates-update-name-link {
 	padding-right: 1em;
 }
+.fedora-updates-update-name-link:hover {
+	background-color: #404040;
+}
 .fedora-updates-update-version-to {
 	vertical-align: baseline;
 }

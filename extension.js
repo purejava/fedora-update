@@ -455,6 +455,8 @@ class FedoraUpdateIndicator extends PanelMenu.Button {
 		if (PACKAGE_INFO_CMD) {
 			let label = new St.Label({
 				text: name,
+				track_hover: true,
+				reactive: true,
 				style_class: 'fedora-updates-update-name-link'
 			});
 			let button = new St.Button({
