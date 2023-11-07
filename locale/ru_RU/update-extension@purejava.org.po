@@ -47,24 +47,24 @@ msgstr "Ожидание первой проверки"
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
-msgstr[0] "%d обновление в ожидании"
-msgstr[1] "%d обновления в ожидании"
-msgstr[2] "%d обновлений в ожидании"
+msgstr[0] "Ожидается %d обновление"
+msgstr[1] "Ожидается %d обновления"
+msgstr[2] "Ожидается %d обновлений"
 
 #: extension.js:385 extension.js:391
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
 msgstr[0] "Новое обновление Fedora Linux"
-msgstr[1] "Новых обновления Fedora Linux"
-msgstr[2] "Новых обновлений Fedora Linux"
+msgstr[1] "Новые обновления Fedora Linux"
+msgstr[2] "Новые обновления Fedora Linux"
 
 #: extension.js:392
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
-msgstr[0] "%d обновление в ожидании"
-msgstr[1] "%d обновления в ожидании"
-msgstr[2] "%d обновлений в ожидании"
+msgstr[0] "Ожидается %d обновление"
+msgstr[1] "Ожидается %d обновления"
+msgstr[2] "Ожидается %d обновлений"
 
 #: extension.js:408
 msgid "Note : you have to install dnf to use the 'check for updates' script."
