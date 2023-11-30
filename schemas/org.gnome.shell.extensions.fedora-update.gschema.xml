@@ -71,7 +71,7 @@
     </key>
 
     <key name="packages-dir" type="s">
-      <default>""</default>
+      <default>"/var/lib/rpm"</default>
         <summary>Package cache directory to monitor</summary>
         <description></description>
     </key>
