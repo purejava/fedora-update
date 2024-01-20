@@ -14,7 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with Fedora Linux Update Indicator.  If not, see <http://www.gnu.org/licenses/>.
 
-    Copyright 2023 Ralph Plawetzki
+    Copyright 2023-2024 Ralph Plawetzki
 */
 
 import Clutter from 'gi://Clutter';

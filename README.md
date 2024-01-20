@@ -19,4 +19,4 @@ If you like the extension, you can give me a cup of coffee :)
 Thanks to [Raphaël Rochet](https://github.com/RaphaelRochet), who implemented the Arch Linux Updates Indicator, this extension is based on.
 
 # Copyright
-Copyright (C) 2023 Ralph Plawetzki
+Copyright (C) 2023-2024 Ralph Plawetzki
