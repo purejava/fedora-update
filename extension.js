@@ -111,7 +111,6 @@ class FedoraUpdateIndicator extends Button {
 		// Prepare the special menu : a submenu for updates list that will look like a regular menu item when disabled
 		// Scrollability will also be taken care of by the popupmenu
 		this.menuExpander = new PopupMenu.PopupSubMenuMenuItem('');
-		this.menuExpander.menu.box.style_class = 'fedora-updates-list';
 
 		// Other standard menu items
 		let settingsMenuItem = new PopupMenu.PopupMenuItem(_('Settings'));
@@ -442,7 +441,7 @@ class FedoraUpdateIndicator extends Button {
 							// Not an update
 							this.menuExpander.menu.box.add_child( new St.Label({ text: item, style_class: 'fedora-updates-update-title' }) );
 						} else {
-							let hBox = new St.BoxLayout({ vertical: false });
+							let hBox = new St.BoxLayout({ vertical: false, style_class: 'fedora-updates-update-line' });
 							hBox.add_child( this._createPackageLabel(matches[1]) );
 							if (!STRIP_VERSIONS) {
 								hBox.add_child( new St.Label({
