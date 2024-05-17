@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-21 13:39+0200\n"
+"PO-Revision-Date: 2023-11-05 23:57+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.4\n"
+
+#: extension.js:121
+msgid "Settings"
+msgstr "Налаштування"
+
+#: extension.js:122 extension.js:584
+msgid "Update now"
+msgstr "Оновити"
+
+#: extension.js:123
+msgid "Open package manager"
+msgstr "Відкрити менеджер пакетів"
+
+#: extension.js:127
+msgid "Checking"
+msgstr "Перевірка"
+
+#: extension.js:138
+msgid "Check now"
+msgstr "Перевірити"
+
+#: extension.js:161
+msgid "Waiting first check"
+msgstr "Очікування першої перевірки"
+
+#: extension.js:359
+#, javascript-format
+msgid "%d update pending"
+msgid_plural "%d updates pending"
+msgstr[0] "%d оновлення в очікуванні"
+msgstr[1] "%d оновлення в очікуванні"
+msgstr[2] "%d оновлень в очікуванні"
+
+#: extension.js:385 extension.js:391
+msgid "New Fedora Linux Update"
+msgid_plural "New Fedora Linux Updates"
+msgstr[0] "Нове оновлення Fedora Linux"
+msgstr[1] "Нових оновлень Fedora Linux"
+msgstr[2] "Нових оновлень Fedora Linux"
+
+#: extension.js:392
+#, javascript-format
+msgid "There is %d update pending"
+msgid_plural "There are %d updates pending"
+msgstr[0] "%d оновлення в очікуванні"
+msgstr[1] "%d оновлення в очікуванні"
+msgstr[2] "%d оновлень в очікуванні"
+
+#: extension.js:408
+msgid "Note : you have to install dnf to use the 'check for updates' script."
+msgstr ""
+"Примітка: вам необхідно встановити dnf для використання сценарію "перевірка оновлень"."
+
+#: extension.js:410
+msgid "Error"
+msgstr "Помилка"
+
+#: extension.js:415
+msgid "Up to date :)"
+msgstr "Немає оновлень :)"
+
+#: prefs.xml:44
+msgid "Basic settings"
+msgstr "Базові налаштування"
+
+#: prefs.xml:49
+msgid "Checking for updates"
+msgstr "Перевірка оновлень"
+
+#: prefs.xml:52
+msgid "Time to wait before first check (seconds)"
+msgstr "Час очікування перед першою перевіркою (секунди)"
+
+#: prefs.xml:64
+msgid "Interval between updates check (minutes)"
+msgstr "Інтервал між перевіркою оновлень (хвилини)"
+
+#: prefs.xml:79
+msgid "Indicator"
+msgstr "Індикатор"
+
+#: prefs.xml:82
+msgid "Always visible"
+msgstr "Відображати завжди"
+
+#: prefs.xml:94
+msgid "Use built-in icons"
+msgstr "Використовувати вбудовані іконки"
+
+#: prefs.xml:106
+msgid "Show updates count on indicator"
+msgstr "Показувати кількість оновлень на індикаторі"
+
+#: prefs.xml:118
+msgid "Position in Panel"
+msgstr "Положення на панелі"
+
+#: prefs.xml:136
+msgid "Left"
+msgstr "Ліворуч"
+
+#: prefs.xml:137
+msgid "Center"
+msgstr "По центру"
+
+#: prefs.xml:138
+msgid "Right"
+msgstr "Праворуч"
+
+#: prefs.xml:157
+msgid "Menu"
+msgstr "Меню"
+
+#: prefs.xml:160
+msgid ""
+"Auto-expand updates list if updates count is less than this number (0 to "
+"disable)"
+msgstr ""
+"Автоматично розширювати список оновлень, якщо кількість оновлень "
+"менше цього числа (0, щоб вимкнути)"
+
+#: prefs.xml:172 prefs.xml:230
+msgid "Strip out versions numbers"
+msgstr "Видалити номери версій"
+
+#: prefs.xml:187
+msgid "Notification"
+msgstr "Сповіщення"
+
+#: prefs.xml:190
+msgid "Send a notification when new updates are available"
+msgstr "Надсилати сповіщення, коли нові оновлення будуть доступні"
+
+#: prefs.xml:202
+msgid "Use transient notifications (auto dismiss)"
+msgstr "Використовувати тимчасові сповіщення (автоматичне закриття)"
+
+#: prefs.xml:214
+msgid "How much information to show on notifications"
+msgstr "Скільки інформації показувати в сповіщеннях"
+
+#: prefs.xml:220
+msgid "Count only"
+msgstr "Тільки кількість"
+
+#: prefs.xml:221
+msgid "New updates names"
+msgstr "Назви нових оновлень"
+
+#: prefs.xml:222
+msgid "All updates names"
+msgstr "Назви всіх оновлень"
+
+#: prefs.xml:245
+msgid "Advanced settings"
+msgstr "Розширені налаштування"
+
+#: prefs.xml:250
+msgid "Command to check for package updates"
+msgstr "Команда для перевірки оновлень пакетів"
+
+#: prefs.xml:262
+msgid ""
+"Disable output parsing, count every line as an update. This is the old "
+"behavior."
+msgstr ""
+"Вимкнути синтаксичний аналіз виводу, вважати кожен рядок оновленням. "
+"Це стара поведінка."
+
+#: prefs.xml:276
+msgid "Command to update packages"
+msgstr "Команда для оновлення пакетів"
+
+#: prefs.xml:291
+msgid ""
+"Package manager local directory path - To detect when new packages are "
+"installed"
+msgstr ""
+"Шлях до локального каталогу диспетчера пакетів для визначення установки "
+"нових пакетів"
+
+#: prefs.xml:306
+msgid "Command to open package manager (optional)"
+msgstr "Команда для відкриття менеджера пакетів (необов'язково)"
+
+#: prefs.xml:321
+msgid "Command to show info for a package (optional)"
+msgstr "Команда для відображення інформації про пакет (необов'язково)"
+
+#: prefs.xml:336
+msgid "About"
+msgstr "Про розширення"
