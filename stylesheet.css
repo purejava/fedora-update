@@ -26,25 +26,36 @@
 	border-radius: 10px;
 	padding: 0px 4px;
 }
+
 .fedora-updates-menubutton:hover, .fedora-updates-menubutton:focus {
 	/* 1px borders disapears, need to compensate */
 	padding: 1px 5px;
 }
+
 .fedora-updates-menubutton > StIcon {
 	icon-size: 16px;
 }
+
+.fedora-updates-updates-list {
+	padding: .8em;
+}
+
 .fedora-updates-update-title {
 	font-weight: bold;
 }
+
 .fedora-updates-update-name {
 	padding-right: 1em;
 }
+
 .fedora-updates-update-name-link {
 	padding-right: 1em;
 }
+
 .fedora-updates-update-name-link:hover {
 	background-color: #404040;
 }
+
 .fedora-updates-update-version-to {
 	vertical-align: baseline;
 }
