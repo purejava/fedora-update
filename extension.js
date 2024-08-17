@@ -53,6 +53,7 @@ let STRIP_VERSIONS_N   = true;
 let AUTO_EXPAND_LIST   = 0;
 let DISABLE_PARSING    = false;
 let PACKAGE_INFO_CMD   = "xdg-open https://packages.fedoraproject.org/";
+let SHOW_TIMECHECKED   = true;
 
 /* Variables we want to keep when extension is disabled (eg during screen lock) */
 let FIRST_BOOT         = 1;
@@ -84,6 +85,7 @@ const FedoraUpdateIndicator = GObject.registerClass(
 		_updateProcess_stream: null,
 		_updateProcess_pid: null,
 		_updateList: [],
+		_timeChecked: null,
 	},
 class FedoraUpdateIndicator extends Button {
 
@@ -136,13 +138,18 @@ class FedoraUpdateIndicator extends Button {
 		this.checkNowMenuContainer = new PopupMenu.PopupMenuSection();
 		this.checkNowMenuContainer.box.add_child(this.checkNowMenuItem.actor);
 
+		// A placeholder to show the last check time
+		this.timeCheckedMenu = new PopupMenu.PopupMenuItem( "-", {reactive:false} );
+
 		// Assemble all menu items into the popup menu
 		this.menu.addMenuItem(this.menuExpander);
+		this.menu.addMenuItem(this.timeCheckedMenu);
 		this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 		this.menu.addMenuItem(this.updateNowMenuItem);
 		this.menu.addMenuItem(this.checkingMenuItem);
 		this.menu.addMenuItem(this.checkNowMenuContainer);
 		this.menu.addMenuItem(this.managerMenuItem);
+		this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 		this.menu.addMenuItem(settingsMenuItem);
 
 		// Bind some events
@@ -235,7 +242,9 @@ class FedoraUpdateIndicator extends Button {
 		STRIP_VERSIONS_N = this._settings.get_boolean('strip-versions-in-notification');
 		AUTO_EXPAND_LIST = this._settings.get_int('auto-expand-list');
 		PACKAGE_INFO_CMD = this._settings.get_string('package-info-cmd');
+		SHOW_TIMECHECKED = this._settings.get_boolean('show-timechecked');
 		this.managerMenuItem.visible = ( MANAGER_CMD != "" );
+		this.timeCheckedMenu.visible = SHOW_TIMECHECKED;
 		this._checkShowHide();
 		this._updateStatus();
 		this._startFolderMonitor();
@@ -573,6 +582,9 @@ class FedoraUpdateIndicator extends Button {
 		} else {
 			this._updateStatus(this._updateList.filter(function(line) { return RE_UpdateLine.test(line) }).length);
 		}
+		this._timeChecked = new Date();
+		this.timeCheckedMenu.label.set_text( _("Last checked") + "  " + this._timeChecked.toLocaleString() );
+		this.timeCheckedMenu.visible = SHOW_TIMECHECKED;
 	}
 
 	_showNotification(title, message) {

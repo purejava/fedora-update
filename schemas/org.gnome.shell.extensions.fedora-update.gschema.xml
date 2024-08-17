@@ -125,5 +125,13 @@
       <description>Can be used as a string template with attributes.</description>
     </key>
 
+    <key name="show-timechecked" type="b">
+      <default>true</default>
+        <summary>Show last check date and time</summary>
+        <description>
+            If true, date/time of last check is added in the menu
+        </description>
+    </key>
+
   </schema>
 </schemalist>

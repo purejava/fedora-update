@@ -179,6 +179,18 @@
 					</child>
 				</object>
 			</child>
+			<child>
+				<object class="AdwActionRow">
+					<property translatable="yes" name="title">Show date/time of last check</property>
+					<property name="activatable-widget">field_showtimechecked</property>
+					<child>
+						<object class="GtkSwitch" id="field_showtimechecked">
+							<property name="valign">3</property>
+							<property name="active">false</property>
+						</object>
+					</child>
+				</object>
+			</child>
 		</object>
 	</child>
 
