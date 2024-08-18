@@ -264,7 +264,7 @@ class FedoraUpdateIndicator extends Button {
 			// Do not go under "First check delay" setting
 			if (delay < BOOT_WAIT) delay = BOOT_WAIT;
 		}
-		console.log(`Arch-update : next update check schedule in (seconds) ` + delay.toString());
+		console.log(`Fedora-update : next update check schedule in (seconds) ` + delay.toString());
 		this._TimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, delay, function () {
 			that._checkUpdates();
 			that._TimeoutId = undefined;
