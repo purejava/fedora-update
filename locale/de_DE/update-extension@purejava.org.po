@@ -22,7 +22,7 @@ msgstr ""
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: extension.js:121 extension.js:614
+#: extension.js:121 extension.js:640
 msgid "Update now"
 msgstr "Jetzt aktualisieren"
 
@@ -62,21 +62,21 @@ msgid_plural "There are %d updates pending"
 msgstr[0] "Es gibt %d ausstehende Aktualisierung"
 msgstr[1] "Es gibt %d ausstehende Aktualisierungen"
 
-#: extension.js:413
+#: extension.js:434
 msgid "Note : you have to install dnf to use the 'check for updates' script."
 msgstr ""
 "Hinweis: dnf muss installiert werden, um das Skript ‚check for updates‘ "
 "verwenden zu können."
 
-#: extension.js:415
+#: extension.js:436
 msgid "Error"
 msgstr "Fehler"
 
-#: extension.js:420
+#: extension.js:441
 msgid "Up to date :)"
 msgstr "Auf dem Laufenden :)"
 
-#: extension.js:586
+#: extension.js:376
 msgid "Last checked"
 msgstr ""
 

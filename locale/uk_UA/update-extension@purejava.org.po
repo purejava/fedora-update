@@ -23,7 +23,7 @@ msgstr ""
 msgid "Settings"
 msgstr "Налаштування"
 
-#: extension.js:121 extension.js:614
+#: extension.js:121 extension.js:640
 msgid "Update now"
 msgstr "Оновити"
 
@@ -66,21 +66,21 @@ msgstr[0] "%d оновлення в очікуванні"
 msgstr[1] "%d оновлення в очікуванні"
 msgstr[2] "%d оновлень в очікуванні"
 
-#: extension.js:413
+#: extension.js:434
 msgid "Note : you have to install dnf to use the 'check for updates' script."
 msgstr ""
 "Примітка: вам необхідно встановити dnf для використання сценарію 'перевірка "
 "оновлень'."
 
-#: extension.js:415
+#: extension.js:436
 msgid "Error"
 msgstr "Помилка"
 
-#: extension.js:420
+#: extension.js:441
 msgid "Up to date :)"
 msgstr "Немає оновлень :)"
 
-#: extension.js:586
+#: extension.js:376
 msgid "Last checked"
 msgstr ""
 
