@@ -1,0 +1,216 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fedora-update\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-21 13:39+0200\n"
+"PO-Revision-Date: 2024-08-18 17:57\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.4\n"
+"X-Crowdin-Project: fedora-update\n"
+"X-Crowdin-Project-ID: 705967\n"
+"X-Crowdin-Language: ar\n"
+"X-Crowdin-File: /main/locale/update-extension@purejava.org.pot\n"
+"X-Crowdin-File-ID: 6\n"
+"Language: ar_SA\n"
+
+#: extension.js:120
+msgid "Settings"
+msgstr ""
+
+#: extension.js:121 extension.js:640
+msgid "Update now"
+msgstr ""
+
+#: extension.js:122
+msgid "Open package manager"
+msgstr ""
+
+#: extension.js:126
+msgid "Checking"
+msgstr ""
+
+#: extension.js:137
+msgid "Check now"
+msgstr ""
+
+#: extension.js:165
+msgid "Waiting first check"
+msgstr ""
+
+#: extension.js:364
+#, javascript-format
+msgid "%d update pending"
+msgid_plural "%d updates pending"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: extension.js:390 extension.js:396
+msgid "New Fedora Linux Update"
+msgid_plural "New Fedora Linux Updates"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: extension.js:397
+#, javascript-format
+msgid "There is %d update pending"
+msgid_plural "There are %d updates pending"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: extension.js:434
+msgid "Note : you have to install dnf to use the 'check for updates' script."
+msgstr ""
+
+#: extension.js:436
+msgid "Error"
+msgstr ""
+
+#: extension.js:441
+msgid "Up to date :)"
+msgstr ""
+
+#: extension.js:376
+msgid "Last checked"
+msgstr ""
+
+#: prefs.xml:44
+msgid "Basic settings"
+msgstr ""
+
+#: prefs.xml:49
+msgid "Checking for updates"
+msgstr ""
+
+#: prefs.xml:52
+msgid "Time to wait before first check (seconds)"
+msgstr ""
+
+#: prefs.xml:64
+msgid "Interval between updates check (minutes)"
+msgstr ""
+
+#: prefs.xml:79
+msgid "Indicator"
+msgstr ""
+
+#: prefs.xml:82
+msgid "Always visible"
+msgstr ""
+
+#: prefs.xml:94
+msgid "Use built-in icons"
+msgstr ""
+
+#: prefs.xml:106
+msgid "Show updates count on indicator"
+msgstr ""
+
+#: prefs.xml:118
+msgid "Position in Panel"
+msgstr ""
+
+#: prefs.xml:136
+msgid "Left"
+msgstr ""
+
+#: prefs.xml:137
+msgid "Center"
+msgstr ""
+
+#: prefs.xml:138
+msgid "Right"
+msgstr ""
+
+#: prefs.xml:157
+msgid "Menu"
+msgstr ""
+
+#: prefs.xml:160
+msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
+msgstr ""
+
+#: prefs.xml:172 prefs.xml:230
+msgid "Strip out versions numbers"
+msgstr ""
+
+#: prefs.xml:184
+msgid "Show date/time of last check"
+msgstr ""
+
+#: prefs.xml:199
+msgid "Notification"
+msgstr ""
+
+#: prefs.xml:202
+msgid "Send a notification when new updates are available"
+msgstr ""
+
+#: prefs.xml:202
+msgid "Use transient notifications (auto dismiss)"
+msgstr ""
+
+#: prefs.xml:214
+msgid "How much information to show on notifications"
+msgstr ""
+
+#: prefs.xml:220
+msgid "Count only"
+msgstr ""
+
+#: prefs.xml:221
+msgid "New updates names"
+msgstr ""
+
+#: prefs.xml:222
+msgid "All updates names"
+msgstr ""
+
+#: prefs.xml:245
+msgid "Advanced settings"
+msgstr ""
+
+#: prefs.xml:250
+msgid "Command to check for package updates"
+msgstr ""
+
+#: prefs.xml:262
+msgid "Disable output parsing, count every line as an update. This is the old behavior."
+msgstr ""
+
+#: prefs.xml:276
+msgid "Command to update packages"
+msgstr ""
+
+#: prefs.xml:291
+msgid "Package manager local directory path - To detect when new packages are installed"
+msgstr ""
+
+#: prefs.xml:306
+msgid "Command to open package manager (optional)"
+msgstr ""
+
+#: prefs.xml:321
+msgid "Command to show info for a package (optional)"
+msgstr ""
+
+#: prefs.xml:336
+msgid "About"
+msgstr ""
+
