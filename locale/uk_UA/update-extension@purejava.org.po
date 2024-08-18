@@ -19,31 +19,31 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.4\n"
 
-#: extension.js:121
+#: extension.js:120
 msgid "Settings"
 msgstr "Налаштування"
 
-#: extension.js:122 extension.js:584
+#: extension.js:121 extension.js:614
 msgid "Update now"
 msgstr "Оновити"
 
-#: extension.js:123
+#: extension.js:122
 msgid "Open package manager"
 msgstr "Відкрити менеджер пакетів"
 
-#: extension.js:127
+#: extension.js:126
 msgid "Checking"
 msgstr "Перевірка"
 
-#: extension.js:138
+#: extension.js:137
 msgid "Check now"
 msgstr "Перевірити"
 
-#: extension.js:161
+#: extension.js:165
 msgid "Waiting first check"
 msgstr "Очікування першої перевірки"
 
-#: extension.js:359
+#: extension.js:364
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
@@ -51,14 +51,14 @@ msgstr[0] "%d оновлення в очікуванні"
 msgstr[1] "%d оновлення в очікуванні"
 msgstr[2] "%d оновлень в очікуванні"
 
-#: extension.js:385 extension.js:391
+#: extension.js:390 extension.js:396
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
 msgstr[0] "Нове оновлення Fedora Linux"
 msgstr[1] "Нових оновлень Fedora Linux"
 msgstr[2] "Нових оновлень Fedora Linux"
 
-#: extension.js:392
+#: extension.js:397
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
@@ -66,18 +66,23 @@ msgstr[0] "%d оновлення в очікуванні"
 msgstr[1] "%d оновлення в очікуванні"
 msgstr[2] "%d оновлень в очікуванні"
 
-#: extension.js:408
+#: extension.js:413
 msgid "Note : you have to install dnf to use the 'check for updates' script."
 msgstr ""
-"Примітка: вам необхідно встановити dnf для використання сценарію "перевірка оновлень"."
+"Примітка: вам необхідно встановити dnf для використання сценарію 'перевірка "
+"оновлень'."
 
-#: extension.js:410
+#: extension.js:415
 msgid "Error"
 msgstr "Помилка"
 
-#: extension.js:415
+#: extension.js:420
 msgid "Up to date :)"
 msgstr "Немає оновлень :)"
+
+#: extension.js:586
+msgid "Last checked"
+msgstr ""
 
 #: prefs.xml:44
 msgid "Basic settings"
@@ -136,18 +141,22 @@ msgid ""
 "Auto-expand updates list if updates count is less than this number (0 to "
 "disable)"
 msgstr ""
-"Автоматично розширювати список оновлень, якщо кількість оновлень "
-"менше цього числа (0, щоб вимкнути)"
+"Автоматично розширювати список оновлень, якщо кількість оновлень менше цього "
+"числа (0, щоб вимкнути)"
 
 #: prefs.xml:172 prefs.xml:230
 msgid "Strip out versions numbers"
 msgstr "Видалити номери версій"
 
-#: prefs.xml:187
+#: prefs.xml:184
+msgid "Show date/time of last check"
+msgstr ""
+
+#: prefs.xml:199
 msgid "Notification"
 msgstr "Сповіщення"
 
-#: prefs.xml:190
+#: prefs.xml:202
 msgid "Send a notification when new updates are available"
 msgstr "Надсилати сповіщення, коли нові оновлення будуть доступні"
 
@@ -184,8 +193,8 @@ msgid ""
 "Disable output parsing, count every line as an update. This is the old "
 "behavior."
 msgstr ""
-"Вимкнути синтаксичний аналіз виводу, вважати кожен рядок оновленням. "
-"Це стара поведінка."
+"Вимкнути синтаксичний аналіз виводу, вважати кожен рядок оновленням. Це "
+"стара поведінка."
 
 #: prefs.xml:276
 msgid "Command to update packages"
