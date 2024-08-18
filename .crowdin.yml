@@ -1,0 +1,3 @@
+files:
+  - source: /locale/update-extension@purejava.org.pot
+    translation: /locale/%locale_with_underscore%/update-extension@purejava.org.po
