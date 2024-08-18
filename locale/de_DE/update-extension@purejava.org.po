@@ -1,22 +1,22 @@
-# German translations for PACKAGE package.
-# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Ralph Plawetzki <ralph@purejava.org>, 2023.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-21 13:39+0200\n"
-"PO-Revision-Date: 2023-10-19 18:23+0200\n"
-"Last-Translator: Ralph Plawetzki <ralph@purejava.org>\n"
-"Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
-"Language: de\n"
+"PO-Revision-Date: 2024-08-19 08:23\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4\n"
+"X-Crowdin-Project: fedora-update\n"
+"X-Crowdin-Project-ID: 705967\n"
+"X-Crowdin-Language: de\n"
+"X-Crowdin-File: /main/locale/update-extension@purejava.org.pot\n"
+"X-Crowdin-File-ID: 6\n"
+"Language: de_DE\n"
 
 #: extension.js:120
 msgid "Settings"
@@ -64,9 +64,7 @@ msgstr[1] "Es gibt %d ausstehende Aktualisierungen"
 
 #: extension.js:434
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr ""
-"Hinweis: dnf muss installiert werden, um das Skript ‚check for updates‘ "
-"verwenden zu können."
+msgstr "Hinweis: dnf muss installiert werden, um das Skript ‚check for updates‘ verwenden zu können."
 
 #: extension.js:436
 msgid "Error"
@@ -78,7 +76,7 @@ msgstr "Auf dem Laufenden :)"
 
 #: extension.js:376
 msgid "Last checked"
-msgstr ""
+msgstr "Zuletzt überprüft"
 
 #: prefs.xml:44
 msgid "Basic settings"
@@ -130,15 +128,11 @@ msgstr "Rechts"
 
 #: prefs.xml:157
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 #: prefs.xml:160
-msgid ""
-"Auto-expand updates list if updates count is less than this number (0 to "
-"disable)"
-msgstr ""
-"Liste mit Aktualisierungen automatisch ausklappen, wenn Anzahl der "
-"Aktualisierungen geringer als diese Zahl ist (0 zum Deaktivieren)"
+msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
+msgstr "Liste mit Aktualisierungen automatisch ausklappen, wenn Anzahl der Aktualisierungen geringer als diese Zahl ist (0 zum Deaktivieren)"
 
 #: prefs.xml:172 prefs.xml:230
 msgid "Strip out versions numbers"
@@ -146,7 +140,7 @@ msgstr "Versionsnummern weglassen"
 
 #: prefs.xml:184
 msgid "Show date/time of last check"
-msgstr ""
+msgstr "Zeige Datum/Uhrzeit der letzten Überprüfung"
 
 #: prefs.xml:199
 msgid "Notification"
@@ -185,24 +179,16 @@ msgid "Command to check for package updates"
 msgstr "Befehl, um auf Aktualisierungen zu prüfen"
 
 #: prefs.xml:262
-msgid ""
-"Disable output parsing, count every line as an update. This is the old "
-"behavior."
-msgstr ""
-"Das Parsen der Ausgabe wird abgeschaltet, jede Zeile wird als eine "
-"Aktualisierung gezählt. Dies ist das alte Verhalten."
+msgid "Disable output parsing, count every line as an update. This is the old behavior."
+msgstr "Das Parsen der Ausgabe wird abgeschaltet, jede Zeile wird als eine Aktualisierung gezählt. Dies ist das alte Verhalten."
 
 #: prefs.xml:276
 msgid "Command to update packages"
 msgstr "Befehl, um Pakete zu aktualisieren"
 
 #: prefs.xml:291
-msgid ""
-"Package manager local directory path - To detect when new packages are "
-"installed"
-msgstr ""
-"Lokales Paket-Manager-Verzeichnis – Wird benötigt, um festzustellen, dass "
-"neue Pakete installiert werden"
+msgid "Package manager local directory path - To detect when new packages are installed"
+msgstr "Lokales Paket-Manager-Verzeichnis – Wird benötigt, um festzustellen, dass neue Pakete installiert werden"
 
 #: prefs.xml:306
 msgid "Command to open package manager (optional)"
@@ -214,4 +200,5 @@ msgstr "Befehl, um Info zu einem Paket anzuzeigen (optional)"
 
 #: prefs.xml:336
 msgid "About"
-msgstr ""
+msgstr "Über"
+

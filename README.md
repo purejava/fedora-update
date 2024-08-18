@@ -15,6 +15,9 @@ If you like the extension, you can give me a cup of coffee :)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=XVX9ZM7WE4ANL)
 
+# Translations
+To provide or change translations, please visit [Crowdin - fedora-update](https://crowdin.com/project/fedora-update/).
+
 # Thank you
 Thanks to [Raphaël Rochet](https://github.com/RaphaelRochet), who implemented the Arch Linux Updates Indicator, this extension is based on.
 
