@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-21 13:39+0200\n"
-"PO-Revision-Date: 2024-08-18 17:57\n"
+"PO-Revision-Date: 2024-08-19 08:23\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,7 @@ msgstr "Auf dem Laufenden :)"
 
 #: extension.js:376
 msgid "Last checked"
-msgstr ""
+msgstr "Zuletzt überprüft"
 
 #: prefs.xml:44
 msgid "Basic settings"
@@ -128,7 +128,7 @@ msgstr "Rechts"
 
 #: prefs.xml:157
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 #: prefs.xml:160
 msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
@@ -140,7 +140,7 @@ msgstr "Versionsnummern weglassen"
 
 #: prefs.xml:184
 msgid "Show date/time of last check"
-msgstr ""
+msgstr "Zeige Datum/Uhrzeit der letzten Überprüfung"
 
 #: prefs.xml:199
 msgid "Notification"
@@ -200,5 +200,5 @@ msgstr "Befehl, um Info zu einem Paket anzuzeigen (optional)"
 
 #: prefs.xml:336
 msgid "About"
-msgstr ""
+msgstr "Über"
 
