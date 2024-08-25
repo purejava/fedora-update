@@ -6,5 +6,5 @@
   "uuid": "update-extension@purejava.org",
   "gettext-domain": "update-extension@purejava.org",
   "settings-schema": "org.gnome.shell.extensions.fedora-update",
-  "version": 12
+  "version": 14
 }
