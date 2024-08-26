@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-21 13:39+0200\n"
-"PO-Revision-Date: 2024-08-18 17:57\n"
+"PO-Revision-Date: 2024-08-26 14:44\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgid_plural "%d updates pending"
 msgstr[0] "%d оновлення в очікуванні"
 msgstr[1] "%d оновлення в очікуванні"
 msgstr[2] "%d оновлень в очікуванні"
-msgstr[3] ""
+msgstr[3] "%d оновлень в очікуванні"
 
 #: extension.js:390 extension.js:396
 msgid "New Fedora Linux Update"
@@ -57,7 +57,7 @@ msgid_plural "New Fedora Linux Updates"
 msgstr[0] "Нове оновлення Fedora Linux"
 msgstr[1] "Нових оновлень Fedora Linux"
 msgstr[2] "Нових оновлень Fedora Linux"
-msgstr[3] ""
+msgstr[3] "Нових оновлень Fedora Linux"
 
 #: extension.js:397
 #, javascript-format
@@ -82,7 +82,7 @@ msgstr "Немає оновлень :)"
 
 #: extension.js:376
 msgid "Last checked"
-msgstr ""
+msgstr "Востаннє перевірено"
 
 #: prefs.xml:44
 msgid "Basic settings"
@@ -146,7 +146,7 @@ msgstr "Видалити номери версій"
 
 #: prefs.xml:184
 msgid "Show date/time of last check"
-msgstr ""
+msgstr "Показати дату/час останньої перевірки"
 
 #: prefs.xml:199
 msgid "Notification"
