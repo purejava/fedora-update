@@ -90,7 +90,8 @@ const FedoraUpdateIndicator = GObject.registerClass(
 class FedoraUpdateIndicator extends Button {
 
 	_init(ext) {
-		super._init(0);
+		console.log(`Fedora-update : loading`);
+		super._init(0.5);
 		this._extension = ext;
 
 		this.launcher = new Gio.SubprocessLauncher({
@@ -177,10 +178,9 @@ class FedoraUpdateIndicator extends Button {
 		if (FIRST_BOOT) {
 			// Schedule first check only if this is the first extension load
 			// This won't be run again if extension is disabled/enabled (like when screen is locked)
-			let that = this;
-			this._FirstTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, BOOT_WAIT, function () {
-				that._checkUpdates();
-				that._FirstTimeoutId = null;
+			this._FirstTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, BOOT_WAIT, ()=>{
+				this._FirstTimeoutId = null;
+				this._checkUpdates();
 				FIRST_BOOT = 0;
 				return false; // Run once
 			});
@@ -253,7 +253,7 @@ class FedoraUpdateIndicator extends Button {
 	}
 
 	_scheduleCheck() {
-		let that = this;
+		// Remove previous schedule if any
 		if (this._TimeoutId) GLib.source_remove(this._TimeoutId);
 		let delay = CHECK_INTERVAL; // seconds before next check
 		if (LAST_CHECK) {
@@ -264,15 +264,16 @@ class FedoraUpdateIndicator extends Button {
 			// Do not go under "First check delay" setting
 			if (delay < BOOT_WAIT) delay = BOOT_WAIT;
 		}
-		console.log(`Fedora-update : next update check schedule in (seconds) ` + delay.toString());
-		this._TimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, delay, function () {
-			that._checkUpdates();
-			that._TimeoutId = undefined;
+		console.log(`Fedora-update : next update check scheduled in (seconds) ` + delay.toString());
+		this._TimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, delay, ()=>{
+			this._TimeoutId = null;
+			this._checkUpdates();
 			return false;
 		});
 	}
 
 	destroy() {
+		console.log(`Fedora-update : unloading`);
 		this._settings.disconnect( this._settingsChangedId );
 		if (this._notifSource) {
 			// Delete the notification source, which lay still have a notification shown
@@ -352,11 +353,12 @@ class FedoraUpdateIndicator extends Button {
 
 	_onFolderChanged() {
 		// Folder have changed ! Let's schedule a check in a few seconds
-		let that = this;
+		// This will replace the first check if not done yet, we don't want to do double checking
 		if (this._FolderChangedTimeoutId) GLib.source_remove(this._FolderChangedTimeoutId);
-		this._FolderChangedTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 5, function () {
-			that._checkUpdates();
-			that._FolderChangedTimeoutId = null;
+		this._FirstTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 5, ()=>{
+			this._FirstTimeoutId = null;
+			this._checkUpdates();
+			FIRST_BOOT = 0;
 			return false;
 		});
 	}
@@ -546,7 +548,7 @@ class FedoraUpdateIndicator extends Button {
 
 	_checkUpdates() {
 		// Remove timer if any (in case the trigger was menu or external)
-		if (this._TimeoutId) { GLib.source_remove(this._TimeoutId) ; this._TimeoutId = undefined }
+		if (this._TimeoutId) { GLib.source_remove(this._TimeoutId) ; this._TimeoutId = null }
 		if(this._updateProcess_sourceId) {
 			// A check is already running ! Maybe we should kill it and run another one ?
 			return;
