@@ -349,6 +349,9 @@ class FedoraUpdateIndicator extends Button {
 	_onFolderChanged() {
 		// Folder have changed ! Let's schedule a check in a few seconds
 		// This will replace the first check if not done yet, we don't want to do double checking
+		if (this._FirstTimeoutId) {
+			GLib.source_remove(this._FirstTimeoutId);
+		}
 		this._FirstTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 5, ()=>{
 			this._FirstTimeoutId = null;
 			this._checkUpdates();
