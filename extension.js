@@ -81,7 +81,6 @@ const FedoraUpdateIndicator = GObject.registerClass(
 	{
 		_TimeoutId: null,
 		_FirstTimeoutId: null,
-		_FolderChangedTimeoutId: null,
 		_updateProcess_sourceId: null,
 		_updateProcess_stream: null,
 		_updateProcess_pid: null,
@@ -295,10 +294,6 @@ class FedoraUpdateIndicator extends Button {
 			GLib.source_remove(this._FirstTimeoutId);
 			this._FirstTimeoutId = null;
 		}
-		if (this._FolderChangedTimeoutId) {
-			GLib.source_remove(this._FolderChangedTimeoutId);
-			this._FolderChangedTimeoutId = null;
-		}
 		if (this._TimeoutId) {
 			GLib.source_remove(this._TimeoutId);
 			this._TimeoutId = null;
@@ -354,7 +349,6 @@ class FedoraUpdateIndicator extends Button {
 	_onFolderChanged() {
 		// Folder have changed ! Let's schedule a check in a few seconds
 		// This will replace the first check if not done yet, we don't want to do double checking
-		if (this._FolderChangedTimeoutId) GLib.source_remove(this._FolderChangedTimeoutId);
 		this._FirstTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 5, ()=>{
 			this._FirstTimeoutId = null;
 			this._checkUpdates();
