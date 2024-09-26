@@ -63,9 +63,9 @@ msgstr[3] ""
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
-msgstr[0] "Ожидается %d обновление"
-msgstr[1] "Ожидается %d обновления"
-msgstr[2] "Ожидается %d обновлений"
+msgstr[0] "%d обновление ожидает"
+msgstr[1] "%d обновления ожидают"
+msgstr[2] "%d обновлений ожидают"
 msgstr[3] ""
 
 #: extension.js:434
