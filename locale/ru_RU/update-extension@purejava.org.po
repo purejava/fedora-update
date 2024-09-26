@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-21 13:39+0200\n"
-"PO-Revision-Date: 2024-08-29 10:00+0300\n"
+"PO-Revision-Date: 2024-09-27 00:04+0300\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Crowdin-Project: fedora-update\n"
 "X-Crowdin-Project-ID: 705967\n"
 "X-Crowdin-Language: ru\n"
@@ -46,26 +46,26 @@ msgstr "Ожидание первой проверки"
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
-msgstr[0] "Ожидается %d обновление"
-msgstr[1] "Ожидается %d обновления"
-msgstr[2] "Ожидается %d обновлений"
+msgstr[0] "%d обновление ожидает"
+msgstr[1] "%d обновления ожидают"
+msgstr[2] "%d обновлений ожидают"
 msgstr[3] ""
 
 #: extension.js:390 extension.js:396
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
-msgstr[0] "Обновление Fedora Linux"
+msgstr[0] "Обновления Fedora Linux"
 msgstr[1] "Обновления Fedora Linux"
-msgstr[2] "Обновлений Fedora Linux"
+msgstr[2] "Обновления Fedora Linux"
 msgstr[3] ""
 
 #: extension.js:397
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
-msgstr[0] "Ожидается %d обновление"
-msgstr[1] "Ожидается %d обновления"
-msgstr[2] "Ожидается %d обновлений"
+msgstr[0] "%d обновление ожидает"
+msgstr[1] "%d обновления ожидают"
+msgstr[2] "%d обновлений ожидают"
 msgstr[3] ""
 
 #: extension.js:434
@@ -146,7 +146,7 @@ msgstr "Удалить номера версий"
 
 #: prefs.xml:184
 msgid "Show date/time of last check"
-msgstr "Показать дату и время последней проверки"
+msgstr "Показывать дату и время последней проверки"
 
 #: prefs.xml:199
 msgid "Notification"
