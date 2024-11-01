@@ -34,6 +34,8 @@ export default class FedoraUpdatePreferences extends ExtensionPreferences {
 		buildable.get_object('about_name').set_text(this.metadata.name.toString());
 		buildable.get_object('about_version').set_text(this.metadata.version.toString());
 		buildable.get_object('about_description').set_text(this.metadata.description.toString());
+		buildable.get_object('for_dnf4').set_text('dnf 4');
+		buildable.get_object('for_dnf5').set_text('dnf 5');
 		buildable.get_object('about_url').set_markup("<a href=\"" + this.metadata.url.toString() + "\">" + this.metadata.url.toString() + "</a>");
 
 		// Bind fields to settings
@@ -47,7 +49,8 @@ export default class FedoraUpdatePreferences extends ExtensionPreferences {
 		settings.bind('howmuch', buildable.get_object('field_howmuch'), 'active', Gio.SettingsBindFlags.DEFAULT);
 		settings.bind('strip-versions' , buildable.get_object('field_stripversions') , 'active' , Gio.SettingsBindFlags.DEFAULT);
 		settings.bind('strip-versions-in-notification' , buildable.get_object('field_stripversionsnotifications') , 'active' , Gio.SettingsBindFlags.DEFAULT);
-		settings.bind('check-cmd' , buildable.get_object('field_checkcmd') , 'text' , Gio.SettingsBindFlags.DEFAULT);
+		settings.bind('check-cmd-dnf4' , buildable.get_object('field_checkcmd_dnf4') , 'text' , Gio.SettingsBindFlags.DEFAULT);
+		settings.bind('check-cmd-dnf5' , buildable.get_object('field_checkcmd_dnf5') , 'text' , Gio.SettingsBindFlags.DEFAULT);
 		settings.bind('disable-parsing', buildable.get_object('field_disableparsing'), 'active', Gio.SettingsBindFlags.DEFAULT);
 		settings.bind('update-cmd' , buildable.get_object('field_updatecmd') , 'text' , Gio.SettingsBindFlags.DEFAULT);
 		settings.bind('packages-dir' , buildable.get_object('field_packagesdir') , 'text' , Gio.SettingsBindFlags.DEFAULT);

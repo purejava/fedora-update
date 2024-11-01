@@ -250,11 +250,32 @@
 			<property name="title" translatable="yes">Command to check for package updates</property>
 			<child>
 				<object class="AdwActionRow">
-					<property name="activatable-widget">field_checkcmd</property>
-					<property name="child">
-						<object class="GtkEntry" id="field_checkcmd">
+					<property name="halign">0</property>
+					<property name="hexpand">true</property>
+					<property name="activatable-widget">field_checkcmd_dnf4</property>
+					<child type="prefix">
+						<object class="GtkLabel" id="for_dnf4">
 						</object>
-					</property>
+					</child>
+					<child>
+						<object class="GtkEntry" id="field_checkcmd_dnf4">
+						</object>
+					</child>
+				</object>
+			</child>
+			<child>
+				<object class="AdwActionRow">
+					<property name="halign">0</property>
+					<property name="hexpand">true</property>
+					<property name="activatable-widget">field_checkcmd_dnf5</property>
+					<child type="prefix">
+						<object class="GtkLabel" id="for_dnf5">
+						</object>
+					</child>
+					<child>
+						<object class="GtkEntry" id="field_checkcmd_dnf5">
+						</object>
+					</child>
 				</object>
 			</child>
 			<child>

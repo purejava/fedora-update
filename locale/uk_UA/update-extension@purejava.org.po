@@ -2,47 +2,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 13:39+0200\n"
+"POT-Creation-Date: 2024-11-01 16:47+0100\n"
 "PO-Revision-Date: 2024-08-26 16:10\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
+"Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 "
+"&& n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 "
+"&& n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Generator: Poedit 3.4\n"
 "X-Crowdin-Project: fedora-update\n"
 "X-Crowdin-Project-ID: 705967\n"
 "X-Crowdin-Language: uk\n"
 "X-Crowdin-File: /main/locale/update-extension@purejava.org.pot\n"
 "X-Crowdin-File-ID: 6\n"
-"Language: uk_UA\n"
 
-#: extension.js:120
+#: extension.js:140
 msgid "Settings"
 msgstr "Налаштування"
 
-#: extension.js:121 extension.js:640
+#: extension.js:141 extension.js:666
 msgid "Update now"
 msgstr "Оновити"
 
-#: extension.js:122
+#: extension.js:142
 msgid "Open package manager"
 msgstr "Відкрити менеджер пакетів"
 
-#: extension.js:126
+#: extension.js:146
 msgid "Checking"
 msgstr "Перевірка"
 
-#: extension.js:137
+#: extension.js:157
 msgid "Check now"
 msgstr "Перевірити"
 
-#: extension.js:165
+#: extension.js:185
 msgid "Waiting first check"
 msgstr "Очікування першої перевірки"
 
-#: extension.js:364
+#: extension.js:402
+msgid "Last checked"
+msgstr "Востаннє перевірено"
+
+#: extension.js:411
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
@@ -51,7 +57,7 @@ msgstr[1] "%d оновлення в очікуванні"
 msgstr[2] "%d оновлень в очікуванні"
 msgstr[3] "%d оновлень в очікуванні"
 
-#: extension.js:390 extension.js:396
+#: extension.js:437 extension.js:443
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
 msgstr[0] "Нове оновлення Fedora Linux"
@@ -59,7 +65,7 @@ msgstr[1] "Нових оновлень Fedora Linux"
 msgstr[2] "Нових оновлень Fedora Linux"
 msgstr[3] "Нових оновлень Fedora Linux"
 
-#: extension.js:397
+#: extension.js:444
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
@@ -68,21 +74,19 @@ msgstr[1] "Є %d оновлення в очікуванні"
 msgstr[2] "Є %d оновлень в очікуванні"
 msgstr[3] "Є %d оновлень в очікуванні"
 
-#: extension.js:434
+#: extension.js:460
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr "Примітка: вам необхідно встановити dnf для використання сценарію 'перевірка оновлень'."
+msgstr ""
+"Примітка: вам необхідно встановити dnf для використання сценарію 'перевірка "
+"оновлень'."
 
-#: extension.js:436
+#: extension.js:462
 msgid "Error"
 msgstr "Помилка"
 
-#: extension.js:441
+#: extension.js:467
 msgid "Up to date :)"
 msgstr "Немає оновлень :)"
-
-#: extension.js:376
-msgid "Last checked"
-msgstr "Востаннє перевірено"
 
 #: prefs.xml:44
 msgid "Basic settings"
@@ -137,8 +141,12 @@ msgid "Menu"
 msgstr "Меню"
 
 #: prefs.xml:160
-msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
-msgstr "Автоматично розширювати список оновлень, якщо кількість оновлень менше цього числа (0, щоб вимкнути)"
+msgid ""
+"Auto-expand updates list if updates count is less than this number (0 to "
+"disable)"
+msgstr ""
+"Автоматично розширювати список оновлень, якщо кількість оновлень менше цього "
+"числа (0, щоб вимкнути)"
 
 #: prefs.xml:172 prefs.xml:230
 msgid "Strip out versions numbers"
@@ -155,10 +163,6 @@ msgstr "Сповіщення"
 #: prefs.xml:202
 msgid "Send a notification when new updates are available"
 msgstr "Надсилати сповіщення, коли нові оновлення будуть доступні"
-
-#: prefs.xml:202
-msgid "Use transient notifications (auto dismiss)"
-msgstr "Використовувати тимчасові сповіщення (автоматичне закриття)"
 
 #: prefs.xml:214
 msgid "How much information to show on notifications"
@@ -184,27 +188,37 @@ msgstr "Розширені налаштування"
 msgid "Command to check for package updates"
 msgstr "Команда для перевірки оновлень пакетів"
 
-#: prefs.xml:262
-msgid "Disable output parsing, count every line as an update. This is the old behavior."
-msgstr "Вимкнути синтаксичний аналіз виводу, вважати кожен рядок оновленням. Це стара поведінка."
+#: prefs.xml:283
+msgid ""
+"Disable output parsing, count every line as an update. This is the old "
+"behavior."
+msgstr ""
+"Вимкнути синтаксичний аналіз виводу, вважати кожен рядок оновленням. Це "
+"стара поведінка."
 
-#: prefs.xml:276
+#: prefs.xml:297
 msgid "Command to update packages"
 msgstr "Команда для оновлення пакетів"
 
-#: prefs.xml:291
-msgid "Package manager local directory path - To detect when new packages are installed"
-msgstr "Шлях до локального каталогу диспетчера пакетів для визначення установки нових пакетів"
+#: prefs.xml:312
+msgid ""
+"Package manager local directory path - To detect when new packages are "
+"installed"
+msgstr ""
+"Шлях до локального каталогу диспетчера пакетів для визначення установки "
+"нових пакетів"
 
-#: prefs.xml:306
+#: prefs.xml:327
 msgid "Command to open package manager (optional)"
 msgstr "Команда для відкриття менеджера пакетів (необов'язково)"
 
-#: prefs.xml:321
+#: prefs.xml:342
 msgid "Command to show info for a package (optional)"
 msgstr "Команда для відображення інформації про пакет (необов'язково)"
 
-#: prefs.xml:336
+#: prefs.xml:357
 msgid "About"
 msgstr "Про розширення"
 
+#~ msgid "Use transient notifications (auto dismiss)"
+#~ msgstr "Використовувати тимчасові сповіщення (автоматичне закриття)"

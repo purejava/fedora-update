@@ -45,7 +45,7 @@ let CHECK_INTERVAL     = 60*60;   // 1h
 let NOTIFY             = false;
 let HOWMUCH            = 0;
 let UPDATE_CMD         = "gnome-terminal -- /bin/sh -c \"sudo dnf upgrade; echo Done - Press enter to exit; read _\" ";
-let CHECK_CMD          = "/bin/bash -c \"/usr/bin/dnf check-update --refresh -yq | tail -n +2  | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print $1;$2}'\"";
+let CHECK_CMD          = "/bin/bash -c \"/usr/bin/dnf check-update -yq | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print $1;$2}'\"";
 let MANAGER_CMD        = "";
 let PACKAGE_CACHE_DIR  = "";
 let STRIP_VERSIONS     = false;
@@ -87,6 +87,26 @@ const FedoraUpdateIndicator = GObject.registerClass(
 		_updateList: [],
 	},
 class FedoraUpdateIndicator extends Button {
+
+	// Determins the dnf version and returns the first digit
+	_dnfVersion() {
+		return new Promise((resolve, reject) => {
+			let proc = this.launcher.spawnv(['dnf', '--version']);
+			proc.communicate_utf8_async(null, null, (proc, res) => {
+				let [, stdout, ] = proc.communicate_utf8_finish(res);
+				if (proc.get_successful()) {
+					let m = stdout.match(/^\d/gm);
+					if (m !== null) {
+						resolve(m[0]);
+					} else {
+						reject(new Error("Version match not found"));
+					}
+					} else {
+						reject(new Error("Process launch wasn't successful"));
+					}
+				});
+			});
+	}
 
 	_init(ext) {
 		console.log(`Fedora-update : loading`);
@@ -234,7 +254,14 @@ class FedoraUpdateIndicator extends Button {
 		NOTIFY = this._settings.get_boolean('notify');
 		HOWMUCH = this._settings.get_int('howmuch');
 		UPDATE_CMD = this._settings.get_string('update-cmd');
-		CHECK_CMD = this._settings.get_string('check-cmd');
+		this._dnfVersion()
+			.then(version => {
+				console.log("Found DNF version:", version);
+				version >= 5 ? CHECK_CMD = this._settings.get_string('check-cmd-dnf5') : this._settings.get_string('check-cmd-dnf4');
+			})
+			.catch(error => {
+				console.error("Failed to get DNF version:", error);
+			});
 		DISABLE_PARSING = this._settings.get_boolean('disable-parsing');
 		MANAGER_CMD = this._settings.get_string('package-manager');
 		PACKAGE_CACHE_DIR = this._settings.get_string('packages-dir');
