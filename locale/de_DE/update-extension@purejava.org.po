@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2024-08-19 08:23\n"
+"PO-Revision-Date: 2024-11-01 16:28\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -68,9 +68,7 @@ msgstr[1] "Es gibt %d ausstehende Aktualisierungen"
 
 #: extension.js:460
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr ""
-"Hinweis: dnf muss installiert werden, um das Skript ‚check for updates‘ "
-"verwenden zu können."
+msgstr "Hinweis: dnf muss installiert werden, um das Skript ‚check for updates‘ verwenden zu können."
 
 #: extension.js:462
 msgid "Error"
@@ -133,12 +131,8 @@ msgid "Menu"
 msgstr "Menü"
 
 #: prefs.xml:160
-msgid ""
-"Auto-expand updates list if updates count is less than this number (0 to "
-"disable)"
-msgstr ""
-"Liste mit Aktualisierungen automatisch ausklappen, wenn Anzahl der "
-"Aktualisierungen geringer als diese Zahl ist (0 zum Deaktivieren)"
+msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
+msgstr "Liste mit Aktualisierungen automatisch ausklappen, wenn Anzahl der Aktualisierungen geringer als diese Zahl ist (0 zum Deaktivieren)"
 
 #: prefs.xml:172 prefs.xml:230
 msgid "Strip out versions numbers"
@@ -181,24 +175,16 @@ msgid "Command to check for package updates"
 msgstr "Befehl, um auf Aktualisierungen zu prüfen"
 
 #: prefs.xml:283
-msgid ""
-"Disable output parsing, count every line as an update. This is the old "
-"behavior."
-msgstr ""
-"Das Parsen der Ausgabe wird abgeschaltet, jede Zeile wird als eine "
-"Aktualisierung gezählt. Dies ist das alte Verhalten."
+msgid "Disable output parsing, count every line as an update. This is the old behavior."
+msgstr "Das Parsen der Ausgabe wird abgeschaltet, jede Zeile wird als eine Aktualisierung gezählt. Dies ist das alte Verhalten."
 
 #: prefs.xml:297
 msgid "Command to update packages"
 msgstr "Befehl, um Pakete zu aktualisieren"
 
 #: prefs.xml:312
-msgid ""
-"Package manager local directory path - To detect when new packages are "
-"installed"
-msgstr ""
-"Lokales Paket-Manager-Verzeichnis – Wird benötigt, um festzustellen, dass "
-"neue Pakete installiert werden"
+msgid "Package manager local directory path - To detect when new packages are installed"
+msgstr "Lokales Paket-Manager-Verzeichnis – Wird benötigt, um festzustellen, dass neue Pakete installiert werden"
 
 #: prefs.xml:327
 msgid "Command to open package manager (optional)"
@@ -212,5 +198,3 @@ msgstr "Befehl, um Info zu einem Paket anzuzeigen (optional)"
 msgid "About"
 msgstr "Über"
 
-#~ msgid "Use transient notifications (auto dismiss)"
-#~ msgstr "Verwende kurzlebige Benachrichtigung (automatische Ausblendung)"
