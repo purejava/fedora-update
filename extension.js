@@ -95,9 +95,12 @@ class FedoraUpdateIndicator extends Button {
 			proc.communicate_utf8_async(null, null, (proc, res) => {
 				let [, stdout, ] = proc.communicate_utf8_finish(res);
 				if (proc.get_successful()) {
-					let m = stdout.match(/^\d/gm);
-					if (m !== null) {
-						resolve(m[0]);
+					let m = 0;
+					for (const match of stdout.matchAll((/^(\w*\s\w*\s)?(\d)/g))) {
+                        m = match[2];
+                    }
+					if (m !== 0) {
+						resolve(m);
 					} else {
 						reject(new Error("Version match not found"));
 					}
