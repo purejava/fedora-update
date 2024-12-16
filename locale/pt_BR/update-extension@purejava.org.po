@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2024-12-16 18:47\n"
+"PO-Revision-Date: 2024-12-16 20:12\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
@@ -36,55 +36,55 @@ msgstr "Verificando"
 
 #: extension.js:157
 msgid "Check now"
-msgstr ""
+msgstr "Verificar"
 
 #: extension.js:185
 msgid "Waiting first check"
-msgstr ""
+msgstr "Esperando terminar de verificar"
 
 #: extension.js:402
 msgid "Last checked"
-msgstr ""
+msgstr "Última verificação"
 
 #: extension.js:411
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d atualização pendente"
+msgstr[1] "%d atualizações pendentes"
 
 #: extension.js:437 extension.js:443
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Atualização do sistema disponível"
+msgstr[1] "Atualizações do sistema disponível"
 
 #: extension.js:444
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
 msgstr[0] ""
-msgstr[1] ""
+msgstr[1] "Há %d atualizações pendentes"
 
 #: extension.js:460
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr ""
+msgstr "Nota: você tem que ter o dnf instalado para usar o script \"Verificar por atualizações\"."
 
 #: extension.js:462
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
 #: extension.js:467
 msgid "Up to date :)"
-msgstr ""
+msgstr "Atualizado :)"
 
 #: prefs.xml:44
 msgid "Basic settings"
-msgstr ""
+msgstr "Configurações básicas"
 
 #: prefs.xml:49
 msgid "Checking for updates"
-msgstr ""
+msgstr "Verificando por atualizações"
 
 #: prefs.xml:52
 msgid "Time to wait before first check (seconds)"
@@ -96,11 +96,11 @@ msgstr ""
 
 #: prefs.xml:79
 msgid "Indicator"
-msgstr ""
+msgstr "Indicador"
 
 #: prefs.xml:82
 msgid "Always visible"
-msgstr ""
+msgstr "Sempre visível"
 
 #: prefs.xml:94
 msgid "Use built-in icons"
@@ -108,27 +108,27 @@ msgstr ""
 
 #: prefs.xml:106
 msgid "Show updates count on indicator"
-msgstr ""
+msgstr "Mostrar contador de atualizações no indicador"
 
 #: prefs.xml:118
 msgid "Position in Panel"
-msgstr ""
+msgstr "Posição no Painel"
 
 #: prefs.xml:136
 msgid "Left"
-msgstr ""
+msgstr "Esquerda"
 
 #: prefs.xml:137
 msgid "Center"
-msgstr ""
+msgstr "Centralizado"
 
 #: prefs.xml:138
 msgid "Right"
-msgstr ""
+msgstr "À Direita"
 
 #: prefs.xml:157
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: prefs.xml:160
 msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
@@ -140,23 +140,23 @@ msgstr ""
 
 #: prefs.xml:184
 msgid "Show date/time of last check"
-msgstr ""
+msgstr "Mostrar data e hora da última verificação"
 
 #: prefs.xml:199
 msgid "Notification"
-msgstr ""
+msgstr "Notificação"
 
 #: prefs.xml:202
 msgid "Send a notification when new updates are available"
-msgstr ""
+msgstr "Notificar quando novas atualizações estiverem disponíveis"
 
 #: prefs.xml:214
 msgid "How much information to show on notifications"
-msgstr ""
+msgstr "Informações a serem exibidas na notificação"
 
 #: prefs.xml:220
 msgid "Count only"
-msgstr ""
+msgstr "Apenas o contador"
 
 #: prefs.xml:221
 msgid "New updates names"
@@ -168,11 +168,11 @@ msgstr ""
 
 #: prefs.xml:245
 msgid "Advanced settings"
-msgstr ""
+msgstr "Configurações avançadas"
 
 #: prefs.xml:250
 msgid "Command to check for package updates"
-msgstr ""
+msgstr "Comando para verificar se há atualizações de pacotes"
 
 #: prefs.xml:283
 msgid "Disable output parsing, count every line as an update. This is the old behavior."
@@ -180,7 +180,7 @@ msgstr ""
 
 #: prefs.xml:297
 msgid "Command to update packages"
-msgstr ""
+msgstr "Comando para atualizar pacotes"
 
 #: prefs.xml:312
 msgid "Package manager local directory path - To detect when new packages are installed"
@@ -188,13 +188,13 @@ msgstr ""
 
 #: prefs.xml:327
 msgid "Command to open package manager (optional)"
-msgstr ""
+msgstr "Comando para abrir o gerenciador de pacotes (opcional)"
 
 #: prefs.xml:342
 msgid "Command to show info for a package (optional)"
-msgstr ""
+msgstr "Comando para mostrar informações de um pacote (opcional)"
 
 #: prefs.xml:357
 msgid "About"
-msgstr ""
+msgstr "Sobre"
 
