@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2024-11-01 16:28\n"
+"PO-Revision-Date: 2024-12-16 18:47\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
@@ -20,19 +20,19 @@ msgstr ""
 
 #: extension.js:140
 msgid "Settings"
-msgstr ""
+msgstr "Configurações"
 
 #: extension.js:141 extension.js:666
 msgid "Update now"
-msgstr ""
+msgstr "Atualizar"
 
 #: extension.js:142
 msgid "Open package manager"
-msgstr ""
+msgstr "Abrir gerenciador de pacotes"
 
 #: extension.js:146
 msgid "Checking"
-msgstr ""
+msgstr "Verificando"
 
 #: extension.js:157
 msgid "Check now"
