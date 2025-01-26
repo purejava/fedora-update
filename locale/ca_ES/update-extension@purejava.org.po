@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2025-01-26 10:26\n"
+"PO-Revision-Date: 2025-01-26 11:26\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -50,7 +50,7 @@ msgstr "Darrera comprovació"
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
-msgstr[0] ""
+msgstr[0] "%d actualització pendent"
 msgstr[1] "%d actualitzacions pendents"
 
 #: extension.js:437 extension.js:443
@@ -63,7 +63,7 @@ msgstr[1] "Nova actualització de Fedora Linux"
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
-msgstr[0] ""
+msgstr[0] "Hi ha %d actualització pendent"
 msgstr[1] "Hi ha %d actualitzacions pendents"
 
 #: extension.js:460
@@ -148,53 +148,53 @@ msgstr "Notificació"
 
 #: prefs.xml:202
 msgid "Send a notification when new updates are available"
-msgstr ""
+msgstr "Envia una notificació quan hi hagi noves actualitzacions disponibles"
 
 #: prefs.xml:214
 msgid "How much information to show on notifications"
-msgstr ""
+msgstr "Quanta informació mostrar en les notificacions"
 
 #: prefs.xml:220
 msgid "Count only"
-msgstr ""
+msgstr "Només el nombre d'actualitzacions"
 
 #: prefs.xml:221
 msgid "New updates names"
-msgstr ""
+msgstr "Només els noms"
 
 #: prefs.xml:222
 msgid "All updates names"
-msgstr ""
+msgstr "Tota la informació"
 
 #: prefs.xml:245
 msgid "Advanced settings"
-msgstr ""
+msgstr "Configuració avançada"
 
 #: prefs.xml:250
 msgid "Command to check for package updates"
-msgstr ""
+msgstr "Ordre per comprovar les actualitzacions de paquets"
 
 #: prefs.xml:283
 msgid "Disable output parsing, count every line as an update. This is the old behavior."
-msgstr ""
+msgstr "Desactiva l'anàlisi de la sortida, compta cada línia com una actualització. Aquest és el comportament antic."
 
 #: prefs.xml:297
 msgid "Command to update packages"
-msgstr ""
+msgstr "Ordre per actualitzar paquets"
 
 #: prefs.xml:312
 msgid "Package manager local directory path - To detect when new packages are installed"
-msgstr ""
+msgstr "Ruta del directori local del gestor de paquets - Per detectar quan s'instal·len nous paquets"
 
 #: prefs.xml:327
 msgid "Command to open package manager (optional)"
-msgstr ""
+msgstr "Ordre per obrir l'administrador de paquets (opcional)"
 
 #: prefs.xml:342
 msgid "Command to show info for a package (optional)"
-msgstr ""
+msgstr "Ordre per mostrar informació d'un paquet (opcional)"
 
 #: prefs.xml:357
 msgid "About"
-msgstr ""
+msgstr "Quant a"
 
