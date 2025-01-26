@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2024-11-01 16:28\n"
+"PO-Revision-Date: 2025-01-26 10:26\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -20,131 +20,131 @@ msgstr ""
 
 #: extension.js:140
 msgid "Settings"
-msgstr ""
+msgstr "Configuració"
 
 #: extension.js:141 extension.js:666
 msgid "Update now"
-msgstr ""
+msgstr "Actualitza ara"
 
 #: extension.js:142
 msgid "Open package manager"
-msgstr ""
+msgstr "Obrir el gestor de paquets"
 
 #: extension.js:146
 msgid "Checking"
-msgstr ""
+msgstr "Comprovant"
 
 #: extension.js:157
 msgid "Check now"
-msgstr ""
+msgstr "Comprovar ara"
 
 #: extension.js:185
 msgid "Waiting first check"
-msgstr ""
+msgstr "Esperant la primera comprovació"
 
 #: extension.js:402
 msgid "Last checked"
-msgstr ""
+msgstr "Darrera comprovació"
 
 #: extension.js:411
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
 msgstr[0] ""
-msgstr[1] ""
+msgstr[1] "%d actualitzacions pendents"
 
 #: extension.js:437 extension.js:443
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Nova actualització de Fedora Linux"
+msgstr[1] "Nova actualització de Fedora Linux"
 
 #: extension.js:444
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
 msgstr[0] ""
-msgstr[1] ""
+msgstr[1] "Hi ha %d actualitzacions pendents"
 
 #: extension.js:460
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr ""
+msgstr "Atenció: Heu d'instal·lar dnf per utilitzar l'script de comprovació d'actualitzacions."
 
 #: extension.js:462
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: extension.js:467
 msgid "Up to date :)"
-msgstr ""
+msgstr "Actualitzat :)"
 
 #: prefs.xml:44
 msgid "Basic settings"
-msgstr ""
+msgstr "Configuració bàsica"
 
 #: prefs.xml:49
 msgid "Checking for updates"
-msgstr ""
+msgstr "Comprovant actualitzacions"
 
 #: prefs.xml:52
 msgid "Time to wait before first check (seconds)"
-msgstr ""
+msgstr "Temps d'espera abans de la primera comprovació (segons)"
 
 #: prefs.xml:64
 msgid "Interval between updates check (minutes)"
-msgstr ""
+msgstr "Interval entre comprovacions d'actualització (minuts)"
 
 #: prefs.xml:79
 msgid "Indicator"
-msgstr ""
+msgstr "Indicador"
 
 #: prefs.xml:82
 msgid "Always visible"
-msgstr ""
+msgstr "Sempre visible"
 
 #: prefs.xml:94
 msgid "Use built-in icons"
-msgstr ""
+msgstr "Utilitzeu les icones integrades"
 
 #: prefs.xml:106
 msgid "Show updates count on indicator"
-msgstr ""
+msgstr "Mostra el recompte d'actualitzacions a l'indicador"
 
 #: prefs.xml:118
 msgid "Position in Panel"
-msgstr ""
+msgstr "Posició al Panell"
 
 #: prefs.xml:136
 msgid "Left"
-msgstr ""
+msgstr "A l'esquerra"
 
 #: prefs.xml:137
 msgid "Center"
-msgstr ""
+msgstr "Al centre"
 
 #: prefs.xml:138
 msgid "Right"
-msgstr ""
+msgstr "A la dreta"
 
 #: prefs.xml:157
 msgid "Menu"
-msgstr ""
+msgstr "Menú"
 
 #: prefs.xml:160
 msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
-msgstr ""
+msgstr "Expandeix automàticament la llista d'actualitzacions si el nombre d'actualitzacions és inferior a aquest número (0 per desactivar)\""
 
 #: prefs.xml:172 prefs.xml:230
 msgid "Strip out versions numbers"
-msgstr ""
+msgstr "Elimina els números de versió"
 
 #: prefs.xml:184
 msgid "Show date/time of last check"
-msgstr ""
+msgstr "Mostra la data i hora de la darrera comprovació"
 
 #: prefs.xml:199
 msgid "Notification"
-msgstr ""
+msgstr "Notificació"
 
 #: prefs.xml:202
 msgid "Send a notification when new updates are available"
