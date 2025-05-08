@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2025-05-08 11:29\n"
+"PO-Revision-Date: 2025-05-08 14:48\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -20,127 +20,127 @@ msgstr ""
 
 #: extension.js:140
 msgid "Settings"
-msgstr ""
+msgstr "Ajustes"
 
 #: extension.js:141 extension.js:666
 msgid "Update now"
-msgstr ""
+msgstr "Actualizar ahora"
 
 #: extension.js:142
 msgid "Open package manager"
-msgstr ""
+msgstr "Abrir gestor de paquetes"
 
 #: extension.js:146
 msgid "Checking"
-msgstr ""
+msgstr "Comprobando"
 
 #: extension.js:157
 msgid "Check now"
-msgstr ""
+msgstr "Comprobar ahora"
 
 #: extension.js:185
 msgid "Waiting first check"
-msgstr ""
+msgstr "Esperando la primera comprobación"
 
 #: extension.js:402
 msgid "Last checked"
-msgstr ""
+msgstr "Última vez revisado"
 
 #: extension.js:411
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d actualización pendiente"
+msgstr[1] "%d actualizaciones pendientes"
 
 #: extension.js:437 extension.js:443
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Nueva Actualización de Fedora Linux"
+msgstr[1] "Nuevas Actualizaciones de Fedora Linux"
 
 #: extension.js:444
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hay %d actualización pendiente"
+msgstr[1] "Hay %d actualizaciones pendientes"
 
 #: extension.js:460
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr ""
+msgstr "Nota: tiene que instalar dnf para usar el script \"Comprobar Actualizaciones\"."
 
 #: extension.js:462
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: extension.js:467
 msgid "Up to date :)"
-msgstr ""
+msgstr "Actualizado :)"
 
 #: prefs.xml:44
 msgid "Basic settings"
-msgstr ""
+msgstr "Ajustes básicos"
 
 #: prefs.xml:49
 msgid "Checking for updates"
-msgstr ""
+msgstr "Comprobando actualizaciones"
 
 #: prefs.xml:52
 msgid "Time to wait before first check (seconds)"
-msgstr ""
+msgstr "Tiempo de espera antes de la primera comprobación (segundos)"
 
 #: prefs.xml:64
 msgid "Interval between updates check (minutes)"
-msgstr ""
+msgstr "Intervalo entre comprobación de actualizaciones (minutos)"
 
 #: prefs.xml:79
 msgid "Indicator"
-msgstr ""
+msgstr "Indicador"
 
 #: prefs.xml:82
 msgid "Always visible"
-msgstr ""
+msgstr "Siempre visible"
 
 #: prefs.xml:94
 msgid "Use built-in icons"
-msgstr ""
+msgstr "Usar iconos integrados"
 
 #: prefs.xml:106
 msgid "Show updates count on indicator"
-msgstr ""
+msgstr "Mostrar contador de actualizaciones en el indicador"
 
 #: prefs.xml:118
 msgid "Position in Panel"
-msgstr ""
+msgstr "Posición en el Panel"
 
 #: prefs.xml:136
 msgid "Left"
-msgstr ""
+msgstr "Izquierda"
 
 #: prefs.xml:137
 msgid "Center"
-msgstr ""
+msgstr "Centro"
 
 #: prefs.xml:138
 msgid "Right"
-msgstr ""
+msgstr "Derecha"
 
 #: prefs.xml:157
 msgid "Menu"
-msgstr ""
+msgstr "Menú"
 
 #: prefs.xml:160
 msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
-msgstr ""
+msgstr "Autoexpandir lista de actualizaciones si el número de actualizaciones es menor que este número (0 para desactivar)"
 
 #: prefs.xml:172 prefs.xml:230
 msgid "Strip out versions numbers"
-msgstr ""
+msgstr "Omitir números de versiones"
 
 #: prefs.xml:184
 msgid "Show date/time of last check"
-msgstr ""
+msgstr "Mostrar fecha/hora de la última comprobación"
 
 #: prefs.xml:199
 msgid "Notification"
@@ -148,53 +148,53 @@ msgstr "Notificación"
 
 #: prefs.xml:202
 msgid "Send a notification when new updates are available"
-msgstr ""
+msgstr "Enviar una notificación cuando haya nuevas actualizaciones disponibles"
 
 #: prefs.xml:214
 msgid "How much information to show on notifications"
-msgstr ""
+msgstr "Cuánta información mostrar en las notificaciones"
 
 #: prefs.xml:220
 msgid "Count only"
-msgstr ""
+msgstr "Contar solo"
 
 #: prefs.xml:221
 msgid "New updates names"
-msgstr ""
+msgstr "Nombres de nuevas actualizaciones"
 
 #: prefs.xml:222
 msgid "All updates names"
-msgstr ""
+msgstr "Todos los nombres de actualizaciones"
 
 #: prefs.xml:245
 msgid "Advanced settings"
-msgstr ""
+msgstr "Ajustes avanzados"
 
 #: prefs.xml:250
 msgid "Command to check for package updates"
-msgstr ""
+msgstr "Comando para comprobar actualizaciones de paquetes"
 
 #: prefs.xml:283
 msgid "Disable output parsing, count every line as an update. This is the old behavior."
-msgstr ""
+msgstr "Desactivar el análisis de salida, contar cada línea como actualización. Este es el comportamiento antiguo."
 
 #: prefs.xml:297
 msgid "Command to update packages"
-msgstr ""
+msgstr "Comando para actualizar paquetes"
 
 #: prefs.xml:312
 msgid "Package manager local directory path - To detect when new packages are installed"
-msgstr ""
+msgstr "Ruta del directorio local del gestor de paquetes - Detectar cuando se instalen nuevos paquetes"
 
 #: prefs.xml:327
 msgid "Command to open package manager (optional)"
-msgstr ""
+msgstr "Comando para abrir el gestor de paquetes (opcional)"
 
 #: prefs.xml:342
 msgid "Command to show info for a package (optional)"
-msgstr ""
+msgstr "Comando para mostrar información para un paquete (opcional)"
 
 #: prefs.xml:357
 msgid "About"
-msgstr ""
+msgstr "Acerca de"
 
