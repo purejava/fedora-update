@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2024-11-01 16:28\n"
+"PO-Revision-Date: 2025-05-08 11:29\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -144,7 +144,7 @@ msgstr ""
 
 #: prefs.xml:199
 msgid "Notification"
-msgstr ""
+msgstr "Notificación"
 
 #: prefs.xml:202
 msgid "Send a notification when new updates are available"
