@@ -253,7 +253,7 @@
 					<property name="halign">0</property>
 					<property name="hexpand">true</property>
 					<property name="title">dnf 4</property>
-					<property name="text">"/bin/bash -c \"/usr/bin/dnf check-update --refresh -yq | tail -n +2  | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print $1;$2}'\""</property>
+					<property name="text">"/bin/bash -c \"/usr/bin/dnf check-update --refresh -yq | tail -n +2  | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print \$1,\$2}'\""</property>
 				</object>
 			</child>
 			<child>
@@ -261,7 +261,7 @@
 					<property name="halign">0</property>
 					<property name="hexpand">true</property>
 					<property name="title">dnf 5+</property>
-					<property name="text">"/bin/bash -c \"/usr/bin/dnf check-update -yq | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print $1;$2}'\""</property>
+					<property name="text">"/bin/bash -c \"/usr/bin/dnf check-update -yq | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print \$1,\$2}'\""</property>
 				</object>
 			</child>
 			<child>

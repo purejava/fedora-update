@@ -53,13 +53,13 @@
     </key>
 
     <key name="check-cmd-dnf4" type="s">
-      <default>"/bin/bash -c \"/usr/bin/dnf check-update --refresh -yq | tail -n +2  | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print $1,$2}'\""</default>
+      <default>"/bin/bash -c \"/usr/bin/dnf check-update --refresh -yq | tail -n +2  | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print \$1,\$2}'\""</default>
       <summary>Command to run to check for updated packages with dnf 4.</summary>
       <description>Command to run to check for updated packages with dnf 4.</description>
     </key>
 
     <key name="check-cmd-dnf5" type="s">
-      <default>"/bin/bash -c \"/usr/bin/dnf check-update -yq | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print $1,$2}'\""</default>
+      <default>"/bin/bash -c \"/usr/bin/dnf check-update -yq | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print \$1,\$2}'\""</default>
       <summary>Command to run to check for updated packages with dnf 5.</summary>
       <description>Command to run to check for updated packages with dnf 5.</description>
     </key>
