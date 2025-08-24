@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2025-08-24 14:22\n"
+"PO-Revision-Date: 2025-08-24 15:44\n"
 "Last-Translator: \n"
 "Language-Team: Hebrew\n"
 "Language: he_IL\n"
@@ -114,7 +114,7 @@ msgstr "השתמש בסמלים מובנים"
 
 #: prefs.xml:106
 msgid "Show updates count on indicator"
-msgstr "הצג ספירת עדכונים במחוון"
+msgstr "הצג כמות עדכונים במחוון"
 
 #: prefs.xml:118
 msgid "Position in Panel"
