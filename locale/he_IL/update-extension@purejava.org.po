@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2025-08-24 15:44\n"
+"PO-Revision-Date: 2025-08-24 18:36\n"
 "Last-Translator: \n"
 "Language-Team: Hebrew\n"
 "Language: he_IL\n"
@@ -94,11 +94,11 @@ msgstr "מחפש עדכונים"
 
 #: prefs.xml:52
 msgid "Time to wait before first check (seconds)"
-msgstr "זמן לחכות לפני בדיקה ראשונית (שניות)"
+msgstr "זמן להמתנה לפני הבדיקה הראשונה (שניות)"
 
 #: prefs.xml:64
 msgid "Interval between updates check (minutes)"
-msgstr "מרווח בין חיפוש עדכונים (דקות)"
+msgstr "פרק זמן בין בדיקות עדכונים (דקות)"
 
 #: prefs.xml:79
 msgid "Indicator"
@@ -162,7 +162,7 @@ msgstr "כמה מידע להציג בהתראות"
 
 #: prefs.xml:220
 msgid "Count only"
-msgstr "רק ספירה"
+msgstr "רק כמות העדכונים"
 
 #: prefs.xml:221
 msgid "New updates names"
@@ -178,11 +178,11 @@ msgstr "הגדרות מתקדמות"
 
 #: prefs.xml:250
 msgid "Command to check for package updates"
-msgstr "פקודה לחיפוש עדכוני חבילות"
+msgstr "פקודה לבדיקת עדכוני חבילות"
 
 #: prefs.xml:283
 msgid "Disable output parsing, count every line as an update. This is the old behavior."
-msgstr "בטל ניתוח פלט, ספור כל שורה כעדכון. זוהי ההתנהגות הישנה."
+msgstr "השבת ניתוח פלט, ספור כל שורה כעדכון. זוהי ההתנהגות הישנה."
 
 #: prefs.xml:297
 msgid "Command to update packages"
@@ -190,7 +190,7 @@ msgstr "פקודה לעדכון חבילות"
 
 #: prefs.xml:312
 msgid "Package manager local directory path - To detect when new packages are installed"
-msgstr "נתיב הספרייה המקומית של מנהל החבילות - כדי לזהות מתי חבילות חדשות מותקנות"
+msgstr "נתיב ספרייה מקומית של מנהל החבילות - לזיהוי כאשר חבילות חדשות מותקנות"
 
 #: prefs.xml:327
 msgid "Command to open package manager (optional)"
@@ -198,7 +198,7 @@ msgstr "פקודה לפתוח את מנהל החבילות (אופציונלי)"
 
 #: prefs.xml:342
 msgid "Command to show info for a package (optional)"
-msgstr "פקודה להציג מידע על חבילה (אופציונלי)"
+msgstr "פקודה להצגת מידע על חבילה (אופציונלי)"
 
 #: prefs.xml:357
 msgid "About"
