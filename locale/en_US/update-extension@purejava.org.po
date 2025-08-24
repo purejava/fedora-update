@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2025-08-24 13:09\n"
+"PO-Revision-Date: 2025-08-24 14:22\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
 "Language: en_US\n"
@@ -20,155 +20,155 @@ msgstr ""
 
 #: extension.js:140
 msgid "Settings"
-msgstr "הגדרות"
+msgstr ""
 
 #: extension.js:141 extension.js:666
 msgid "Update now"
-msgstr "עדכן עכשיו"
+msgstr ""
 
 #: extension.js:142
 msgid "Open package manager"
-msgstr "פתח את מנהל החבילות"
+msgstr ""
 
 #: extension.js:146
 msgid "Checking"
-msgstr "בודק"
+msgstr ""
 
 #: extension.js:157
 msgid "Check now"
-msgstr "בדוק עכשיו"
+msgstr ""
 
 #: extension.js:185
 msgid "Waiting first check"
-msgstr "מחכה לבדיקה ראשונית"
+msgstr ""
 
 #: extension.js:402
 msgid "Last checked"
-msgstr "נבדק לאחרונה"
+msgstr ""
 
 #: extension.js:411
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
-msgstr[0] "עדכון %d ממתין"
-msgstr[1] "%d עדכונים ממתינים"
+msgstr[0] ""
+msgstr[1] ""
 
 #: extension.js:437 extension.js:443
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
-msgstr[0] "עדכון חדש לפדורה לינוקס"
-msgstr[1] "עדכונים חדשים לפדורה לינוקס"
+msgstr[0] ""
+msgstr[1] ""
 
 #: extension.js:444
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
-msgstr[0] "יש עדכון %d ממתין"
-msgstr[1] "יש %d עדכונים ממתינים"
+msgstr[0] ""
+msgstr[1] ""
 
 #: extension.js:460
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr "יש להתקין dnf כדי להשתמש בסקריפט 'חפש עדכונים'."
+msgstr ""
 
 #: extension.js:462
 msgid "Error"
-msgstr "שגיאה"
+msgstr ""
 
 #: extension.js:467
 msgid "Up to date :)"
-msgstr "מעודכן :)"
+msgstr ""
 
 #: prefs.xml:44
 msgid "Basic settings"
-msgstr "הגדרות רגילות"
+msgstr ""
 
 #: prefs.xml:49
 msgid "Checking for updates"
-msgstr "מחפש עדכונים"
+msgstr ""
 
 #: prefs.xml:52
 msgid "Time to wait before first check (seconds)"
-msgstr "זמן לחכות לפני בדיקה ראשונית (שניות)"
+msgstr ""
 
 #: prefs.xml:64
 msgid "Interval between updates check (minutes)"
-msgstr "מרווח בין חיפוש עדכונים (דקות)"
+msgstr ""
 
 #: prefs.xml:79
 msgid "Indicator"
-msgstr "מחוון"
+msgstr ""
 
 #: prefs.xml:82
 msgid "Always visible"
-msgstr "תמיד גלוי"
+msgstr ""
 
 #: prefs.xml:94
 msgid "Use built-in icons"
-msgstr "השתמש בסמלים מובנים"
+msgstr ""
 
 #: prefs.xml:106
 msgid "Show updates count on indicator"
-msgstr "הצג ספירת עדכונים במחוון"
+msgstr ""
 
 #: prefs.xml:118
 msgid "Position in Panel"
-msgstr "מיקום בפאנל"
+msgstr ""
 
 #: prefs.xml:136
 msgid "Left"
-msgstr "שמאל"
+msgstr ""
 
 #: prefs.xml:137
 msgid "Center"
-msgstr "אמצע"
+msgstr ""
 
 #: prefs.xml:138
 msgid "Right"
-msgstr "ימין"
+msgstr ""
 
 #: prefs.xml:157
 msgid "Menu"
-msgstr "תפריט"
+msgstr ""
 
 #: prefs.xml:160
 msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
-msgstr "הרחבה אוטומטית של רשימת עדכונים אם מספר העדכונים נמוכה ממספר זה (0 כדי להשבית)"
+msgstr ""
 
 #: prefs.xml:172 prefs.xml:230
 msgid "Strip out versions numbers"
-msgstr "הסר את מספרי הגרסאות"
+msgstr ""
 
 #: prefs.xml:184
 msgid "Show date/time of last check"
-msgstr "הצג תאריך/זמן של הבדיקה האחרונה"
+msgstr ""
 
 #: prefs.xml:199
 msgid "Notification"
-msgstr "התראה"
+msgstr ""
 
 #: prefs.xml:202
 msgid "Send a notification when new updates are available"
-msgstr "שלח התראה כאשר יש עדכונים חדשים זמינים"
+msgstr ""
 
 #: prefs.xml:214
 msgid "How much information to show on notifications"
-msgstr "כמה מידע להציג בהתראות"
+msgstr ""
 
 #: prefs.xml:220
 msgid "Count only"
-msgstr "רק ספירה"
+msgstr ""
 
 #: prefs.xml:221
 msgid "New updates names"
-msgstr "שמות העדכונים החדשים"
+msgstr ""
 
 #: prefs.xml:222
 msgid "All updates names"
-msgstr "כל שמות העדכונים"
+msgstr ""
 
 #: prefs.xml:245
 msgid "Advanced settings"
-msgstr "הגדרות מתקדמות"
+msgstr ""
 
 #: prefs.xml:250
 msgid "Command to check for package updates"
