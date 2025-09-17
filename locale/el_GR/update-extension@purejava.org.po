@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2024-11-01 16:28\n"
+"PO-Revision-Date: 2025-09-17 12:31\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
 "Language: el_GR\n"
@@ -20,181 +20,181 @@ msgstr ""
 
 #: extension.js:140
 msgid "Settings"
-msgstr ""
+msgstr "Ρυθμίσεις"
 
 #: extension.js:141 extension.js:666
 msgid "Update now"
-msgstr ""
+msgstr "Ενημέρωση τώρα"
 
 #: extension.js:142
 msgid "Open package manager"
-msgstr ""
+msgstr "Άνοιγμα διαχείρισης πακέτων"
 
 #: extension.js:146
 msgid "Checking"
-msgstr ""
+msgstr "Έλεγχος"
 
 #: extension.js:157
 msgid "Check now"
-msgstr ""
+msgstr "Έλεγχος τώρα"
 
 #: extension.js:185
 msgid "Waiting first check"
-msgstr ""
+msgstr "Σε αναμονή για πρώτο έλεγχο"
 
 #: extension.js:402
 msgid "Last checked"
-msgstr ""
+msgstr "Τελευταίος έλεγχος"
 
 #: extension.js:411
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Εκκρεμεί %d ενημέρωση"
+msgstr[1] "Εκκρεμούν %d ενημερώσεις"
 
 #: extension.js:437 extension.js:443
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Νέα ενημέρωση του Fedora Linux"
+msgstr[1] "Νέες ενημερώσεις του Fedora Linux"
 
 #: extension.js:444
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Υπάρχει %d ενημέρωση σε εκκρεμότητα"
+msgstr[1] "Υπάρχουν %d ενημερώσεις σε εκκρεμότητα"
 
 #: extension.js:460
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr ""
+msgstr "Σημείωση: πρέπει να εγκαταστήσετε το dnf για χρήση της δέσμης ενεργειών ελέγχου για ενημερώσεις."
 
 #: extension.js:462
 msgid "Error"
-msgstr ""
+msgstr "Σφάλμα"
 
 #: extension.js:467
 msgid "Up to date :)"
-msgstr ""
+msgstr "Ενημερωμένο σύστημα :)"
 
 #: prefs.xml:44
 msgid "Basic settings"
-msgstr ""
+msgstr "Βασικές ρυθμίσεις"
 
 #: prefs.xml:49
 msgid "Checking for updates"
-msgstr ""
+msgstr "Έλεγχος για ενημερώσεις"
 
 #: prefs.xml:52
 msgid "Time to wait before first check (seconds)"
-msgstr ""
+msgstr "Χρόνος αναμονής πριν από τον πρώτο έλεγχο (δευτερόλεπτα)"
 
 #: prefs.xml:64
 msgid "Interval between updates check (minutes)"
-msgstr ""
+msgstr "Χρονικό διάστημα μεταξύ ελέγχων για ενημερώσεις (λεπτά)"
 
 #: prefs.xml:79
 msgid "Indicator"
-msgstr ""
+msgstr "Ένδειξη"
 
 #: prefs.xml:82
 msgid "Always visible"
-msgstr ""
+msgstr "Πάντα ορατή"
 
 #: prefs.xml:94
 msgid "Use built-in icons"
-msgstr ""
+msgstr "Χρήση ενσωματωμένων εικονιδίων"
 
 #: prefs.xml:106
 msgid "Show updates count on indicator"
-msgstr ""
+msgstr "Εμφάνιση αριθμού ενημερώσεων στην ένδειξη"
 
 #: prefs.xml:118
 msgid "Position in Panel"
-msgstr ""
+msgstr "Θέση στη γραμμή"
 
 #: prefs.xml:136
 msgid "Left"
-msgstr ""
+msgstr "Αριστερά"
 
 #: prefs.xml:137
 msgid "Center"
-msgstr ""
+msgstr "Κέντρο"
 
 #: prefs.xml:138
 msgid "Right"
-msgstr ""
+msgstr "Δεξιά"
 
 #: prefs.xml:157
 msgid "Menu"
-msgstr ""
+msgstr "Μενού"
 
 #: prefs.xml:160
 msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
-msgstr ""
+msgstr "Αυτόματη ανάπτυξη λίστας ενημερώσεων εάν είναι λιγότερες από αυτόν τον αριθμό (0 για απενεργοποίηση)"
 
 #: prefs.xml:172 prefs.xml:230
 msgid "Strip out versions numbers"
-msgstr ""
+msgstr "Απόκρυψη αριθμών εκδόσεων"
 
 #: prefs.xml:184
 msgid "Show date/time of last check"
-msgstr ""
+msgstr "Εμφάνιση ημερομηνίας/ώρας τελευταίου ελέγχου"
 
 #: prefs.xml:199
 msgid "Notification"
-msgstr ""
+msgstr "Ειδοποίηση"
 
 #: prefs.xml:202
 msgid "Send a notification when new updates are available"
-msgstr ""
+msgstr "Αποστολή ειδοποίησης όταν διατίθενται νέες ενημερώσεις"
 
 #: prefs.xml:214
 msgid "How much information to show on notifications"
-msgstr ""
+msgstr "Ποσότητα πληροφοριών για τις ειδοποιήσεις"
 
 #: prefs.xml:220
 msgid "Count only"
-msgstr ""
+msgstr "Μόνο αριθμός"
 
 #: prefs.xml:221
 msgid "New updates names"
-msgstr ""
+msgstr "Ονόματα νέων ενημερώσεων"
 
 #: prefs.xml:222
 msgid "All updates names"
-msgstr ""
+msgstr "Ονόματα όλων των ενημερώσεων"
 
 #: prefs.xml:245
 msgid "Advanced settings"
-msgstr ""
+msgstr "Σύνθετες ρυθμίσεις"
 
 #: prefs.xml:250
 msgid "Command to check for package updates"
-msgstr ""
+msgstr "Εντολή ελέγχου για ενημερώσεις πακέτων"
 
 #: prefs.xml:283
 msgid "Disable output parsing, count every line as an update. This is the old behavior."
-msgstr ""
+msgstr "Απενεργοποίηση ανάλυσης εξόδου, λογισμός κάθε γραμμής ως ενημέρωσης (παλιά συμπεριφορά)."
 
 #: prefs.xml:297
 msgid "Command to update packages"
-msgstr ""
+msgstr "Εντολή ενημέρωσης πακέτων"
 
 #: prefs.xml:312
 msgid "Package manager local directory path - To detect when new packages are installed"
-msgstr ""
+msgstr "Διαδρομή τοπικού καταλόγου διαχείρισης πακέτων (για εντοπισμό νέων εγκαταστάσεων πακέτων)"
 
 #: prefs.xml:327
 msgid "Command to open package manager (optional)"
-msgstr ""
+msgstr "Εντολή ανοίγματος διαχείρισης πακέτων (προαιρετικό)"
 
 #: prefs.xml:342
 msgid "Command to show info for a package (optional)"
-msgstr ""
+msgstr "Εντολή εμφάνισης πληροφοριών πακέτου (προαιρετικό)"
 
 #: prefs.xml:357
 msgid "About"
-msgstr ""
+msgstr "Πληροφορίες"
 
