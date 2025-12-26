@@ -22,4 +22,4 @@ To provide or change translations, please visit [Crowdin - fedora-update](https:
 Thanks to [Raphaël Rochet](https://github.com/RaphaelRochet), who implemented the Arch Linux Updates Indicator, this extension is based on.
 
 # Copyright
-Copyright (C) 2023-2025 Ralph Plawetzki
+Copyright (C) 2023 Ralph Plawetzki
