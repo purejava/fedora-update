@@ -5,6 +5,8 @@
 
 Update indicator for Fedora Linux. GNOME Shell extension.
 
+Created for the more traditional Fedora options using the package manager dnf.
+
 # Install
 This extension is available on the [GNOME Extensions website](https://extensions.gnome.org/extension/6406/fedora-linux-update-indicator/).
 
