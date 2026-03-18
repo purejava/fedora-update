@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-18 13:43+0100\n"
+"POT-Creation-Date: 2026-03-18 13:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,33 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4\n"
 
-#: extension.js:140
+#: extension.js:140 extension.js:144
 msgid "Settings"
 msgstr ""
 
-#: extension.js:141 extension.js:666
+#: extension.js:141 extension.js:666 extension.js:145 extension.js:691
 msgid "Update now"
 msgstr ""
 
-#: extension.js:142
+#: extension.js:142 extension.js:146
 msgid "Open package manager"
 msgstr ""
 
-#: extension.js:146
+#: extension.js:146 extension.js:150
 msgid "Checking"
 msgstr ""
 
-#: extension.js:157
+#: extension.js:157 extension.js:161
 msgid "Check now"
 msgstr ""
 
-#: extension.js:185
+#: extension.js:185 extension.js:189
 msgid "Waiting first check"
 msgstr ""
 
-#: extension.js:402
+#: extension.js:402 extension.js:411
 msgid "Last checked"
 msgstr ""
 
@@ -67,15 +66,15 @@ msgid_plural "There are %d updates pending"
 msgstr[0] ""
 msgstr[1] ""
 
-#: extension.js:460
+#: extension.js:460 extension.js:485
 msgid "Note : you have to install dnf to use the 'check for updates' script."
 msgstr ""
 
-#: extension.js:462
+#: extension.js:462 extension.js:487
 msgid "Error"
 msgstr ""
 
-#: extension.js:467
+#: extension.js:467 extension.js:492
 msgid "Up to date :)"
 msgstr ""
 
@@ -214,4 +213,9 @@ msgstr ""
 
 #: prefs.xml:387
 msgid "About"
+msgstr ""
+
+#: extension.js:466
+#, javascript-format
+msgid "%d updates available (below notification threshold)"
 msgstr ""
