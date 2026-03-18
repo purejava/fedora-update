@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-01 16:47+0100\n"
+"POT-Creation-Date: 2026-03-18 13:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,103 +104,114 @@ msgid "Always visible"
 msgstr ""
 
 #: prefs.xml:94
+msgid "Disable indicator, until at least N updates are available"
+msgstr ""
+
+#: prefs.xml:120
+msgid ""
+"<span foreground=\"red\">Warning: Delaying notifications until multiple "
+"updates are available can hide important security updates and is dangerous.</"
+"span>"
+msgstr ""
+
+#: prefs.xml:127
 msgid "Use built-in icons"
 msgstr ""
 
-#: prefs.xml:106
+#: prefs.xml:139
 msgid "Show updates count on indicator"
 msgstr ""
 
-#: prefs.xml:118
+#: prefs.xml:151
 msgid "Position in Panel"
 msgstr ""
 
-#: prefs.xml:136
+#: prefs.xml:169
 msgid "Left"
 msgstr ""
 
-#: prefs.xml:137
+#: prefs.xml:170
 msgid "Center"
 msgstr ""
 
-#: prefs.xml:138
+#: prefs.xml:171
 msgid "Right"
 msgstr ""
 
-#: prefs.xml:157
+#: prefs.xml:190
 msgid "Menu"
 msgstr ""
 
-#: prefs.xml:160
+#: prefs.xml:193
 msgid ""
 "Auto-expand updates list if updates count is less than this number (0 to "
 "disable)"
 msgstr ""
 
-#: prefs.xml:172 prefs.xml:230
+#: prefs.xml:207 prefs.xml:267
 msgid "Strip out versions numbers"
 msgstr ""
 
-#: prefs.xml:184
+#: prefs.xml:219
 msgid "Show date/time of last check"
 msgstr ""
 
-#: prefs.xml:199
+#: prefs.xml:234
 msgid "Notification"
 msgstr ""
 
-#: prefs.xml:202
+#: prefs.xml:237
 msgid "Send a notification when new updates are available"
 msgstr ""
 
-#: prefs.xml:214
+#: prefs.xml:250
 msgid "How much information to show on notifications"
 msgstr ""
 
-#: prefs.xml:220
+#: prefs.xml:257
 msgid "Count only"
 msgstr ""
 
-#: prefs.xml:221
+#: prefs.xml:258
 msgid "New updates names"
 msgstr ""
 
-#: prefs.xml:222
+#: prefs.xml:259
 msgid "All updates names"
 msgstr ""
 
-#: prefs.xml:245
+#: prefs.xml:281
 msgid "Advanced settings"
 msgstr ""
 
-#: prefs.xml:250
+#: prefs.xml:286
 msgid "Command to check for package updates"
 msgstr ""
 
-#: prefs.xml:283
+#: prefs.xml:309
 msgid ""
 "Disable output parsing, count every line as an update. This is the old "
 "behavior."
 msgstr ""
 
-#: prefs.xml:297
+#: prefs.xml:325
 msgid "Command to update packages"
 msgstr ""
 
-#: prefs.xml:312
+#: prefs.xml:340
 msgid ""
 "Package manager local directory path - To detect when new packages are "
 "installed"
 msgstr ""
 
-#: prefs.xml:327
+#: prefs.xml:357
 msgid "Command to open package manager (optional)"
 msgstr ""
 
-#: prefs.xml:342
+#: prefs.xml:372
 msgid "Command to show info for a package (optional)"
 msgstr ""
 
-#: prefs.xml:357
+#: prefs.xml:387
 msgid "About"
 msgstr ""
