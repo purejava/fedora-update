@@ -43,6 +43,7 @@ let SHOW_COUNT         = true;
 let BOOT_WAIT          = 15;      // 15s
 let CHECK_INTERVAL     = 60*60;   // 1h
 let NOTIFY             = false;
+let NOTIFY_THRESHOLD   = 1;
 let HOWMUCH            = 0;
 let UPDATE_CMD         = "ptyxis -- /bin/sh -c \"pkexec dnf upgrade; echo Done - Press enter to exit; read _\" ";
 let CHECK_CMD          = "/bin/bash -c \"/usr/bin/dnf check-update -yq | grep -E 'x86_64|i686|noarch|aarch64' | awk '{print \$1,\$2}'\"";
@@ -255,12 +256,13 @@ class FedoraUpdateIndicator extends Button {
 		BOOT_WAIT = this._settings.get_int('boot-wait');
 		CHECK_INTERVAL = 60 * this._settings.get_int('check-interval');
 		NOTIFY = this._settings.get_boolean('notify');
+		NOTIFY_THRESHOLD = this._settings.get_int('notify-threshold');
 		HOWMUCH = this._settings.get_int('howmuch');
 		UPDATE_CMD = this._settings.get_string('update-cmd');
 		this._dnfVersion()
 			.then(version => {
 				console.log("Found DNF version:", version);
-				version >= 5 ? CHECK_CMD = this._settings.get_string('check-cmd-dnf5') : this._settings.get_string('check-cmd-dnf4');
+				CHECK_CMD = version >= 5 ? this._settings.get_string('check-cmd-dnf5') : this._settings.get_string('check-cmd-dnf4');
 			})
 			.catch(error => {
 				console.error("Failed to get DNF version:", error);
@@ -331,6 +333,10 @@ class FedoraUpdateIndicator extends Button {
 		super.destroy();
 	}
 
+	_reachedNotificationThreshold(updatesCount) {
+		return updatesCount >= NOTIFY_THRESHOLD;
+	}
+
 	_checkShowHide() {
 		if ( UPDATES_PENDING == -3 ) {
 			// Do not apply visibility change while checking for updates
@@ -338,12 +344,12 @@ class FedoraUpdateIndicator extends Button {
 		} else if ( UPDATES_PENDING == -2 ) {
 			// Always show indicator if there is an error
 			this.visible = true;
-		} else if (!ALWAYS_VISIBLE && UPDATES_PENDING < 1) {
+		} else if (!ALWAYS_VISIBLE && !this._reachedNotificationThreshold(UPDATES_PENDING)) {
 			this.visible = false;
 		} else {
 			this.visible = true;
 		}
-		this.label.visible = SHOW_COUNT && UPDATES_PENDING > 0;
+		this.label.visible = SHOW_COUNT && this._reachedNotificationThreshold(UPDATES_PENDING);
 	}
 
 	_onMenuOpened() {
@@ -353,7 +359,7 @@ class FedoraUpdateIndicator extends Button {
 	}
 
 	_checkAutoExpandList() {
-		if (this.menu.isOpen && UPDATES_PENDING > 0 && UPDATES_PENDING <= AUTO_EXPAND_LIST) {
+		if (this.menu.isOpen && this._reachedNotificationThreshold(UPDATES_PENDING) && UPDATES_PENDING <= AUTO_EXPAND_LIST) {
 			this.menuExpander.setSubmenuShown(true);
 		} else {
 			this.menuExpander.setSubmenuShown(false);
@@ -409,45 +415,61 @@ class FedoraUpdateIndicator extends Button {
 	_updateStatus(updatesCount) {
 		updatesCount = typeof updatesCount === 'number' ? updatesCount : UPDATES_PENDING;
 		if (updatesCount > 0) {
-			// Updates pending
-			this.updateIcon.set_gicon( this._getCustIcon('fedora-updates-symbolic') );
-			this._updateMenuExpander( true, __( "%d update pending", "%d updates pending", updatesCount ).format(updatesCount) );
-			this.label.set_text(updatesCount.toString());
-			if (NOTIFY && UPDATES_PENDING < updatesCount) {
-				if (HOWMUCH > 0) {
-					let updateList = [];
-					if (HOWMUCH > 1) {
-						updateList = this._updateList;
+			if (this._reachedNotificationThreshold(updatesCount)) {
+				// Updates pending and threshold reached
+				this.updateIcon.set_gicon( this._getCustIcon('fedora-updates-symbolic') );
+				this._updateMenuExpander( true, __( "%d update pending", "%d updates pending", updatesCount ).format(updatesCount) );
+				this.label.set_text(updatesCount.toString());
+				if (NOTIFY && UPDATES_PENDING < updatesCount) {
+					if (HOWMUCH > 0) {
+						let updateList = [];
+						if (HOWMUCH > 1) {
+							updateList = this._updateList;
+						} else {
+							// Keep only packets that was not in the previous notification
+							updateList = this._updateList.filter(function(pkg) { return UPDATES_LIST.indexOf(pkg) < 0 });
+						}
+						// Filter out titles and whatnot
+						if (!DISABLE_PARSING) {
+							updateList = updateList.filter(function(line) { return RE_UpdateLine.test(line) });
+						}
+						// If version numbers should be stripped, do it
+						if (STRIP_VERSIONS_N == true) {
+							updateList = updateList.map(function(p) {
+								// Try to keep only what's before the first space
+								var chunks = p.split(" ",2);
+								return chunks[0];
+							});
+						}
+						if (updateList.length > 0) {
+							// Show notification only if there's new updates
+							this._showNotification(
+								__( "New Fedora Linux Update", "New Fedora Linux Updates", updateList.length ),
+								updateList.join(', ')
+							);
+						}
 					} else {
-						// Keep only packets that was not in the previous notification
-						updateList = this._updateList.filter(function(pkg) { return UPDATES_LIST.indexOf(pkg) < 0 });
-					}
-					// Filter out titles and whatnot
-					if (!DISABLE_PARSING) {
-						updateList = updateList.filter(function(line) { return RE_UpdateLine.test(line) });
-					}
-					// If version numbers should be stripped, do it
-					if (STRIP_VERSIONS_N == true) {
-						updateList = updateList.map(function(p) {
-							// Try to keep only what's before the first space
-							var chunks = p.split(" ",2);
-							return chunks[0];
-						});
-					}
-					if (updateList.length > 0) {
-						// Show notification only if there's new updates
 						this._showNotification(
-							__( "New Fedora Linux Update", "New Fedora Linux Updates", updateList.length ),
-							updateList.join(', ')
-						);
-					}
-				} else {
-					this._showNotification(
-						__( "New Fedora Linux Update", "New Fedora Linux Updates", updatesCount ),
-						__( "There is %d update pending", "There are %d updates pending", updatesCount ).format(updatesCount)
-					);
+							__( "New Fedora Linux Update", "New Fedora Linux Updates", updatesCount ),
+							__( "There is %d update pending", "There are %d updates pending", updatesCount ).format(updatesCount)
+ 						);
+ 					}
 				}
-			}
+			} else {
+				// Updates exist, but threshold not reached yet
+				this.label.set_text('');
+
+				if (ALWAYS_VISIBLE) {
+					this.updateIcon.set_gicon( this._getCustIcon('fedora-unknown-symbolic') );
+					this._updateMenuExpander(
+						false,
+						_("%d updates available (below notification threshold)").format(updatesCount)
+					);
+ 				} else {
+					this.updateIcon.set_gicon( this._getCustIcon('fedora-unknown-symbolic') );
+					this._updateMenuExpander( false, '' );
+ 				}
+ 			}
 			// Store the new list
 			UPDATES_LIST = this._updateList;
 		} else {

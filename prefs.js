@@ -61,6 +61,37 @@ export default class FedoraUpdatePreferences extends ExtensionPreferences {
 		settings.bind('package-info-cmd' , buildable.get_object('field_packageinfocmd') , 'text' , Gio.SettingsBindFlags.DEFAULT);
 		settings.bind('show-timechecked' , buildable.get_object('field_showtimechecked') , 'active' , Gio.SettingsBindFlags.DEFAULT);
 
+		const notifyThresholdCombo = buildable.get_object('field_notifythreshold');
+		const notifyThresholdWarningRow = buildable.get_object('row_notifythreshold_warning');
+
+		// Initialize from settings
+		notifyThresholdCombo.set_active_id(settings.get_int('notify-threshold').toString());
+
+		const updateNotifyThresholdWarning = () => {
+			const selected = notifyThresholdCombo.get_active_id();
+			notifyThresholdWarningRow.visible = selected !== '1';
+		};
+
+		// Save user selection to GSettings
+		notifyThresholdCombo.connect('changed', () => {
+			const selected = notifyThresholdCombo.get_active_id();
+			if (selected !== null)
+				settings.set_int('notify-threshold', parseInt(selected, 10));
+
+			updateNotifyThresholdWarning();
+		});
+
+		// Keep UI in sync if setting changes externally
+		settings.connect('changed::notify-threshold', () => {
+			const value = settings.get_int('notify-threshold').toString();
+			if (notifyThresholdCombo.get_active_id() !== value)
+				notifyThresholdCombo.set_active_id(value);
+
+			updateNotifyThresholdWarning();
+		});
+
+		updateNotifyThresholdWarning();
+
 		// Pref window layout
 		window.search_enabled = true;
 		window.add( buildable.get_object('page_basic') );

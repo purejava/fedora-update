@@ -139,5 +139,11 @@
         </description>
     </key>
 
+    <key name="notify-threshold" type="i">
+        <default>1</default>
+        <summary>Minimum number of updates before showing indicator and notification</summary>
+        <description>Indicator and notifications are only shown when at least this many updates are available.</description>
+    </key>
+
   </schema>
 </schemalist>
