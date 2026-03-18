@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-01 16:47+0100\n"
+"POT-Creation-Date: 2026-03-18 13:57+0100\n"
 "PO-Revision-Date: 2025-12-26 12:19\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
@@ -10,7 +10,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 "
+"&& n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 "
+"&& n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Generator: Poedit 3.4\n"
 "X-Crowdin-Project: fedora-update\n"
 "X-Crowdin-Project-ID: 705967\n"
@@ -18,31 +20,31 @@ msgstr ""
 "X-Crowdin-File: /main/locale/update-extension@purejava.org.pot\n"
 "X-Crowdin-File-ID: 6\n"
 
-#: extension.js:140
+#: extension.js:140 extension.js:144
 msgid "Settings"
 msgstr "Настройки"
 
-#: extension.js:141 extension.js:666
+#: extension.js:141 extension.js:666 extension.js:145 extension.js:691
 msgid "Update now"
 msgstr "Обновить"
 
-#: extension.js:142
+#: extension.js:142 extension.js:146
 msgid "Open package manager"
 msgstr "Открыть менеджер пакетов"
 
-#: extension.js:146
+#: extension.js:146 extension.js:150
 msgid "Checking"
 msgstr "Проверка"
 
-#: extension.js:157
+#: extension.js:157 extension.js:161
 msgid "Check now"
 msgstr "Проверить"
 
-#: extension.js:185
+#: extension.js:185 extension.js:189
 msgid "Waiting first check"
 msgstr "Ожидание первой проверки"
 
-#: extension.js:402
+#: extension.js:402 extension.js:411
 msgid "Last checked"
 msgstr ""
 
@@ -72,15 +74,17 @@ msgstr[1] "Ожидается %d обновления"
 msgstr[2] "Ожидается %d обновлений"
 msgstr[3] ""
 
-#: extension.js:460
+#: extension.js:460 extension.js:485
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr "Примечание: вам необходимо установить dnf, чтобы использовать сценарий проверки обновлений."
+msgstr ""
+"Примечание: вам необходимо установить dnf, чтобы использовать сценарий "
+"проверки обновлений."
 
-#: extension.js:462
+#: extension.js:462 extension.js:487
 msgid "Error"
 msgstr "Ошибка"
 
-#: extension.js:467
+#: extension.js:467 extension.js:492
 msgid "Up to date :)"
 msgstr "Нет обновлений :)"
 
@@ -109,98 +113,125 @@ msgid "Always visible"
 msgstr "Отображать всегда"
 
 #: prefs.xml:94
+#, fuzzy
+msgid "Disable indicator, until at least N updates are available"
+msgstr "Отправлять уведомление, когда доступны новые обновления"
+
+#: prefs.xml:119
+msgid ""
+"Warning: Delaying notifications until multiple updates are available can "
+"hide important security updates and is dangerous."
+msgstr ""
+
+#: prefs.xml:129
 msgid "Use built-in icons"
 msgstr "Использовать встроенные иконки"
 
-#: prefs.xml:106
+#: prefs.xml:141
 msgid "Show updates count on indicator"
 msgstr "Показывать число обновлений на индикаторе"
 
-#: prefs.xml:118
+#: prefs.xml:153
 msgid "Position in Panel"
 msgstr "Положение в панели"
 
-#: prefs.xml:136
+#: prefs.xml:171
 msgid "Left"
 msgstr "Слева"
 
-#: prefs.xml:137
+#: prefs.xml:172
 msgid "Center"
 msgstr "По центру"
 
-#: prefs.xml:138
+#: prefs.xml:173
 msgid "Right"
 msgstr "Справа"
 
-#: prefs.xml:157
+#: prefs.xml:192
 msgid "Menu"
 msgstr "Меню"
 
-#: prefs.xml:160
-msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
-msgstr "Автоматически расширять список обновлений, если количество обновлений меньше этого числа (0, чтобы отключить)"
+#: prefs.xml:195
+msgid ""
+"Auto-expand updates list if updates count is less than this number (0 to "
+"disable)"
+msgstr ""
+"Автоматически расширять список обновлений, если количество обновлений меньше "
+"этого числа (0, чтобы отключить)"
 
-#: prefs.xml:172 prefs.xml:230
+#: prefs.xml:209 prefs.xml:269
 msgid "Strip out versions numbers"
 msgstr "Удалить номера версий"
 
-#: prefs.xml:184
+#: prefs.xml:221
 msgid "Show date/time of last check"
 msgstr ""
 
-#: prefs.xml:199
+#: prefs.xml:236
 msgid "Notification"
 msgstr "Уведомление"
 
-#: prefs.xml:202
+#: prefs.xml:239
 msgid "Send a notification when new updates are available"
 msgstr "Отправлять уведомление, когда доступны новые обновления"
 
-#: prefs.xml:214
+#: prefs.xml:252
 msgid "How much information to show on notifications"
 msgstr "Сколько информации показывать в уведомлениях"
 
-#: prefs.xml:220
+#: prefs.xml:259
 msgid "Count only"
 msgstr "Только количество"
 
-#: prefs.xml:221
+#: prefs.xml:260
 msgid "New updates names"
 msgstr "Названия новых обновлений"
 
-#: prefs.xml:222
+#: prefs.xml:261
 msgid "All updates names"
 msgstr "Названия всех обновлений"
 
-#: prefs.xml:245
+#: prefs.xml:283
 msgid "Advanced settings"
 msgstr "Расширенные настройки"
 
-#: prefs.xml:250
+#: prefs.xml:288
 msgid "Command to check for package updates"
 msgstr "Команда для проверки обновлений пакетов"
 
-#: prefs.xml:283
-msgid "Disable output parsing, count every line as an update. This is the old behavior."
-msgstr "Отключить синтаксический анализ вывода, считать каждую строку обновлением. Это старое поведение."
+#: prefs.xml:311
+msgid ""
+"Disable output parsing, count every line as an update. This is the old "
+"behavior."
+msgstr ""
+"Отключить синтаксический анализ вывода, считать каждую строку обновлением. "
+"Это старое поведение."
 
-#: prefs.xml:297
+#: prefs.xml:327
 msgid "Command to update packages"
 msgstr "Команда для обновления пакетов"
 
-#: prefs.xml:312
-msgid "Package manager local directory path - To detect when new packages are installed"
-msgstr "Путь к локальному каталогу диспетчера пакетов для определения установки новых пакетов"
+#: prefs.xml:342
+msgid ""
+"Package manager local directory path - To detect when new packages are "
+"installed"
+msgstr ""
+"Путь к локальному каталогу диспетчера пакетов для определения установки "
+"новых пакетов"
 
-#: prefs.xml:327
+#: prefs.xml:359
 msgid "Command to open package manager (optional)"
 msgstr "Команда для открытия менеджера пакетов (необязательно)"
 
-#: prefs.xml:342
+#: prefs.xml:374
 msgid "Command to show info for a package (optional)"
 msgstr "Команда для отображения информации о пакете (необязательно)"
 
-#: prefs.xml:357
+#: prefs.xml:389
 msgid "About"
 msgstr "О расширении"
 
+#: extension.js:466
+#, javascript-format
+msgid "%d updates available (below notification threshold)"
+msgstr ""

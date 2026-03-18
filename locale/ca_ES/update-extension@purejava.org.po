@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-01 16:47+0100\n"
+"POT-Creation-Date: 2026-03-18 13:57+0100\n"
 "PO-Revision-Date: 2025-01-26 11:26\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
@@ -18,31 +18,31 @@ msgstr ""
 "X-Crowdin-File: /main/locale/update-extension@purejava.org.pot\n"
 "X-Crowdin-File-ID: 6\n"
 
-#: extension.js:140
+#: extension.js:140 extension.js:144
 msgid "Settings"
 msgstr "Configuració"
 
-#: extension.js:141 extension.js:666
+#: extension.js:141 extension.js:666 extension.js:145 extension.js:691
 msgid "Update now"
 msgstr "Actualitza ara"
 
-#: extension.js:142
+#: extension.js:142 extension.js:146
 msgid "Open package manager"
 msgstr "Obrir el gestor de paquets"
 
-#: extension.js:146
+#: extension.js:146 extension.js:150
 msgid "Checking"
 msgstr "Comprovant"
 
-#: extension.js:157
+#: extension.js:157 extension.js:161
 msgid "Check now"
 msgstr "Comprovar ara"
 
-#: extension.js:185
+#: extension.js:185 extension.js:189
 msgid "Waiting first check"
 msgstr "Esperant la primera comprovació"
 
-#: extension.js:402
+#: extension.js:402 extension.js:411
 msgid "Last checked"
 msgstr "Darrera comprovació"
 
@@ -66,15 +66,17 @@ msgid_plural "There are %d updates pending"
 msgstr[0] "Hi ha %d actualització pendent"
 msgstr[1] "Hi ha %d actualitzacions pendents"
 
-#: extension.js:460
+#: extension.js:460 extension.js:485
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr "Atenció: Heu d'instal·lar dnf per utilitzar l'script de comprovació d'actualitzacions."
+msgstr ""
+"Atenció: Heu d'instal·lar dnf per utilitzar l'script de comprovació "
+"d'actualitzacions."
 
-#: extension.js:462
+#: extension.js:462 extension.js:487
 msgid "Error"
 msgstr "Error"
 
-#: extension.js:467
+#: extension.js:467 extension.js:492
 msgid "Up to date :)"
 msgstr "Actualitzat :)"
 
@@ -103,98 +105,125 @@ msgid "Always visible"
 msgstr "Sempre visible"
 
 #: prefs.xml:94
+#, fuzzy
+msgid "Disable indicator, until at least N updates are available"
+msgstr "Envia una notificació quan hi hagi noves actualitzacions disponibles"
+
+#: prefs.xml:119
+msgid ""
+"Warning: Delaying notifications until multiple updates are available can "
+"hide important security updates and is dangerous."
+msgstr ""
+
+#: prefs.xml:129
 msgid "Use built-in icons"
 msgstr "Utilitzeu les icones integrades"
 
-#: prefs.xml:106
+#: prefs.xml:141
 msgid "Show updates count on indicator"
 msgstr "Mostra el recompte d'actualitzacions a l'indicador"
 
-#: prefs.xml:118
+#: prefs.xml:153
 msgid "Position in Panel"
 msgstr "Posició al Panell"
 
-#: prefs.xml:136
+#: prefs.xml:171
 msgid "Left"
 msgstr "A l'esquerra"
 
-#: prefs.xml:137
+#: prefs.xml:172
 msgid "Center"
 msgstr "Al centre"
 
-#: prefs.xml:138
+#: prefs.xml:173
 msgid "Right"
 msgstr "A la dreta"
 
-#: prefs.xml:157
+#: prefs.xml:192
 msgid "Menu"
 msgstr "Menú"
 
-#: prefs.xml:160
-msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
-msgstr "Expandeix automàticament la llista d'actualitzacions si el nombre d'actualitzacions és inferior a aquest número (0 per desactivar)\""
+#: prefs.xml:195
+msgid ""
+"Auto-expand updates list if updates count is less than this number (0 to "
+"disable)"
+msgstr ""
+"Expandeix automàticament la llista d'actualitzacions si el nombre "
+"d'actualitzacions és inferior a aquest número (0 per desactivar)\""
 
-#: prefs.xml:172 prefs.xml:230
+#: prefs.xml:209 prefs.xml:269
 msgid "Strip out versions numbers"
 msgstr "Elimina els números de versió"
 
-#: prefs.xml:184
+#: prefs.xml:221
 msgid "Show date/time of last check"
 msgstr "Mostra la data i hora de la darrera comprovació"
 
-#: prefs.xml:199
+#: prefs.xml:236
 msgid "Notification"
 msgstr "Notificació"
 
-#: prefs.xml:202
+#: prefs.xml:239
 msgid "Send a notification when new updates are available"
 msgstr "Envia una notificació quan hi hagi noves actualitzacions disponibles"
 
-#: prefs.xml:214
+#: prefs.xml:252
 msgid "How much information to show on notifications"
 msgstr "Quanta informació mostrar en les notificacions"
 
-#: prefs.xml:220
+#: prefs.xml:259
 msgid "Count only"
 msgstr "Només el nombre d'actualitzacions"
 
-#: prefs.xml:221
+#: prefs.xml:260
 msgid "New updates names"
 msgstr "Només els noms"
 
-#: prefs.xml:222
+#: prefs.xml:261
 msgid "All updates names"
 msgstr "Tota la informació"
 
-#: prefs.xml:245
+#: prefs.xml:283
 msgid "Advanced settings"
 msgstr "Configuració avançada"
 
-#: prefs.xml:250
+#: prefs.xml:288
 msgid "Command to check for package updates"
 msgstr "Ordre per comprovar les actualitzacions de paquets"
 
-#: prefs.xml:283
-msgid "Disable output parsing, count every line as an update. This is the old behavior."
-msgstr "Desactiva l'anàlisi de la sortida, compta cada línia com una actualització. Aquest és el comportament antic."
+#: prefs.xml:311
+msgid ""
+"Disable output parsing, count every line as an update. This is the old "
+"behavior."
+msgstr ""
+"Desactiva l'anàlisi de la sortida, compta cada línia com una actualització. "
+"Aquest és el comportament antic."
 
-#: prefs.xml:297
+#: prefs.xml:327
 msgid "Command to update packages"
 msgstr "Ordre per actualitzar paquets"
 
-#: prefs.xml:312
-msgid "Package manager local directory path - To detect when new packages are installed"
-msgstr "Ruta del directori local del gestor de paquets - Per detectar quan s'instal·len nous paquets"
+#: prefs.xml:342
+msgid ""
+"Package manager local directory path - To detect when new packages are "
+"installed"
+msgstr ""
+"Ruta del directori local del gestor de paquets - Per detectar quan "
+"s'instal·len nous paquets"
 
-#: prefs.xml:327
+#: prefs.xml:359
 msgid "Command to open package manager (optional)"
 msgstr "Ordre per obrir l'administrador de paquets (opcional)"
 
-#: prefs.xml:342
+#: prefs.xml:374
 msgid "Command to show info for a package (optional)"
 msgstr "Ordre per mostrar informació d'un paquet (opcional)"
 
-#: prefs.xml:357
+#: prefs.xml:389
 msgid "About"
 msgstr "Quant a"
 
+#: extension.js:466
+#, javascript-format
+msgid "%d updates available (below notification threshold)"
+msgstr ""
