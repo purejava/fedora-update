@@ -106,112 +106,111 @@ msgstr ""
 msgid "Disable indicator, until at least N updates are available"
 msgstr ""
 
-#: prefs.xml:120
+#: prefs.xml:119
 msgid ""
-"<span foreground=\"red\">Warning: Delaying notifications until multiple "
-"updates are available can hide important security updates and is dangerous.</"
-"span>"
+"Warning: Delaying notifications until multiple updates are available can "
+"hide important security updates and is dangerous."
 msgstr ""
 
-#: prefs.xml:127
+#: prefs.xml:129
 msgid "Use built-in icons"
 msgstr ""
 
-#: prefs.xml:139
+#: prefs.xml:141
 msgid "Show updates count on indicator"
 msgstr ""
 
-#: prefs.xml:151
+#: prefs.xml:153
 msgid "Position in Panel"
 msgstr ""
 
-#: prefs.xml:169
+#: prefs.xml:171
 msgid "Left"
 msgstr ""
 
-#: prefs.xml:170
+#: prefs.xml:172
 msgid "Center"
 msgstr ""
 
-#: prefs.xml:171
+#: prefs.xml:173
 msgid "Right"
 msgstr ""
 
-#: prefs.xml:190
+#: prefs.xml:192
 msgid "Menu"
 msgstr ""
 
-#: prefs.xml:193
+#: prefs.xml:195
 msgid ""
 "Auto-expand updates list if updates count is less than this number (0 to "
 "disable)"
 msgstr ""
 
-#: prefs.xml:207 prefs.xml:267
+#: prefs.xml:209 prefs.xml:269
 msgid "Strip out versions numbers"
 msgstr ""
 
-#: prefs.xml:219
+#: prefs.xml:221
 msgid "Show date/time of last check"
 msgstr ""
 
-#: prefs.xml:234
+#: prefs.xml:236
 msgid "Notification"
 msgstr ""
 
-#: prefs.xml:237
+#: prefs.xml:239
 msgid "Send a notification when new updates are available"
 msgstr ""
 
-#: prefs.xml:250
+#: prefs.xml:252
 msgid "How much information to show on notifications"
 msgstr ""
 
-#: prefs.xml:257
+#: prefs.xml:259
 msgid "Count only"
 msgstr ""
 
-#: prefs.xml:258
+#: prefs.xml:260
 msgid "New updates names"
 msgstr ""
 
-#: prefs.xml:259
+#: prefs.xml:261
 msgid "All updates names"
 msgstr ""
 
-#: prefs.xml:281
+#: prefs.xml:283
 msgid "Advanced settings"
 msgstr ""
 
-#: prefs.xml:286
+#: prefs.xml:288
 msgid "Command to check for package updates"
 msgstr ""
 
-#: prefs.xml:309
+#: prefs.xml:311
 msgid ""
 "Disable output parsing, count every line as an update. This is the old "
 "behavior."
 msgstr ""
 
-#: prefs.xml:325
+#: prefs.xml:327
 msgid "Command to update packages"
 msgstr ""
 
-#: prefs.xml:340
+#: prefs.xml:342
 msgid ""
 "Package manager local directory path - To detect when new packages are "
 "installed"
 msgstr ""
 
-#: prefs.xml:357
+#: prefs.xml:359
 msgid "Command to open package manager (optional)"
 msgstr ""
 
-#: prefs.xml:372
+#: prefs.xml:374
 msgid "Command to show info for a package (optional)"
 msgstr ""
 
-#: prefs.xml:387
+#: prefs.xml:389
 msgid "About"
 msgstr ""
 
