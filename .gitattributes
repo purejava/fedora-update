@@ -7,3 +7,4 @@ README.md export-ignore
 /.gitignore export-ignore
 /.github export-ignore
 /.editorconfig export-ignore
+update-translations.sh export-ignore
