@@ -8,6 +8,11 @@ Update indicator for Fedora Linux. GNOME Shell extension.
 
 Created for the more traditional Fedora options using the package manager dnf.
 
+# Compatibility
+Update indicator for Fedora Linux is built for GNOME environments:
+
+* GNOME 44 / 45 / 46 / 47 / 48 / 49 / 50
+
 # Install
 This extension is available on the [GNOME Extensions website](https://extensions.gnome.org/extension/6406/fedora-linux-update-indicator/).
 
