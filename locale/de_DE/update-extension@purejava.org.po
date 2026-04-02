@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-01 16:47+0100\n"
-"PO-Revision-Date: 2024-11-01 16:28\n"
+"POT-Creation-Date: 2026-03-18 13:57+0100\n"
+"PO-Revision-Date: 2026-04-02 05:09\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -11,38 +11,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4\n"
 "X-Crowdin-Project: fedora-update\n"
 "X-Crowdin-Project-ID: 705967\n"
 "X-Crowdin-Language: de\n"
 "X-Crowdin-File: /main/locale/update-extension@purejava.org.pot\n"
 "X-Crowdin-File-ID: 6\n"
 
-#: extension.js:140
+#: extension.js:140 extension.js:144
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: extension.js:141 extension.js:666
+#: extension.js:141 extension.js:666 extension.js:145 extension.js:691
 msgid "Update now"
 msgstr "Jetzt aktualisieren"
 
-#: extension.js:142
+#: extension.js:142 extension.js:146
 msgid "Open package manager"
 msgstr "Paketverwaltung öffnen"
 
-#: extension.js:146
+#: extension.js:146 extension.js:150
 msgid "Checking"
 msgstr "Überprüfe"
 
-#: extension.js:157
+#: extension.js:157 extension.js:161
 msgid "Check now"
 msgstr "Jetzt überprüfen"
 
-#: extension.js:185
+#: extension.js:185 extension.js:189
 msgid "Waiting first check"
 msgstr "Warte auf erste Überprüfung"
 
-#: extension.js:402
+#: extension.js:402 extension.js:411
 msgid "Last checked"
 msgstr "Zuletzt überprüft"
 
@@ -66,15 +65,15 @@ msgid_plural "There are %d updates pending"
 msgstr[0] "Es gibt %d ausstehende Aktualisierung"
 msgstr[1] "Es gibt %d ausstehende Aktualisierungen"
 
-#: extension.js:460
+#: extension.js:460 extension.js:485
 msgid "Note : you have to install dnf to use the 'check for updates' script."
 msgstr "Hinweis: dnf muss installiert werden, um das Skript ‚check for updates‘ verwenden zu können."
 
-#: extension.js:462
+#: extension.js:462 extension.js:487
 msgid "Error"
 msgstr "Fehler"
 
-#: extension.js:467
+#: extension.js:467 extension.js:492
 msgid "Up to date :)"
 msgstr "Auf dem Laufenden :)"
 
@@ -103,98 +102,111 @@ msgid "Always visible"
 msgstr "Immer sichtbar"
 
 #: prefs.xml:94
+msgid "Disable indicator, until at least N updates are available"
+msgstr ""
+
+#: prefs.xml:119
+msgid "Warning: Delaying notifications until multiple updates are available can hide important security updates and is dangerous."
+msgstr ""
+
+#: prefs.xml:129
 msgid "Use built-in icons"
 msgstr "Eingebaute Symbole verwenden"
 
-#: prefs.xml:106
+#: prefs.xml:141
 msgid "Show updates count on indicator"
 msgstr "Zeige Anzahl an Aktualisierungen"
 
-#: prefs.xml:118
+#: prefs.xml:153
 msgid "Position in Panel"
 msgstr "Position in der Leiste"
 
-#: prefs.xml:136
+#: prefs.xml:171
 msgid "Left"
 msgstr "Links"
 
-#: prefs.xml:137
+#: prefs.xml:172
 msgid "Center"
 msgstr "Mitte"
 
-#: prefs.xml:138
+#: prefs.xml:173
 msgid "Right"
 msgstr "Rechts"
 
-#: prefs.xml:157
+#: prefs.xml:192
 msgid "Menu"
 msgstr "Menü"
 
-#: prefs.xml:160
+#: prefs.xml:195
 msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
 msgstr "Liste mit Aktualisierungen automatisch ausklappen, wenn Anzahl der Aktualisierungen geringer als diese Zahl ist (0 zum Deaktivieren)"
 
-#: prefs.xml:172 prefs.xml:230
+#: prefs.xml:209 prefs.xml:269
 msgid "Strip out versions numbers"
 msgstr "Versionsnummern weglassen"
 
-#: prefs.xml:184
+#: prefs.xml:221
 msgid "Show date/time of last check"
 msgstr "Zeige Datum/Uhrzeit der letzten Überprüfung"
 
-#: prefs.xml:199
+#: prefs.xml:236
 msgid "Notification"
 msgstr "Benachrichtigung"
 
-#: prefs.xml:202
+#: prefs.xml:239
 msgid "Send a notification when new updates are available"
 msgstr "Sende eine Benachrichtigung, sobald Aktualisierungen verfügbar sind"
 
-#: prefs.xml:214
+#: prefs.xml:252
 msgid "How much information to show on notifications"
 msgstr "Informationen, die in der Benachrichtigung angezeigt werden"
 
-#: prefs.xml:220
+#: prefs.xml:259
 msgid "Count only"
 msgstr "Nur Anzahl"
 
-#: prefs.xml:221
+#: prefs.xml:260
 msgid "New updates names"
 msgstr "Namen der neuen Aktualisierungen"
 
-#: prefs.xml:222
+#: prefs.xml:261
 msgid "All updates names"
 msgstr "Namen aller Aktualisierungen"
 
-#: prefs.xml:245
+#: prefs.xml:283
 msgid "Advanced settings"
 msgstr "Erweiterte Einstellungen"
 
-#: prefs.xml:250
+#: prefs.xml:288
 msgid "Command to check for package updates"
 msgstr "Befehl, um auf Aktualisierungen zu prüfen"
 
-#: prefs.xml:283
+#: prefs.xml:311
 msgid "Disable output parsing, count every line as an update. This is the old behavior."
 msgstr "Das Parsen der Ausgabe wird abgeschaltet, jede Zeile wird als eine Aktualisierung gezählt. Dies ist das alte Verhalten."
 
-#: prefs.xml:297
+#: prefs.xml:327
 msgid "Command to update packages"
 msgstr "Befehl, um Pakete zu aktualisieren"
 
-#: prefs.xml:312
+#: prefs.xml:342
 msgid "Package manager local directory path - To detect when new packages are installed"
 msgstr "Lokales Paket-Manager-Verzeichnis – Wird benötigt, um festzustellen, dass neue Pakete installiert werden"
 
-#: prefs.xml:327
+#: prefs.xml:359
 msgid "Command to open package manager (optional)"
 msgstr "Befehl zum Öffnen der Paketverwaltung (optional)"
 
-#: prefs.xml:342
+#: prefs.xml:374
 msgid "Command to show info for a package (optional)"
 msgstr "Befehl, um Info zu einem Paket anzuzeigen (optional)"
 
-#: prefs.xml:357
+#: prefs.xml:389
 msgid "About"
 msgstr "Über"
+
+#: extension.js:466
+#, javascript-format
+msgid "%d updates available (below notification threshold)"
+msgstr ""
 
