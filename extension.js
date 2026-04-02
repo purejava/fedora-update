@@ -194,7 +194,7 @@ class FedoraUpdateIndicator extends Button {
 
 		// Load settings
 		this._settings = this._extension.getSettings();
-		this._settings.connect('changed', this._positionChanged.bind(this));
+		this._settingsPositionChangedId = this._settings.connect('changed', this._positionChanged.bind(this));
 		this._settingsChangedId = this._settings.connect('changed', this._applySettings.bind(this));
 		this._applySettings();
 
@@ -305,12 +305,30 @@ class FedoraUpdateIndicator extends Button {
 
 	destroy() {
 		console.log(`Fedora-update : unloading`);
-		this._settings.disconnect( this._settingsChangedId );
+		if (this.monitor) {
+			if (this._monitorChangedId) {
+				this.monitor.disconnect(this._monitorChangedId);
+				this._monitorChangedId = null;
+			}
+				this.monitor.cancel?.();
+				this.monitor = null;
+		}
+		if (this._settings) {
+			if (this._settingsPositionChangedId) {
+				this._settings.disconnect(this._settingsPositionChangedId);
+				this._settingsPositionChangedId = null;
+			}
+
+			if (this._settingsChangedId) {
+				this._settings.disconnect(this._settingsChangedId);
+				this._settingsChangedId = null;
+			}
+		}
 		if (this._notifSource) {
 			// Delete the notification source, which lay still have a notification shown
 			this._notifSource.destroy();
 			this._notifSource = null;
-		};
+		}
 		if (this.monitor) {
 			// Stop spying on package manager local dir
 			this.monitor.cancel();
@@ -378,7 +396,7 @@ class FedoraUpdateIndicator extends Button {
 			this.monitoring = PACKAGE_CACHE_DIR;
 			this.packages_dir = Gio.file_new_for_path(PACKAGE_CACHE_DIR);
 			this.monitor = this.packages_dir.monitor_directory(0, null);
-			this.monitor.connect('changed', this._onFolderChanged.bind(this));
+			this._monitorChangedId = this.monitor.connect('changed', this._onFolderChanged.bind(this));
 		}
 	}
 
