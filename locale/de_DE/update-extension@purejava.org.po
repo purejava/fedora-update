@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-18 13:57+0100\n"
-"PO-Revision-Date: 2026-04-02 05:09\n"
+"PO-Revision-Date: 2026-04-02 07:44\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -103,11 +103,11 @@ msgstr "Immer sichtbar"
 
 #: prefs.xml:94
 msgid "Disable indicator, until at least N updates are available"
-msgstr ""
+msgstr "Anzeige deaktivieren, bis mindestens N Updates verfügbar sind"
 
 #: prefs.xml:119
 msgid "Warning: Delaying notifications until multiple updates are available can hide important security updates and is dangerous."
-msgstr ""
+msgstr "Warnung: Verzögerte Benachrichtigungen, bis mehrere Updates verfügbar sind, können wichtige Sicherheitsupdates ausblenden und ist gefährlich."
 
 #: prefs.xml:129
 msgid "Use built-in icons"
@@ -208,5 +208,5 @@ msgstr "Über"
 #: extension.js:466
 #, javascript-format
 msgid "%d updates available (below notification threshold)"
-msgstr ""
+msgstr "%d Aktualisierungen verfügbar (unterhalb der Benachrichtigungsschwelle)"
 
