@@ -3,16 +3,14 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-18 13:57+0100\n"
-"PO-Revision-Date: 2025-08-24 18:36\n"
+"PO-Revision-Date: 2026-04-02 05:09\n"
 "Last-Translator: \n"
 "Language-Team: Hebrew\n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
-"X-Generator: Poedit 3.4\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
 "X-Crowdin-Project: fedora-update\n"
 "X-Crowdin-Project-ID: 705967\n"
 "X-Crowdin-Language: he\n"
@@ -110,14 +108,11 @@ msgid "Always visible"
 msgstr "תמיד גלוי"
 
 #: prefs.xml:94
-#, fuzzy
 msgid "Disable indicator, until at least N updates are available"
-msgstr "שלח התראה כאשר יש עדכונים חדשים זמינים"
+msgstr ""
 
 #: prefs.xml:119
-msgid ""
-"Warning: Delaying notifications until multiple updates are available can "
-"hide important security updates and is dangerous."
+msgid "Warning: Delaying notifications until multiple updates are available can hide important security updates and is dangerous."
 msgstr ""
 
 #: prefs.xml:129
@@ -149,12 +144,8 @@ msgid "Menu"
 msgstr "תפריט"
 
 #: prefs.xml:195
-msgid ""
-"Auto-expand updates list if updates count is less than this number (0 to "
-"disable)"
-msgstr ""
-"הרחבה אוטומטית של רשימת עדכונים אם מספר העדכונים נמוכה ממספר זה (0 כדי "
-"להשבית)"
+msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
+msgstr "הרחבה אוטומטית של רשימת עדכונים אם מספר העדכונים נמוכה ממספר זה (0 כדי להשבית)"
 
 #: prefs.xml:209 prefs.xml:269
 msgid "Strip out versions numbers"
@@ -197,9 +188,7 @@ msgid "Command to check for package updates"
 msgstr "פקודה לבדיקת עדכוני חבילות"
 
 #: prefs.xml:311
-msgid ""
-"Disable output parsing, count every line as an update. This is the old "
-"behavior."
+msgid "Disable output parsing, count every line as an update. This is the old behavior."
 msgstr "השבת ניתוח פלט, ספור כל שורה כעדכון. זוהי ההתנהגות הישנה."
 
 #: prefs.xml:327
@@ -207,9 +196,7 @@ msgid "Command to update packages"
 msgstr "פקודה לעדכון חבילות"
 
 #: prefs.xml:342
-msgid ""
-"Package manager local directory path - To detect when new packages are "
-"installed"
+msgid "Package manager local directory path - To detect when new packages are installed"
 msgstr "נתיב ספרייה מקומית של מנהל החבילות - לזיהוי כאשר חבילות חדשות מותקנות"
 
 #: prefs.xml:359
@@ -228,3 +215,4 @@ msgstr "אודות"
 #, javascript-format
 msgid "%d updates available (below notification threshold)"
 msgstr ""
+
