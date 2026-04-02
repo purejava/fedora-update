@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-18 13:57+0100\n"
-"PO-Revision-Date: 2024-12-16 20:12\n"
+"PO-Revision-Date: 2026-04-02 05:09\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
@@ -11,7 +11,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4\n"
 "X-Crowdin-Project: fedora-update\n"
 "X-Crowdin-Project-ID: 705967\n"
 "X-Crowdin-Language: pt-BR\n"
@@ -68,9 +67,7 @@ msgstr[1] "Há %d atualizações pendentes"
 
 #: extension.js:460 extension.js:485
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr ""
-"Nota: você tem que ter o dnf instalado para usar o script \"Verificar por "
-"atualizações\"."
+msgstr "Nota: você tem que ter o dnf instalado para usar o script \"Verificar por atualizações\"."
 
 #: extension.js:462 extension.js:487
 msgid "Error"
@@ -105,14 +102,11 @@ msgid "Always visible"
 msgstr "Sempre visível"
 
 #: prefs.xml:94
-#, fuzzy
 msgid "Disable indicator, until at least N updates are available"
-msgstr "Notificar quando novas atualizações estiverem disponíveis"
+msgstr ""
 
 #: prefs.xml:119
-msgid ""
-"Warning: Delaying notifications until multiple updates are available can "
-"hide important security updates and is dangerous."
+msgid "Warning: Delaying notifications until multiple updates are available can hide important security updates and is dangerous."
 msgstr ""
 
 #: prefs.xml:129
@@ -144,9 +138,7 @@ msgid "Menu"
 msgstr "Menu"
 
 #: prefs.xml:195
-msgid ""
-"Auto-expand updates list if updates count is less than this number (0 to "
-"disable)"
+msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
 msgstr ""
 
 #: prefs.xml:209 prefs.xml:269
@@ -190,9 +182,7 @@ msgid "Command to check for package updates"
 msgstr "Comando para verificar se há atualizações de pacotes"
 
 #: prefs.xml:311
-msgid ""
-"Disable output parsing, count every line as an update. This is the old "
-"behavior."
+msgid "Disable output parsing, count every line as an update. This is the old behavior."
 msgstr ""
 
 #: prefs.xml:327
@@ -200,9 +190,7 @@ msgid "Command to update packages"
 msgstr "Comando para atualizar pacotes"
 
 #: prefs.xml:342
-msgid ""
-"Package manager local directory path - To detect when new packages are "
-"installed"
+msgid "Package manager local directory path - To detect when new packages are installed"
 msgstr ""
 
 #: prefs.xml:359
@@ -221,3 +209,4 @@ msgstr "Sobre"
 #, javascript-format
 msgid "%d updates available (below notification threshold)"
 msgstr ""
+
