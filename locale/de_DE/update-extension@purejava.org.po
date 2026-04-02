@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-18 13:57+0100\n"
-"PO-Revision-Date: 2024-11-01 16:28\n"
+"PO-Revision-Date: 2026-04-02 05:09\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -11,7 +11,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4\n"
 "X-Crowdin-Project: fedora-update\n"
 "X-Crowdin-Project-ID: 705967\n"
 "X-Crowdin-Language: de\n"
@@ -68,9 +67,7 @@ msgstr[1] "Es gibt %d ausstehende Aktualisierungen"
 
 #: extension.js:460 extension.js:485
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr ""
-"Hinweis: dnf muss installiert werden, um das Skript ‚check for updates‘ "
-"verwenden zu können."
+msgstr "Hinweis: dnf muss installiert werden, um das Skript ‚check for updates‘ verwenden zu können."
 
 #: extension.js:462 extension.js:487
 msgid "Error"
@@ -105,14 +102,11 @@ msgid "Always visible"
 msgstr "Immer sichtbar"
 
 #: prefs.xml:94
-#, fuzzy
 msgid "Disable indicator, until at least N updates are available"
-msgstr "Sende eine Benachrichtigung, sobald Aktualisierungen verfügbar sind"
+msgstr ""
 
 #: prefs.xml:119
-msgid ""
-"Warning: Delaying notifications until multiple updates are available can "
-"hide important security updates and is dangerous."
+msgid "Warning: Delaying notifications until multiple updates are available can hide important security updates and is dangerous."
 msgstr ""
 
 #: prefs.xml:129
@@ -144,12 +138,8 @@ msgid "Menu"
 msgstr "Menü"
 
 #: prefs.xml:195
-msgid ""
-"Auto-expand updates list if updates count is less than this number (0 to "
-"disable)"
-msgstr ""
-"Liste mit Aktualisierungen automatisch ausklappen, wenn Anzahl der "
-"Aktualisierungen geringer als diese Zahl ist (0 zum Deaktivieren)"
+msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
+msgstr "Liste mit Aktualisierungen automatisch ausklappen, wenn Anzahl der Aktualisierungen geringer als diese Zahl ist (0 zum Deaktivieren)"
 
 #: prefs.xml:209 prefs.xml:269
 msgid "Strip out versions numbers"
@@ -192,24 +182,16 @@ msgid "Command to check for package updates"
 msgstr "Befehl, um auf Aktualisierungen zu prüfen"
 
 #: prefs.xml:311
-msgid ""
-"Disable output parsing, count every line as an update. This is the old "
-"behavior."
-msgstr ""
-"Das Parsen der Ausgabe wird abgeschaltet, jede Zeile wird als eine "
-"Aktualisierung gezählt. Dies ist das alte Verhalten."
+msgid "Disable output parsing, count every line as an update. This is the old behavior."
+msgstr "Das Parsen der Ausgabe wird abgeschaltet, jede Zeile wird als eine Aktualisierung gezählt. Dies ist das alte Verhalten."
 
 #: prefs.xml:327
 msgid "Command to update packages"
 msgstr "Befehl, um Pakete zu aktualisieren"
 
 #: prefs.xml:342
-msgid ""
-"Package manager local directory path - To detect when new packages are "
-"installed"
-msgstr ""
-"Lokales Paket-Manager-Verzeichnis – Wird benötigt, um festzustellen, dass "
-"neue Pakete installiert werden"
+msgid "Package manager local directory path - To detect when new packages are installed"
+msgstr "Lokales Paket-Manager-Verzeichnis – Wird benötigt, um festzustellen, dass neue Pakete installiert werden"
 
 #: prefs.xml:359
 msgid "Command to open package manager (optional)"
@@ -227,3 +209,4 @@ msgstr "Über"
 #, javascript-format
 msgid "%d updates available (below notification threshold)"
 msgstr ""
+
