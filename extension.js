@@ -611,16 +611,34 @@ class FedoraUpdateIndicator extends Button {
 
       if (proc.get_successful()) {
         for (const line of stdout.split('\n')) {
-          let nameMatch = line.match(/^Name\s+:\s+([^\r\n]+)$/);
-          if (nameMatch !== null) {
-            name = nameMatch[1].trim();
+          const separator = line.indexOf(':');
+
+          if (separator === -1) {
             continue;
           }
 
-          let sourceMatch = line.match(/^Source\s+:\s+([A-Za-z0-9_.+]+(?:-[A-Za-z0-9_.+]+)*)-\d/);
-          if (sourceMatch !== null) {
-            rootPackage = sourceMatch[1].trim();
-            break;
+          const key = line.substring(0, separator).trim();
+          const value = line.substring(separator + 1).trim();
+
+          if (key === 'Name') {
+            name = value;
+            continue;
+          }
+
+          if (key === 'Source') {
+            let versionSeparator = -1;
+
+            for (let i = 0; i < value.length - 1; i++) {
+              if (value[i] === '-' && value[i + 1] >= '0' && value[i + 1] <= '9') {
+                versionSeparator = i;
+                break;
+              }
+            }
+
+            if (versionSeparator !== -1) {
+              rootPackage = value.substring(0, versionSeparator);
+              break;
+            }
           }
         }
       }
