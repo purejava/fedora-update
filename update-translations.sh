@@ -6,7 +6,7 @@ LOCALE_DIR="locale"
 POT_FILE="$LOCALE_DIR/$DOMAIN.pot"
 
 for po in "$LOCALE_DIR"/*/"$DOMAIN.po"; do
-    [ -e "$po" ] || continue
+    [[ -e "$po" ]] || continue
 
     lang_dir="$(dirname "$po")"
     lang="$(basename "$lang_dir")"
@@ -18,7 +18,7 @@ for po in "$LOCALE_DIR"/*/"$DOMAIN.po"; do
     echo "Updating $po"
     msgmerge --update --backup=none "$po" "$POT_FILE"
 
-    if [ -d "$mo_dir" ]; then
+    if [[ -d "$mo_dir" ]]; then
         echo "Compiling $mo_file"
         msgfmt "$po" -o "$mo_file"
     else

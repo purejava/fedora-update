@@ -63,7 +63,7 @@ let UPDATES_LIST       = [];
 let LAST_CHECK         = undefined;
 
 /* A process builder without i10n for reproducible processing. */
-var launcher = null;
+let launcher = null;
 
 export default class FedoraUpdateIndicatorExtension extends Extension {
 
@@ -91,26 +91,31 @@ class FedoraUpdateIndicator extends Button {
 
 	// Determins the dnf version and returns the first digit
 	_dnfVersion() {
-		return new Promise((resolve, reject) => {
-			let proc = this.launcher.spawnv(['dnf', '--version']);
-			proc.communicate_utf8_async(null, null, (proc, res) => {
-				let [, stdout, ] = proc.communicate_utf8_finish(res);
-				if (proc.get_successful()) {
-					let m = 0;
-					for (const match of stdout.matchAll((/^(\w*\s\w*\s)?(\d)/g))) {
-                        m = match[2];
-                    }
-					if (m !== 0) {
-						resolve(m);
-					} else {
-						reject(new Error("Version match not found"));
-					}
-					} else {
-						reject(new Error("Process launch wasn't successful"));
-					}
-				});
-			});
-	}
+    return new Promise((resolve, reject) => {
+      let proc = this.launcher.spawnv(['dnf', '--version']);
+
+      proc.communicate_utf8_async(null, null, (proc, res) => {
+        let [, stdout, ] = proc.communicate_utf8_finish(res);
+
+        if (!proc.get_successful()) {
+          reject(new Error("Process launch wasn't successful"));
+          return;
+        }
+
+        let version = null;
+
+        for (const match of stdout.matchAll(/^(\w*\s\w*\s)?(\d)/g)) {
+          version = match[2];
+        }
+
+        if (version === null) {
+          reject(new Error("Version match not found"));
+        } else {
+          resolve(version);
+        }
+      });
+    });
+  }
 
 	_init(ext) {
 		console.log(`Fedora-update : loading`);
@@ -291,7 +296,7 @@ class FedoraUpdateIndicator extends Button {
 			// Adjust the delay so that locking screen or changing settings does not reset
 			// the countdown to next check
 			// Remove how many seconds already passed since last check
-			delay -= ((new Date()) - LAST_CHECK) / 1000;
+			delay -= ((Date.now()) - LAST_CHECK) / 1000;
 			// Do not go under "First check delay" setting
 			if (delay < BOOT_WAIT) delay = BOOT_WAIT;
 		}
@@ -415,7 +420,7 @@ class FedoraUpdateIndicator extends Button {
 	}
 
 	_showChecking(isChecking) {
-		if (isChecking == true) {
+		if (isChecking) {
 			this.updateIcon.set_gicon( this._getCustIcon('fedora-unknown-symbolic') );
 			this.checkNowMenuContainer.visible = false;
 			this.checkingMenuItem.actor.visible = true;;
@@ -445,14 +450,14 @@ class FedoraUpdateIndicator extends Button {
 							updateList = this._updateList;
 						} else {
 							// Keep only packets that was not in the previous notification
-							updateList = this._updateList.filter(function(pkg) { return UPDATES_LIST.indexOf(pkg) < 0 });
+							updateList = this._updateList.filter(pkg => !UPDATES_LIST.includes(pkg));
 						}
 						// Filter out titles and whatnot
 						if (!DISABLE_PARSING) {
 							updateList = updateList.filter(function(line) { return RE_UpdateLine.test(line) });
 						}
 						// If version numbers should be stripped, do it
-						if (STRIP_VERSIONS_N == true) {
+						if (STRIP_VERSIONS_N) {
 							updateList = updateList.map(function(p) {
 								// Try to keep only what's before the first space
 								var chunks = p.split(" ",2);
@@ -595,23 +600,35 @@ class FedoraUpdateIndicator extends Button {
 	}
 
 	_packageInfo(item) {
-		this.menu.close();
-		let proc = this.launcher.spawnv(['dnf', 'info', item]);
-		proc.communicate_utf8_async(null, null, (proc, res) => {
-			let name = "NAME";
-			let rootPackage = "PACKAGE";
-			let [,stdout,] = proc.communicate_utf8_finish(res);
-			if (proc.get_successful()) {
-				let m = stdout.match(/^Name\s+:\s+(\w+(-\w+)*)*.*?^Source\s+:\s+((\w+)(-\w+)?)(-\d)/ms);
-				if (m !== null) {
-					name = m[1]; // should be same as item
-					rootPackage = m[3];
-				}
-			}
-			let command = PACKAGE_INFO_CMD.format(rootPackage, item);
-			Util.spawnCommandLine(command);
-		});
-	}
+    this.menu.close();
+
+    let proc = this.launcher.spawnv(['dnf', 'info', item]);
+    proc.communicate_utf8_async(null, null, (proc, res) => {
+      let name = "NAME";
+      let rootPackage = "PACKAGE";
+
+      let [, stdout,] = proc.communicate_utf8_finish(res);
+
+      if (proc.get_successful()) {
+        for (const line of stdout.split('\n')) {
+          let nameMatch = line.match(/^Name\s+:\s+(.+)$/);
+          if (nameMatch !== null) {
+            name = nameMatch[1].trim();
+            continue;
+          }
+
+          let sourceMatch = line.match(/^Source\s+:\s+(.+?)-\d/);
+          if (sourceMatch !== null) {
+            rootPackage = sourceMatch[1].trim();
+            break;
+          }
+        }
+      }
+
+      let command = PACKAGE_INFO_CMD.format(rootPackage, item);
+      Util.spawnCommandLine(command);
+    });
+  }
 
 	_checkUpdates() {
 		// Remove timer if any (in case the trigger was menu or external)
@@ -625,8 +642,8 @@ class FedoraUpdateIndicator extends Button {
 		try {
 			// Parse check command line
 			let [parseok, argvp] = GLib.shell_parse_argv( CHECK_CMD );
-			if (!parseok) { throw 'Parse error' };
-			let [res, pid, in_fd, out_fd, err_fd]  = GLib.spawn_async_with_pipes(null, argvp, null, GLib.SpawnFlags.DO_NOT_REAP_CHILD, null);
+			if (!parseok) { throw new Error('Parse error'); };
+			let [, pid, , out_fd, ] = GLib.spawn_async_with_pipes(null, argvp, null, GLib.SpawnFlags.DO_NOT_REAP_CHILD, null);
 			// Let's buffer the command's output - that's a input for us !
 			this._updateProcess_stream = new Gio.DataInputStream({
 				base_stream: new GioUnix.InputStream({fd: out_fd})
@@ -657,9 +674,9 @@ class FedoraUpdateIndicator extends Button {
 	_checkUpdatesRead() {
 		// Read the buffered output
 		let updateList = [];
-		let out, size;
+		let out;
 		do {
-			[out, size] = this._updateProcess_stream.read_line_utf8(null);
+			[out] = this._updateProcess_stream.read_line_utf8(null);
 			if (out) updateList.push(out);
 		} while (out);
 		this._updateList = updateList;

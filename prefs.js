@@ -76,7 +76,7 @@ export default class FedoraUpdatePreferences extends ExtensionPreferences {
 		notifyThresholdCombo.connect('changed', () => {
 			const selected = notifyThresholdCombo.get_active_id();
 			if (selected !== null)
-				settings.set_int('notify-threshold', parseInt(selected, 10));
+				settings.set_int('notify-threshold', Number.parseInt(selected, 10));
 
 			updateNotifyThresholdWarning();
 		});
