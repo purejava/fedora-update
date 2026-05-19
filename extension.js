@@ -611,13 +611,13 @@ class FedoraUpdateIndicator extends Button {
 
       if (proc.get_successful()) {
         for (const line of stdout.split('\n')) {
-          let nameMatch = line.match(/^Name\s+:\s+(.+)$/);
+          let nameMatch = line.match(/^Name\s+:\s+([^\r\n]+)$/);
           if (nameMatch !== null) {
             name = nameMatch[1].trim();
             continue;
           }
 
-          let sourceMatch = line.match(/^Source\s+:\s+(.+?)-\d/);
+          let sourceMatch = line.match(/^Source\s+:\s+([A-Za-z0-9_.+]+(?:-[A-Za-z0-9_.+]+)*)-\d/);
           if (sourceMatch !== null) {
             rootPackage = sourceMatch[1].trim();
             break;
