@@ -1,6 +1,7 @@
 # fedora-update
 
 [![License](https://img.shields.io/github/license/purejava/fedora-update.svg)](https://github.com/purejava/fedora-update/blob/main/LICENSE.txt)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=purejava_fedora-update&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=purejava_fedora-update)
 [![Crowdin](https://badges.crowdin.net/fedora-update/localized.svg)](https://crowdin.com/project/fedora-update)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=XVX9ZM7WE4ANL)
 
