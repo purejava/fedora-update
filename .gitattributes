@@ -8,3 +8,4 @@ README.md export-ignore
 /.github export-ignore
 /.editorconfig export-ignore
 update-translations.sh export-ignore
+schemas/gschemas.compiled export-ignore
