@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-18 13:57+0100\n"
+"POT-Creation-Date: 2026-07-13 15:44+0200\n"
 "PO-Revision-Date: 2026-04-02 05:09\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
@@ -17,63 +17,70 @@ msgstr ""
 "X-Crowdin-File: /main/locale/update-extension@purejava.org.pot\n"
 "X-Crowdin-File-ID: 6\n"
 
-#: extension.js:140 extension.js:144
+#: extension.js:149
 msgid "Settings"
 msgstr "Ajustes"
 
-#: extension.js:141 extension.js:666 extension.js:145 extension.js:691
+#: extension.js:150 extension.js:761
 msgid "Update now"
 msgstr "Actualizar ahora"
 
-#: extension.js:142 extension.js:146
+#: extension.js:151
 msgid "Open package manager"
 msgstr "Abrir gestor de paquetes"
 
-#: extension.js:146 extension.js:150
+#: extension.js:155
 msgid "Checking"
 msgstr "Comprobando"
 
-#: extension.js:157 extension.js:161
+#: extension.js:166
 msgid "Check now"
 msgstr "Comprobar ahora"
 
-#: extension.js:185 extension.js:189
+#: extension.js:194
 msgid "Waiting first check"
 msgstr "Esperando la primera comprobación"
 
-#: extension.js:402 extension.js:411
+#: extension.js:451
 msgid "Last checked"
 msgstr "Última vez revisado"
 
-#: extension.js:411
+#: extension.js:461
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
 msgstr[0] "%d actualización pendiente"
 msgstr[1] "%d actualizaciones pendientes"
 
-#: extension.js:437 extension.js:443
+#: extension.js:487 extension.js:493
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
 msgstr[0] "Nueva Actualización de Fedora Linux"
 msgstr[1] "Nuevas Actualizaciones de Fedora Linux"
 
-#: extension.js:444
+#: extension.js:494
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
 msgstr[0] "Hay %d actualización pendiente"
 msgstr[1] "Hay %d actualizaciones pendientes"
 
-#: extension.js:460 extension.js:485
-msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr "Nota: tiene que instalar dnf para usar el script \"Comprobar Actualizaciones\"."
+#: extension.js:506
+#, javascript-format
+msgid "%d updates available (below notification threshold)"
+msgstr ""
 
-#: extension.js:462 extension.js:487
+#: extension.js:525
+msgid "Note : you have to install dnf to use the 'check for updates' script."
+msgstr ""
+"Nota: tiene que instalar dnf para usar el script \"Comprobar "
+"Actualizaciones\"."
+
+#: extension.js:527
 msgid "Error"
 msgstr "Error"
 
-#: extension.js:467 extension.js:492
+#: extension.js:532
 msgid "Up to date :)"
 msgstr "Actualizado :)"
 
@@ -106,7 +113,9 @@ msgid "Disable indicator, until at least N updates are available"
 msgstr ""
 
 #: prefs.xml:119
-msgid "Warning: Delaying notifications until multiple updates are available can hide important security updates and is dangerous."
+msgid ""
+"Warning: Delaying notifications until multiple updates are available can "
+"hide important security updates and is dangerous."
 msgstr ""
 
 #: prefs.xml:129
@@ -138,8 +147,12 @@ msgid "Menu"
 msgstr "Menú"
 
 #: prefs.xml:195
-msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
-msgstr "Autoexpandir lista de actualizaciones si el número de actualizaciones es menor que este número (0 para desactivar)"
+msgid ""
+"Auto-expand updates list if updates count is less than this number (0 to "
+"disable)"
+msgstr ""
+"Autoexpandir lista de actualizaciones si el número de actualizaciones es "
+"menor que este número (0 para desactivar)"
 
 #: prefs.xml:209 prefs.xml:269
 msgid "Strip out versions numbers"
@@ -182,16 +195,24 @@ msgid "Command to check for package updates"
 msgstr "Comando para comprobar actualizaciones de paquetes"
 
 #: prefs.xml:311
-msgid "Disable output parsing, count every line as an update. This is the old behavior."
-msgstr "Desactivar el análisis de salida, contar cada línea como actualización. Este es el comportamiento antiguo."
+msgid ""
+"Disable output parsing, count every line as an update. This is the old "
+"behavior."
+msgstr ""
+"Desactivar el análisis de salida, contar cada línea como actualización. Este "
+"es el comportamiento antiguo."
 
 #: prefs.xml:327
 msgid "Command to update packages"
 msgstr "Comando para actualizar paquetes"
 
 #: prefs.xml:342
-msgid "Package manager local directory path - To detect when new packages are installed"
-msgstr "Ruta del directorio local del gestor de paquetes - Detectar cuando se instalen nuevos paquetes"
+msgid ""
+"Package manager local directory path - To detect when new packages are "
+"installed"
+msgstr ""
+"Ruta del directorio local del gestor de paquetes - Detectar cuando se "
+"instalen nuevos paquetes"
 
 #: prefs.xml:359
 msgid "Command to open package manager (optional)"
@@ -204,9 +225,3 @@ msgstr "Comando para mostrar información para un paquete (opcional)"
 #: prefs.xml:389
 msgid "About"
 msgstr "Acerca de"
-
-#: extension.js:466
-#, javascript-format
-msgid "%d updates available (below notification threshold)"
-msgstr ""
-

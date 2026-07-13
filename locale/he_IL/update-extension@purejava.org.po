@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-18 13:57+0100\n"
+"POT-Creation-Date: 2026-07-13 15:44+0200\n"
 "PO-Revision-Date: 2026-04-02 05:09\n"
 "Last-Translator: \n"
 "Language-Team: Hebrew\n"
@@ -10,42 +10,43 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
 "X-Crowdin-Project: fedora-update\n"
 "X-Crowdin-Project-ID: 705967\n"
 "X-Crowdin-Language: he\n"
 "X-Crowdin-File: /main/locale/update-extension@purejava.org.pot\n"
 "X-Crowdin-File-ID: 6\n"
 
-#: extension.js:140 extension.js:144
+#: extension.js:149
 msgid "Settings"
 msgstr "הגדרות"
 
-#: extension.js:141 extension.js:666 extension.js:145 extension.js:691
+#: extension.js:150 extension.js:761
 msgid "Update now"
 msgstr "עדכן עכשיו"
 
-#: extension.js:142 extension.js:146
+#: extension.js:151
 msgid "Open package manager"
 msgstr "פתח את מנהל החבילות"
 
-#: extension.js:146 extension.js:150
+#: extension.js:155
 msgid "Checking"
 msgstr "בודק"
 
-#: extension.js:157 extension.js:161
+#: extension.js:166
 msgid "Check now"
 msgstr "בדוק עכשיו"
 
-#: extension.js:185 extension.js:189
+#: extension.js:194
 msgid "Waiting first check"
 msgstr "מחכה לבדיקה ראשונית"
 
-#: extension.js:402 extension.js:411
+#: extension.js:451
 msgid "Last checked"
 msgstr "נבדק לאחרונה"
 
-#: extension.js:411
+#: extension.js:461
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
@@ -54,7 +55,7 @@ msgstr[1] "%d עדכונים ממתינים"
 msgstr[2] "%d עדכונים ממתינים"
 msgstr[3] "%d עדכונים ממתינים"
 
-#: extension.js:437 extension.js:443
+#: extension.js:487 extension.js:493
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
 msgstr[0] "עדכון חדש לפדורה לינוקס"
@@ -62,7 +63,7 @@ msgstr[1] "שני עדכונים חדשים לפדורה לינוקס"
 msgstr[2] "עדכונים חדש לפדורה לינוקס"
 msgstr[3] "עדכונים חדש לפדורה לינוקס"
 
-#: extension.js:444
+#: extension.js:494
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
@@ -71,15 +72,20 @@ msgstr[1] "יש %d עדכונים ממתינים"
 msgstr[2] "יש %d עדכונים ממתינים"
 msgstr[3] "יש %d עדכונים ממתינים"
 
-#: extension.js:460 extension.js:485
+#: extension.js:506
+#, javascript-format
+msgid "%d updates available (below notification threshold)"
+msgstr ""
+
+#: extension.js:525
 msgid "Note : you have to install dnf to use the 'check for updates' script."
 msgstr "יש להתקין dnf כדי להשתמש בסקריפט 'חפש עדכונים'."
 
-#: extension.js:462 extension.js:487
+#: extension.js:527
 msgid "Error"
 msgstr "שגיאה"
 
-#: extension.js:467 extension.js:492
+#: extension.js:532
 msgid "Up to date :)"
 msgstr "מעודכן :)"
 
@@ -112,7 +118,9 @@ msgid "Disable indicator, until at least N updates are available"
 msgstr ""
 
 #: prefs.xml:119
-msgid "Warning: Delaying notifications until multiple updates are available can hide important security updates and is dangerous."
+msgid ""
+"Warning: Delaying notifications until multiple updates are available can "
+"hide important security updates and is dangerous."
 msgstr ""
 
 #: prefs.xml:129
@@ -144,8 +152,12 @@ msgid "Menu"
 msgstr "תפריט"
 
 #: prefs.xml:195
-msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
-msgstr "הרחבה אוטומטית של רשימת עדכונים אם מספר העדכונים נמוכה ממספר זה (0 כדי להשבית)"
+msgid ""
+"Auto-expand updates list if updates count is less than this number (0 to "
+"disable)"
+msgstr ""
+"הרחבה אוטומטית של רשימת עדכונים אם מספר העדכונים נמוכה ממספר זה (0 כדי "
+"להשבית)"
 
 #: prefs.xml:209 prefs.xml:269
 msgid "Strip out versions numbers"
@@ -188,7 +200,9 @@ msgid "Command to check for package updates"
 msgstr "פקודה לבדיקת עדכוני חבילות"
 
 #: prefs.xml:311
-msgid "Disable output parsing, count every line as an update. This is the old behavior."
+msgid ""
+"Disable output parsing, count every line as an update. This is the old "
+"behavior."
 msgstr "השבת ניתוח פלט, ספור כל שורה כעדכון. זוהי ההתנהגות הישנה."
 
 #: prefs.xml:327
@@ -196,7 +210,9 @@ msgid "Command to update packages"
 msgstr "פקודה לעדכון חבילות"
 
 #: prefs.xml:342
-msgid "Package manager local directory path - To detect when new packages are installed"
+msgid ""
+"Package manager local directory path - To detect when new packages are "
+"installed"
 msgstr "נתיב ספרייה מקומית של מנהל החבילות - לזיהוי כאשר חבילות חדשות מותקנות"
 
 #: prefs.xml:359
@@ -210,9 +226,3 @@ msgstr "פקודה להצגת מידע על חבילה (אופציונלי)"
 #: prefs.xml:389
 msgid "About"
 msgstr "אודות"
-
-#: extension.js:466
-#, javascript-format
-msgid "%d updates available (below notification threshold)"
-msgstr ""
-

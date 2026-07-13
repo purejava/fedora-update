@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-18 13:57+0100\n"
+"POT-Creation-Date: 2026-07-13 15:44+0200\n"
 "PO-Revision-Date: 2026-04-02 05:09\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
@@ -17,63 +17,70 @@ msgstr ""
 "X-Crowdin-File: /main/locale/update-extension@purejava.org.pot\n"
 "X-Crowdin-File-ID: 6\n"
 
-#: extension.js:140 extension.js:144
+#: extension.js:149
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: extension.js:141 extension.js:666 extension.js:145 extension.js:691
+#: extension.js:150 extension.js:761
 msgid "Update now"
 msgstr "Ενημέρωση τώρα"
 
-#: extension.js:142 extension.js:146
+#: extension.js:151
 msgid "Open package manager"
 msgstr "Άνοιγμα διαχείρισης πακέτων"
 
-#: extension.js:146 extension.js:150
+#: extension.js:155
 msgid "Checking"
 msgstr "Έλεγχος"
 
-#: extension.js:157 extension.js:161
+#: extension.js:166
 msgid "Check now"
 msgstr "Έλεγχος τώρα"
 
-#: extension.js:185 extension.js:189
+#: extension.js:194
 msgid "Waiting first check"
 msgstr "Σε αναμονή για πρώτο έλεγχο"
 
-#: extension.js:402 extension.js:411
+#: extension.js:451
 msgid "Last checked"
 msgstr "Τελευταίος έλεγχος"
 
-#: extension.js:411
+#: extension.js:461
 #, javascript-format
 msgid "%d update pending"
 msgid_plural "%d updates pending"
 msgstr[0] "Εκκρεμεί %d ενημέρωση"
 msgstr[1] "Εκκρεμούν %d ενημερώσεις"
 
-#: extension.js:437 extension.js:443
+#: extension.js:487 extension.js:493
 msgid "New Fedora Linux Update"
 msgid_plural "New Fedora Linux Updates"
 msgstr[0] "Νέα ενημέρωση του Fedora Linux"
 msgstr[1] "Νέες ενημερώσεις του Fedora Linux"
 
-#: extension.js:444
+#: extension.js:494
 #, javascript-format
 msgid "There is %d update pending"
 msgid_plural "There are %d updates pending"
 msgstr[0] "Υπάρχει %d ενημέρωση σε εκκρεμότητα"
 msgstr[1] "Υπάρχουν %d ενημερώσεις σε εκκρεμότητα"
 
-#: extension.js:460 extension.js:485
-msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr "Σημείωση: πρέπει να εγκαταστήσετε το dnf για χρήση της δέσμης ενεργειών ελέγχου για ενημερώσεις."
+#: extension.js:506
+#, javascript-format
+msgid "%d updates available (below notification threshold)"
+msgstr ""
 
-#: extension.js:462 extension.js:487
+#: extension.js:525
+msgid "Note : you have to install dnf to use the 'check for updates' script."
+msgstr ""
+"Σημείωση: πρέπει να εγκαταστήσετε το dnf για χρήση της δέσμης ενεργειών "
+"ελέγχου για ενημερώσεις."
+
+#: extension.js:527
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: extension.js:467 extension.js:492
+#: extension.js:532
 msgid "Up to date :)"
 msgstr "Ενημερωμένο σύστημα :)"
 
@@ -106,7 +113,9 @@ msgid "Disable indicator, until at least N updates are available"
 msgstr ""
 
 #: prefs.xml:119
-msgid "Warning: Delaying notifications until multiple updates are available can hide important security updates and is dangerous."
+msgid ""
+"Warning: Delaying notifications until multiple updates are available can "
+"hide important security updates and is dangerous."
 msgstr ""
 
 #: prefs.xml:129
@@ -138,8 +147,12 @@ msgid "Menu"
 msgstr "Μενού"
 
 #: prefs.xml:195
-msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
-msgstr "Αυτόματη ανάπτυξη λίστας ενημερώσεων εάν είναι λιγότερες από αυτόν τον αριθμό (0 για απενεργοποίηση)"
+msgid ""
+"Auto-expand updates list if updates count is less than this number (0 to "
+"disable)"
+msgstr ""
+"Αυτόματη ανάπτυξη λίστας ενημερώσεων εάν είναι λιγότερες από αυτόν τον "
+"αριθμό (0 για απενεργοποίηση)"
 
 #: prefs.xml:209 prefs.xml:269
 msgid "Strip out versions numbers"
@@ -182,16 +195,24 @@ msgid "Command to check for package updates"
 msgstr "Εντολή ελέγχου για ενημερώσεις πακέτων"
 
 #: prefs.xml:311
-msgid "Disable output parsing, count every line as an update. This is the old behavior."
-msgstr "Απενεργοποίηση ανάλυσης εξόδου, λογισμός κάθε γραμμής ως ενημέρωσης (παλιά συμπεριφορά)."
+msgid ""
+"Disable output parsing, count every line as an update. This is the old "
+"behavior."
+msgstr ""
+"Απενεργοποίηση ανάλυσης εξόδου, λογισμός κάθε γραμμής ως ενημέρωσης (παλιά "
+"συμπεριφορά)."
 
 #: prefs.xml:327
 msgid "Command to update packages"
 msgstr "Εντολή ενημέρωσης πακέτων"
 
 #: prefs.xml:342
-msgid "Package manager local directory path - To detect when new packages are installed"
-msgstr "Διαδρομή τοπικού καταλόγου διαχείρισης πακέτων (για εντοπισμό νέων εγκαταστάσεων πακέτων)"
+msgid ""
+"Package manager local directory path - To detect when new packages are "
+"installed"
+msgstr ""
+"Διαδρομή τοπικού καταλόγου διαχείρισης πακέτων (για εντοπισμό νέων "
+"εγκαταστάσεων πακέτων)"
 
 #: prefs.xml:359
 msgid "Command to open package manager (optional)"
@@ -204,9 +225,3 @@ msgstr "Εντολή εμφάνισης πληροφοριών πακέτου (�
 #: prefs.xml:389
 msgid "About"
 msgstr "Πληροφορίες"
-
-#: extension.js:466
-#, javascript-format
-msgid "%d updates available (below notification threshold)"
-msgstr ""
-
