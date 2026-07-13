@@ -199,8 +199,10 @@ class FedoraUpdateIndicator extends Button {
 
 		// Load settings
 		this._settings = this._extension.getSettings();
+		this._desktopSettings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 		this._settingsPositionChangedId = this._settings.connect('changed', this._positionChanged.bind(this));
 		this._settingsChangedId = this._settings.connect('changed', this._applySettings.bind(this));
+		this._desktopSettingsChangedId = this._desktopSettings.connect('changed::clock-format', this._updateLastCheckMenu.bind(this));
 		this._applySettings();
 
 		if (FIRST_BOOT) {
@@ -328,6 +330,10 @@ class FedoraUpdateIndicator extends Button {
 				this._settings.disconnect(this._settingsChangedId);
 				this._settingsChangedId = null;
 			}
+			if (this._desktopSettingsChangedId) {
+				this._desktopSettings.disconnect(this._desktopSettingsChangedId);
+				this._desktopSettingsChangedId = null;
+			}
 		}
 		if (this._notifSource) {
 			// Delete the notification source, which lay still have a notification shown
@@ -430,8 +436,19 @@ class FedoraUpdateIndicator extends Button {
 		}
 	}
 
+	_formatLastCheckedTime() {
+		if (!LAST_CHECK) {
+			return '';
+		}
+
+		const date = GLib.DateTime.new_from_unix_local(Math.floor(LAST_CHECK.getTime() / 1000));
+		const clockFormat = this._desktopSettings?.get_enum('clock-format') ?? 0;
+		const timeFormat = clockFormat === 1 ? '%x %I:%M %p' : '%x %H:%M';
+		return date.format(timeFormat);
+	}
+
 	_updateLastCheckMenu() {
-		this.timeCheckedMenu.label.set_text( _("Last checked") + "  " + LAST_CHECK.toLocaleString() );
+		this.timeCheckedMenu.label.set_text( _("Last checked") + "  " + this._formatLastCheckedTime() );
 		this.timeCheckedMenu.visible = SHOW_TIMECHECKED;
 	}
 
