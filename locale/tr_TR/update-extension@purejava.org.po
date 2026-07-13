@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fedora-update\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-13 15:44+0200\n"
-"PO-Revision-Date: 2026-06-28 08:29\n"
+"PO-Revision-Date: 2026-07-13 16:30\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
@@ -72,8 +72,7 @@ msgstr "%d güncelleme mevcut (bildirim sınırının altında)"
 
 #: extension.js:525
 msgid "Note : you have to install dnf to use the 'check for updates' script."
-msgstr ""
-"Not: 'güncellemeleri denetle' komutunu kullanmak için dnf yüklemelisiniz."
+msgstr "Not: 'güncellemeleri denetle' komutunu kullanmak için dnf yüklemelisiniz."
 
 #: extension.js:527
 msgid "Error"
@@ -112,12 +111,8 @@ msgid "Disable indicator, until at least N updates are available"
 msgstr "En az N güncelleme yayınlanana kadar göstergeyi devre dışı bırak"
 
 #: prefs.xml:119
-msgid ""
-"Warning: Delaying notifications until multiple updates are available can "
-"hide important security updates and is dangerous."
-msgstr ""
-"Uyarı: Birden fazla güncelleme yayınlanana kadar bildirimleri ertelemek "
-"önemli güvenlik güncellemelerini gizleyebilir ve tehlikeli olabilir."
+msgid "Warning: Delaying notifications until multiple updates are available can hide important security updates and is dangerous."
+msgstr "Uyarı: Birden fazla güncelleme yayınlanana kadar bildirimleri ertelemek önemli güvenlik güncellemelerini gizleyebilir ve tehlikeli olabilir."
 
 #: prefs.xml:129
 msgid "Use built-in icons"
@@ -148,9 +143,7 @@ msgid "Menu"
 msgstr "Menü"
 
 #: prefs.xml:195
-msgid ""
-"Auto-expand updates list if updates count is less than this number (0 to "
-"disable)"
+msgid "Auto-expand updates list if updates count is less than this number (0 to disable)"
 msgstr ""
 
 #: prefs.xml:209 prefs.xml:269
@@ -194,9 +187,7 @@ msgid "Command to check for package updates"
 msgstr "Paket güncellemelerini denetlemek için komut"
 
 #: prefs.xml:311
-msgid ""
-"Disable output parsing, count every line as an update. This is the old "
-"behavior."
+msgid "Disable output parsing, count every line as an update. This is the old behavior."
 msgstr ""
 
 #: prefs.xml:327
@@ -204,12 +195,8 @@ msgid "Command to update packages"
 msgstr "Paketleri güncellemek için komut"
 
 #: prefs.xml:342
-msgid ""
-"Package manager local directory path - To detect when new packages are "
-"installed"
-msgstr ""
-"Paket yöneticisi lokal dizini - Yeni paketler yüklendiği zaman tespit etmek "
-"için"
+msgid "Package manager local directory path - To detect when new packages are installed"
+msgstr "Paket yöneticisi lokal dizini - Yeni paketler yüklendiği zaman tespit etmek için"
 
 #: prefs.xml:359
 msgid "Command to open package manager (optional)"
@@ -222,3 +209,4 @@ msgstr "Paket bilgilerini gösterme komutu (isteğe bağlı)"
 #: prefs.xml:389
 msgid "About"
 msgstr "Hakkında"
+
