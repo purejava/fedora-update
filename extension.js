@@ -443,7 +443,7 @@ class FedoraUpdateIndicator extends Button {
 
 		const date = GLib.DateTime.new_from_unix_local(Math.floor(LAST_CHECK.getTime() / 1000));
 		const clockFormat = this._desktopSettings?.get_enum('clock-format') ?? 0;
-		const timeFormat = clockFormat === 1 ? '%x %I:%M %p' : '%x %H:%M';
+		const timeFormat = clockFormat === 1 ? '%x %I:%M %p' : '%x %H:%M:%S';
 		return date.format(timeFormat);
 	}
 
