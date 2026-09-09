@@ -165,7 +165,7 @@ class FedoraUpdateIndicator extends Button {
 		// A little trick on "check now" menuitem to keep menu opened
 		this.checkNowMenuItem = new PopupMenu.PopupMenuItem( _('Check now') );
 		this.checkNowMenuContainer = new PopupMenu.PopupMenuSection();
-		this.checkNowMenuContainer.box.add_child(this.checkNowMenuItem.actor);
+		this.checkNowMenuContainer.box.add_child(this.checkNowMenuItem);
 
 		// A placeholder to show the last check time
 		this.timeCheckedMenu = new PopupMenu.PopupMenuItem( "-", {reactive:false} );
@@ -429,7 +429,7 @@ class FedoraUpdateIndicator extends Button {
 		if (isChecking) {
 			this.updateIcon.set_gicon( this._getCustIcon('fedora-unknown-symbolic') );
 			this.checkNowMenuContainer.visible = false;
-			this.checkingMenuItem.actor.visible = true;;
+			this.checkingMenuItem.visible = true;;
 		} else {
 			this.checkNowMenuContainer.visible = true;;
 			this.checkingMenuItem.visible = false;;
