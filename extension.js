@@ -130,7 +130,7 @@ class FedoraUpdateIndicator extends Button {
 
 		this.updateIcon = new St.Icon({gicon: this._getCustIcon('fedora-unknown-symbolic'), style_class: 'system-status-icon'});
 
-		let box = new St.BoxLayout({ vertical: false, style_class: 'panel-status-menu-box' });
+		let box = new St.BoxLayout({ orientation: Clutter.Orientation.HORIZONTAL, style_class: 'panel-status-menu-box' });
 		this.label = new St.Label({ text: '',
 			y_expand: true,
 			y_align: Clutter.ActorAlign.CENTER });
@@ -142,7 +142,7 @@ class FedoraUpdateIndicator extends Button {
 		// Prepare the special menu : a submenu for updates list that will look like a regular menu item when disabled
 		// Scrollability will also be taken care of by the popupmenu
 		this.menuExpander = new PopupMenu.PopupSubMenuMenuItem('');
-		this.menuExpanderContainer = new St.BoxLayout({ vertical: true, style_class: 'fedora-updates-updates-list' });
+		this.menuExpanderContainer = new St.BoxLayout({ orientation: Clutter.Orientation.VERTICAL, style_class: 'fedora-updates-updates-list' });
 		this.menuExpander.menu.box.add_child( this.menuExpanderContainer );
 
 		// Other standard menu items
@@ -564,7 +564,7 @@ class FedoraUpdateIndicator extends Button {
 							// Not an update
 							this.menuExpanderContainer.add_child( new St.Label({ text: item, style_class: 'fedora-updates-update-title' }) );
 						} else {
-							let hBox = new St.BoxLayout({ vertical: false, style_class: 'fedora-updates-update-line' });
+							let hBox = new St.BoxLayout({ orientation: Clutter.Orientation.HORIZONTAL, style_class: 'fedora-updates-update-line' });
 							hBox.add_child( this._createPackageLabel(matches[1]) );
 							if (!STRIP_VERSIONS) {
 								hBox.add_child( new St.Label({
